@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
       /* CSS Clean-up & Optimasi */
       body {
@@ -173,6 +175,90 @@
         .section-title {
           margin-top: 15px;
         }
+        .list-columns {
+          column-count: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          margin: 16px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+        .section-title {
+          font-size: 16px;
+        }
+        .download-btn {
+          padding: 10px 16px;
+          font-size: 14px;
+          margin-right: 8px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          margin: 12px;
+          font-size: 14px;
+        }
+        .profile-photo {
+          width: 84px;
+          height: 84px;
+        }
+        h1 {
+          font-size: 18px;
+        }
+        h2 {
+          font-size: 14px;
+        }
+        h3 {
+          font-size: 14px;
+        }
+        .section-title {
+          font-size: 15px;
+          margin-top: 12px;
+        }
+        .muted {
+          font-size: 12px;
+        }
+        .contact {
+          font-size: 12px;
+        }
+        .download-btn {
+          padding: 8px 12px;
+          font-size: 13px;
+          margin-bottom: 8px;
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+          margin-right: 0;
+          margin-bottom: 8px;
+        }
+        .logo-row img {
+          height: 28px;
+          margin-right: 6px;
+        }
+        .list {
+          padding-left: 12px;
+          font-size: 13px;
+        }
+        .list li {
+          margin-bottom: 4px;
+        }
+        .project {
+          padding: 10px;
+          margin-bottom: 12px;
+        }
+        .project h3 {
+          font-size: 13px;
+          margin: 8px 0 4px 0;
+        }
+        .list-columns {
+          column-count: 1;
+          column-gap: 0;
+          column-rule: none;
+        }
       }
 
       /* ==================================== */
@@ -251,7 +337,6 @@
         object-fit: cover;
 
         /* Elegant effect */
-        filter: grayscale(100%);
         transition: all 0.35s ease;
 
         /* Double ring */
@@ -266,7 +351,6 @@
 
       /* Hover effect */
       .profile-photo:hover {
-        filter: grayscale(0%);
         transform: scale(1.04);
       }
       .profile-header {
@@ -286,6 +370,215 @@
           height: 84px;
         }
       }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+        50% {
+          box-shadow: 0 8px 32px rgba(30, 144, 255, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      .card {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .left-col > div,
+      .right-col > div {
+        animation: fadeInLeft 0.6s ease-out;
+        animation-fill-mode: both;
+      }
+
+      .left-col > div:nth-child(1) { animation-delay: 0.1s; }
+      .left-col > div:nth-child(2) { animation-delay: 0.2s; }
+      .left-col > div:nth-child(3) { animation-delay: 0.3s; }
+      .left-col > div:nth-child(4) { animation-delay: 0.4s; }
+      .left-col > div:nth-child(5) { animation-delay: 0.5s; }
+      .left-col > div:nth-child(6) { animation-delay: 0.6s; }
+
+      .right-col > div:nth-child(1) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.1s; animation-fill-mode: both; }
+      .right-col > div:nth-child(2) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.2s; animation-fill-mode: both; }
+      .right-col > div:nth-child(3) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.3s; animation-fill-mode: both; }
+      .right-col > div:nth-child(4) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.4s; animation-fill-mode: both; }
+
+      .project {
+        animation: fadeInUp 0.5s ease-out;
+        animation-fill-mode: both;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 114, 255, 0.3);
+      }
+
+      .section-title {
+        animation: fadeInUp 0.5s ease-out;
+        animation-fill-mode: both;
+      }
+
+      .profile-photo {
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .download-btn {
+        animation: fadeInUp 0.8s ease-out 0.3s;
+        animation-fill-mode: both;
+        transition: all 0.3s ease;
+      }
+
+      .download-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .list li {
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .list li:hover {
+        transform: translateX(5px);
+        color: #fff;
+      }
+
+      .logo-row img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .logo-row img:hover {
+        transform: scale(1.15);
+        filter: brightness(1.2);
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        margin-bottom: 10px;
+      }
+
+      .dropdown-header {
+        background: linear-gradient(135deg, rgba(0, 114, 255, 0.15), rgba(0, 170, 255, 0.1));
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 170, 255, 0.2);
+      }
+
+      .dropdown-header:hover {
+        background: linear-gradient(135deg, rgba(0, 114, 255, 0.25), rgba(0, 170, 255, 0.15));
+        border-color: rgba(0, 170, 255, 0.4);
+      }
+
+      .dropdown-header strong {
+        color: #dff6ff;
+        font-size: 15px;
+      }
+
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+        color: #bde0ff;
+        font-size: 18px;
+      }
+
+      .dropdown.open .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 0 0 8px 8px;
+        margin-top: 2px;
+      }
+
+      .dropdown.open .dropdown-content {
+        max-height: 500px;
+      }
+
+      .dropdown-content ul {
+        padding: 12px 16px 12px 32px;
+        margin: 0;
+      }
+
+      .dropdown-content li {
+        padding: 4px 0;
+        color: #d9eefc;
+        font-size: 14px;
+      }
+
+      /* Table styles */
+      .tech-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+      }
+
+      .tech-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+      }
+
+      .tech-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .tech-table td:first-child {
+        font-weight: 600;
+        color: #dff6ff;
+        width: 35%;
+      }
+
+      .tech-table td:last-child {
+        color: #d9eefc;
+      }
     </style>
   </head>
   <body>
@@ -297,14 +590,12 @@
           <div>
             <h1>👨‍💻 Muhammad Fadillah Fachmi</h1>
             <h3>
-              Technical Engineer | IT Infrastructure Engineer | Cloud Engineer | System & Server
-              Administrator
+              System & Infrastructure Engineer
             </h3>
           </div>
         </div>
         <h2>
-          Technical Engineer | IT Infrastructure Engineer | Cloud Engineer | System & Server
-          Administrator
+          System & Infrastructure Engineer
         </h2>
         <div class="contact muted">
           📍 Pamulang Tangerang Selatan, Indonesia &nbsp; • &nbsp; 📧 fachmy.analisprogram@gmail.com
@@ -392,142 +683,208 @@
         <div class="section-title">🌟 Profil Singkat</div>
         <p class="list">
           Profesional IT Infrastructure, DevOps, QA, dan Technical Engineer dengan pengalaman lebih
-          dari 5 tahun dalam pengelolaan infrastruktur enterprise, monitoring sistem,
-          troubleshooting, deployment aplikasi, serta maintenance server dan production environment.
+          dari 5 tahun dalam pengelolaan infrastruktur enterprise, monitoring sistem, troubleshooting,
+          deployment aplikasi, serta maintenance server dan production environment.
         </p>
         <p class="list">
-          Memiliki pengalaman dalam instalasi dan konfigurasi server Linux &amp; Windows, setup
-          RAID, integrasi storage, troubleshooting hardware/software, monitoring availability dan
-          reliability sistem, serta pengelolaan infrastruktur pendukung untuk memastikan operasional
-          IT berjalan stabil dan optimal.
+          Berpengalaman dalam instalasi dan konfigurasi server Linux &amp; Windows, setup RAID,
+          integrasi storage, automation deployment, containerization (Docker & Kubernetes), serta
+          maintenance aplikasi enterprise di lingkungan development dan production.
         </p>
         <p class="list">
-          Berpengalaman dalam automation deployment, containerization, monitoring environment
-          berbasis Docker dan Kubernetes, serta maintenance aplikasi enterprise di lingkungan
-          development maupun production. Memiliki kemampuan analisis incident, troubleshooting
-          jaringan dan aplikasi, serta handling operational issue pada environment enterprise.
-        </p>
-        <p class="list">
-          Memiliki pemahaman cloud computing sebagai AWS Cloud Practitioner, termasuk dasar layanan
-          Amazon Web Services, cloud infrastructure, monitoring, compute, storage, dan fundamental
-          security pada environment cloud.
-        </p>
-        <p class="list">
-          Saat ini juga sedang memperdalam bidang Security Operation Center (SOC), Penetration
-          Testing dan Risk Operation Center (ROC), termasuk monitoring security event, log analysis,
-          incident handling, serta pemahaman dasar terkait keamanan infrastruktur dan operational
-          risk monitoring.
-        </p>
-        <p class="list">
-          Memiliki pendekatan kerja yang analitis, detail-oriented, adaptif terhadap teknologi baru,
-          serta berorientasi pada reliability, continuous improvement, dan operational stability.
+          Memiliki pemahaman cloud computing sebagai AWS Cloud Practitioner dan sedang memperdalam
+          bidang Security Penetration Testing dan Cyber Security, termasuk monitoring security event,
+          log analysis, dan incident handling.
         </p>
 
         <div class="section-title">🛠️ Keahlian Inti (Tech Stack)</div>
-        <ul class="list list-columns">
-          <li><strong>DevOps & Infrastructure</strong></li>
-          <li>Docker</li>
-          <li>Kubernetes</li>
-          <li>Red Hat OpenShift</li>
-          <li>GitLab CI/CD</li>
-          <li>Helm</li>
-          <li>Argo CD (Basic)</li>
-          <li>Linux Server Administration (RHEL, Ubuntu, CentOS)</li>
-          <li>Windows Server Administration</li>
-          <li>Proxmox VE</li>
-          <li>Monitoring & Production Maintenance</li>
-          <li>Server Installation & Configuration</li>
-          <li>RAID Configuration & Storage Integration (NAS/SAN)</li>
-          <li>Server Hardware Troubleshooting & Maintenance</li>
-          <li>Web Server Configuration (Nginx, Apache, IIS)</li>
-          <li>SSL Certificate Installation & Management</li>
-          <li>Virtualization & Infrastructure Management</li>
-          <li>Backup & Restore Basic Administration</li>
-          <li><strong>Quality Assurance</strong></li>
-          <li>Unit Testing</li>
-          <li>SIT (System Integration Testing)</li>
-          <li>UAT (User Acceptance Testing)</li>
-          <li>Regression Testing</li>
-          <li>Test Documentation & Reporting</li>
-          <li>API Troubleshooting</li>
-          <li><strong>Programming & Tools</strong></li>
-          <li>Kotlin (Basic)</li>
-          <li>Bash Scripting</li>
-          <li>LAMP Stack</li>
-          <li>XAMPP</li>
-          <li>Git / GitLab</li>
-          <li>Language :Php, YAML, JavaScript, HTML, CSS, XML, JSON, SQL</li>
-          <li>Vibes Coding</li>
-          <li><strong>Network & Security</strong></li>
-          <li>TCP/IP Networking</li>
-          <li>Subnetting & IP Addressing</li>
-          <li>Firewall Rules & Security Policy</li>
-          <li>IPTables / Basic Firewall Configuration</li>
-          <li>NAT (Network Address Translation)</li>
-          <li>Static & Basic Dynamic Routing</li>
-          <li>DNS Configuration & Troubleshooting</li>
-          <li>Reverse Proxy & Load Balancer Configuration</li>
-          <li>VPN Basic Configuration</li>
-          <li>Network Troubleshooting & Connectivity Analysis</li>
-          <li>Log Monitoring & Incident Analysis</li>
-        </ul>
 
-        <div class="section-title">💡 Soft Skills</div>
-        <ul class="list">
-          <li>Komunikasi efektif</li>
-          <li>Problem solving analitis</li>
-          <li>Teamwork & kolaborasi DevOps</li>
-          <li>Time management</li>
-          <li>Adaptasi cepat pada teknologi baru</li>
-          <li>Dokumentasi teknis yang rapi</li>
-        </ul>
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>🔧 DevOps & Infrastructure</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Red Hat OpenShift</li>
+              <li>GitLab CI/CD</li>
+              <li>Helm</li>
+              <li>Argo CD (Basic)</li>
+              <li>Linux Server Administration (RHEL, Ubuntu, CentOS)</li>
+              <li>Windows Server Administration</li>
+              <li>Proxmox VE</li>
+              <li>Monitoring & Production Maintenance</li>
+              <li>Server Installation & Configuration</li>
+              <li>RAID Configuration & Storage Integration (NAS/SAN)</li>
+              <li>Server Hardware Troubleshooting & Maintenance</li>
+              <li>Web Server Configuration (Nginx, Apache, IIS)</li>
+              <li>SSL Certificate Installation & Management</li>
+              <li>Virtualization & Infrastructure Management</li>
+              <li>Backup & Restore Basic Administration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>✅ Quality Assurance</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>Unit Testing</li>
+              <li>SIT (System Integration Testing)</li>
+              <li>UAT (User Acceptance Testing)</li>
+              <li>Regression Testing</li>
+              <li>Test Documentation & Reporting</li>
+              <li>API Troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>💻 Programming & Tools</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>Kotlin (Basic)</li>
+              <li>Bash Scripting</li>
+              <li>LAMP Stack</li>
+              <li>XAMPP</li>
+              <li>Git / GitLab</li>
+              <li>Language: PHP, YAML, JavaScript, HTML, CSS, XML, JSON, SQL</li>
+              <li>Vibes Coding</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>🌐 Network & Security</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>TCP/IP Networking</li>
+              <li>Subnetting & IP Addressing</li>
+              <li>Firewall Rules & Security Policy</li>
+              <li>IPTables / Basic Firewall Configuration</li>
+              <li>NAT (Network Address Translation)</li>
+              <li>Static & Basic Dynamic Routing</li>
+              <li>DNS Configuration & Troubleshooting</li>
+              <li>Reverse Proxy & Load Balancer Configuration</li>
+              <li>VPN Basic Configuration</li>
+              <li>Network Troubleshooting & Connectivity Analysis</li>
+              <li>Log Monitoring & Incident Analysis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-title">� Distribusi Keahlian</div>
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
+          <canvas id="skillChart" style="max-height: 300px;"></canvas>
+        </div>
+
+        <div class="section-title">� Soft Skills</div>
+        <table class="tech-table">
+          <tr>
+            <td>Komunikasi</td>
+            <td>Komunikasi efektif</td>
+          </tr>
+          <tr>
+            <td>Problem Solving</td>
+            <td>Problem solving analitis</td>
+          </tr>
+          <tr>
+            <td>Kolaborasi</td>
+            <td>Teamwork & kolaborasi DevOps</td>
+          </tr>
+          <tr>
+            <td>Manajemen</td>
+            <td>Time management</td>
+          </tr>
+          <tr>
+            <td>Adaptasi</td>
+            <td>Adaptasi cepat pada teknologi baru</td>
+          </tr>
+          <tr>
+            <td>Dokumentasi</td>
+            <td>Dokumentasi teknis yang rapi</td>
+          </tr>
+        </table>
 
         <div class="section-title">🔍 Tech Summary</div>
-        <ul class="list">
-          <li>
-            Berpengalaman dalam implementasi dan pengelolaan CI/CD Pipeline menggunakan GitLab dan
-            Jenkins
-          </li>
-          <li>Automation deployment environment Development, Staging, hingga Production</li>
-          <li>Containerization dan orchestration menggunakan Kubernetes dan Red Hat OpenShift</li>
-          <li>
-            Maintenance aplikasi banking enterprise, termasuk proyek CCMS BTN dan sistem pendukung
-            operasional lainnya
-          </li>
-          <li>Instalasi, konfigurasi, dan maintenance server Linux & Windows Server</li>
-          <li>
-            Konfigurasi RAID server, storage connection, mounting NAS/SAN, serta management
-            infrastructure server
-          </li>
-          <li>
-            Troubleshooting server, API, network connectivity, dan performa aplikasi production
-          </li>
-          <li>
-            Monitoring stability, reliability, resource utilization, dan availability aplikasi
-            maupun server
-          </li>
-          <li>Pengalaman deployment aplikasi berbasis Docker dan microservices architecture</li>
-          <li>
-            Basic knowledge terkait security hardening, SSL certificate, reverse proxy, dan web
-            server configuration (Nginx/IIS/Apache)
-          </li>
-          <li>
-            Familiar dengan environment virtualisasi dan infrastructure enterprise environment
-          </li>
-        </ul>
+        <table class="tech-table">
+          <tr>
+            <td>CI/CD Pipeline</td>
+            <td>Implementasi dan pengelolaan CI/CD Pipeline menggunakan GitLab dan Jenkins</td>
+          </tr>
+          <tr>
+            <td>Automation Deployment</td>
+            <td>Automation deployment environment Development, Staging, hingga Production</td>
+          </tr>
+          <tr>
+            <td>Containerization</td>
+            <td>Containerization dan orchestration menggunakan Kubernetes dan Red Hat OpenShift</td>
+          </tr>
+          <tr>
+            <td>Enterprise Maintenance</td>
+            <td>Maintenance aplikasi banking enterprise, termasuk proyek CCMS BTN dan sistem pendukung operasional lainnya</td>
+          </tr>
+          <tr>
+            <td>Server Administration</td>
+            <td>Instalasi, konfigurasi, dan maintenance server Linux & Windows Server</td>
+          </tr>
+          <tr>
+            <td>Storage & RAID</td>
+            <td>Konfigurasi RAID server, storage connection, mounting NAS/SAN, serta management infrastructure server</td>
+          </tr>
+          <tr>
+            <td>Troubleshooting</td>
+            <td>Troubleshooting server, API, network connectivity, dan performa aplikasi production</td>
+          </tr>
+          <tr>
+            <td>Monitoring</td>
+            <td>Monitoring stability, reliability, resource utilization, dan availability aplikasi maupun server</td>
+          </tr>
+          <tr>
+            <td>Docker & Microservices</td>
+            <td>Pengalaman deployment aplikasi berbasis Docker dan microservices architecture</td>
+          </tr>
+          <tr>
+            <td>Security</td>
+            <td>Basic knowledge terkait security hardening, SSL certificate, reverse proxy, dan web server configuration (Nginx/IIS/Apache)</td>
+          </tr>
+          <tr>
+            <td>Virtualization</td>
+            <td>Familiar dengan environment virtualisasi dan infrastructure enterprise environment</td>
+          </tr>
+        </table>
 
         <div class="section-title">📜 Sertifikasi</div>
         <ul class="list">
-          <li>IBM — Storwize Deep Dive Enablement for Pre-sales (IBM, 2019)</li>
-          <li>MongoDB Basic — MongoDB University (2020)</li>
-          <li>Android Kominfo (2020)</li>
-          <li>Docker — Udemy (2021)</li>
-          <li>CKA — Kubernetes Administrator (KodeKloud, 2023)</li>
-          <li>Kubernetes Admin — Udemy (2023)</li>
-          <li>ECESET N2KC — Prosperita (2025)</li>
-          <li>Red Hat Ansible Automation Platform: Seller (2025)</li>
-          <li>Red Hat Portfolio: Foundational (2025)</li>
-          <li>Red Hat OpenShift: Seller (2025)</li>
+          <li><a href="assets/Sertifikat Engeener/P. AWS SimuLearn Cloud.pdf" target="_blank" style="color: #bfeaff">AWS Cloud Practitioner — SimuLearn (2026)</a></li>
+          <li><a href="assets/Sertifikat Engeener/R. Getting_Started_with_Cisco_Packet_Tracer_certificate_fachmy-analisprogram-gmail-com_b7cc2abb-d04b-4765-ae6b-77dc94ee3fc0.pdf" target="_blank" style="color: #bfeaff">Cisco Packet Tracer — Getting Started (2026)</a></li>
+          <li><a href="assets/Sertifikat Engeener/S. Introduction_to_Cybersecurity_certificate_fachmy-analisprogram-gmail-com_94c4d2f2-5b5b-43c6-944a-3ffb89af0226.pdf" target="_blank" style="color: #bfeaff">Introduction to Cybersecurity — Cisco (2026)</a></li>
+          <li><a href="assets/Sertifikat Engeener/J. eceset N2KC Muhammad Fadillah Fachmi.png" target="_blank" style="color: #bfeaff">ECESET N2KC — Prosperita (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/K. RedHatCertificate20251203-30-5ekzlv.pdf" target="_blank" style="color: #bfeaff">Red Hat Ansible Automation Platform: Seller (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/L. RedHatCertificate20251203-30-ohbw4u.pdf" target="_blank" style="color: #bfeaff">Red Hat Portfolio: Foundational (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/M. RedHatCertificate20251203-30-6mz04c.pdf" target="_blank" style="color: #bfeaff">Red Hat OpenShift: Seller (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/N. RedHatCertificate20251205-29-g8zwx0.pdf" target="_blank" style="color: #bfeaff">Red Hat Certificate (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/O. RedHatCertificate20251205-32-2z6yjd.pdf" target="_blank" style="color: #bfeaff">Red Hat Certificate (2025)</a></li>
+          <li><a href="assets/Sertifikat Engeener/H. KodeKloud CertifieG. d Kubernetes Administrator with Practice Tests.pdf" target="_blank" style="color: #bfeaff">CKA — Kubernetes Administrator (KodeKloud, 2023)</a></li>
+          <li><a href="assets/Sertifikat Engeener/I. Certified Kubernetes Administrator (CKA) with Practice Tests.jpg" target="_blank" style="color: #bfeaff">Kubernetes Admin — Udemy (2023)</a></li>
+          <li><a href="assets/Sertifikat Engeener/G. Udemy (RHCSA - EX200).pdf" target="_blank" style="color: #bfeaff">RHCSA — Udemy (2022)</a></li>
+          <li><a href="assets/Sertifikat Engeener/F. Certificate Docker Udemy.pdf" target="_blank" style="color: #bfeaff">Docker — Udemy (2021)</a></li>
+          <li><a href="assets/Sertifikat Engeener/C. Kotlin Dicoding.pdf" target="_blank" style="color: #bfeaff">Kotlin — Dicoding (2020)</a></li>
+          <li><a href="assets/Sertifikat Engeener/D. Basic MongoDB.pdf" target="_blank" style="color: #bfeaff">MongoDB Basic — MongoDB University (2020)</a></li>
+          <li><a href="assets/Sertifikat Engeener/E. Sertificate android kominfo.pdf" target="_blank" style="color: #bfeaff">Android Kominfo (2020)</a></li>
+          <li><a href="assets/Sertifikat Engeener/B. Ibm Storewise.pdf" target="_blank" style="color: #bfeaff">IBM — Storwize Deep Dive Enablement for Pre-sales (IBM, 2019)</a></li>
+          <li><a href="assets/Sertifikat Engeener/A. code development.jpg" target="_blank" style="color: #bfeaff">Code Indonesia (2019)</a></li>
         </ul>
 
         <div class="section-title">📦 Tech Logos</div>
@@ -572,6 +929,18 @@
       </div>
       <div class="right-col">
         <div class="section-title">🧩 Pengalaman Kerja & Proyek Utama</div>
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
+          <canvas id="experienceChart" style="max-height: 250px;"></canvas>
+        </div>
+        <div class="project">
+          <h3>🔥 2026 – Sekarang | Maintenance Aplikasi Production CCMS Versi 3</h3>
+          <ul class="list">
+            <li>Maintenance aplikasi production CCMS Versi 3 untuk memastikan operasional berjalan stabil.</li>
+            <li>Monitoring dan troubleshooting issue operasional pada environment production.</li>
+            <li>Implementasi patch dan perbaikan bug untuk meningkatkan stabilitas aplikasi.</li>
+            <li>Koordinasi dengan tim development untuk deployment update dan enhancement.</li>
+          </ul>
+        </div>
         <div class="project">
           <h3>🔥 2025 – Deployment & Management of OKD (OpenShift Community Platform)</h3>
           <!-- <div class="muted">PT Mitra Infosarana – PT Quadrant Solutions</div> -->
@@ -724,6 +1093,137 @@
           navigator.serviceWorker.register('service-worker.js');
         });
       }
+
+      function toggleDropdown(header) {
+        const dropdown = header.parentElement;
+        dropdown.classList.toggle('open');
+      }
+
+      // Skill Distribution Chart
+      document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('skillChart').getContext('2d');
+        
+        new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['DevOps & Infrastructure', 'Quality Assurance', 'Programming & Tools', 'Network & Security'],
+            datasets: [{
+              label: 'Skill Distribution',
+              data: [17, 6, 7, 11],
+              backgroundColor: 'rgba(0, 114, 255, 0.2)',
+              borderColor: 'rgba(0, 114, 255, 1)',
+              borderWidth: 2,
+              pointBackgroundColor: 'rgba(0, 170, 255, 1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(0, 114, 255, 1)'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              r: {
+                beginAtZero: true,
+                max: 20,
+                ticks: {
+                  stepSize: 5,
+                  color: '#9fb7d9',
+                  backdropColor: 'transparent'
+                },
+                grid: {
+                  color: 'rgba(0, 170, 255, 0.1)'
+                },
+                angleLines: {
+                  color: 'rgba(0, 170, 255, 0.1)'
+                },
+                pointLabels: {
+                  color: '#dff6ff',
+                  font: {
+                    size: 12,
+                    weight: '500'
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                backgroundColor: 'rgba(7, 18, 38, 0.9)',
+                titleColor: '#dff6ff',
+                bodyColor: '#d9eefc',
+                borderColor: 'rgba(0, 170, 255, 0.3)',
+                borderWidth: 1
+              }
+            }
+          }
+        });
+
+        // Work Experience Bar Chart
+        const expCtx = document.getElementById('experienceChart').getContext('2d');
+        
+        new Chart(expCtx, {
+          type: 'bar',
+          data: {
+            labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            datasets: [{
+              label: 'Jumlah Proyek',
+              data: [1, 2, 2, 1, 1, 2, 2, 1],
+              backgroundColor: [
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 114, 255, 0.6)',
+                'rgba(0, 170, 255, 0.8)'
+              ],
+              borderColor: 'rgba(0, 114, 255, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 3,
+                ticks: {
+                  stepSize: 1,
+                  color: '#9fb7d9'
+                },
+                grid: {
+                  color: 'rgba(0, 170, 255, 0.1)'
+                }
+              },
+              x: {
+                ticks: {
+                  color: '#9fb7d9'
+                },
+                grid: {
+                  display: false
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                backgroundColor: 'rgba(7, 18, 38, 0.9)',
+                titleColor: '#dff6ff',
+                bodyColor: '#d9eefc',
+                borderColor: 'rgba(0, 170, 255, 0.3)',
+                borderWidth: 1
+              }
+            }
+          }
+        });
+      });
 
       async function downloadWordDoc() {
         const clone = document.body.cloneNode(true);
