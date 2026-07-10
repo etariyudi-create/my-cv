@@ -1,13 +1,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>CV Muhammad Fadillah Fachmi</title>
+    <title>CV Eka Taris Ariyudi</title>
 
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#071226" />
+    <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="CV Fachmi" />
+    <meta name="apple-mobile-web-app-title" content="CV Eka" />
     <link rel="apple-touch-icon" href="icons/icon-192.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
@@ -20,6 +20,7 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
     <style>
       /* CSS Clean-up & Optimasi */
@@ -34,16 +35,40 @@
           'Helvetica Neue',
           Arial,
           sans-serif;
-        background: #071226;
-        color: #e6eef8;
+        background: #0a0f0a;
+        background-image: 
+          linear-gradient(45deg, #1a2a1a 25%, transparent 25%),
+          linear-gradient(-45deg, #1a2a1a 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #1a2a1a 75%),
+          linear-gradient(-45deg, transparent 75%, #1a2a1a 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+        color: #ffffff;
         margin: 24px;
         line-height: 1.6;
       }
       .card {
-        background: linear-gradient(135deg, #071a3a, #0a2a66);
+        background: linear-gradient(135deg, #0f1510, #1a251a);
         padding: 18px;
         border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+        box-shadow: 0 10px 30px rgba(50, 150, 100, 0.2);
+        border: 2px solid #3d8c6f;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(61, 140, 111, 0.08), transparent);
+        animation: shine 4s infinite;
+      }
+      @keyframes shine {
+        0% { left: -100%; }
+        50%, 100% { left: 100%; }
       }
       .container {
         display: grid;
@@ -58,12 +83,14 @@
       h2 {
         margin: 0 0 8px 0;
         font-weight: 500;
-        color: #bde0ff;
+        color: #4caf50;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
       h3 {
         font-size: 16px;
         font-weight: 700;
-        color: #dff6ff;
+        color: #66bb6a;
         margin: 10px 0 5px 0;
       }
       .muted {
@@ -75,8 +102,11 @@
         font-weight: 700;
         margin-top: 20px;
         padding-bottom: 8px;
-        border-bottom: 3px solid rgba(0, 170, 255, 0.12);
-        color: #cfeefd;
+        border-bottom: 3px solid #4caf50;
+        color: #4caf50;
+        text-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
       .logo-row img {
         height: 36px;
@@ -93,18 +123,19 @@
       .list-columns {
         column-count: 2;
         column-gap: 20px;
-        column-rule: 1px solid rgba(0, 170, 255, 0.1);
+        column-rule: 1px solid rgba(76, 175, 80, 0.15);
       }
       .list-columns li {
         break-inside: avoid;
         margin-bottom: 6px;
       }
       .project {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        background: linear-gradient(180deg, rgba(61, 140, 111, 0.08), rgba(61, 140, 111, 0.03));
         padding: 12px;
         border-radius: 10px;
         margin-bottom: 15px;
-        border-left: 4px solid #0072ff;
+        border-left: 4px solid #4caf50;
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
       }
       .qr img {
         height: 170px;
@@ -136,8 +167,8 @@
 
       /* Gaya untuk Tombol Download PDF */
       .download-btn {
-        background: #0072ff;
-        color: white;
+        background: linear-gradient(135deg, #4caf50, #388e3c);
+        color: #ffffff;
         padding: 12px 20px;
         border: none;
         border-radius: 8px;
@@ -147,12 +178,16 @@
         margin-top: 15px;
         margin-bottom: 5px;
         display: inline-block;
-        transition: background 0.3s;
-        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid #66bb6a;
       }
       .download-btn:hover {
-        background: #005bb5;
-        box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+        background: linear-gradient(135deg, #66bb6a, #4caf50);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        transform: translateY(-2px);
       }
 
       @media (max-width: 900px) {
@@ -374,8 +409,9 @@
         transition: all 0.35s ease;
 
         /* Double ring */
-        border: 3px solid #1e90ff;
-        outline: 4px solid rgba(30, 144, 255, 0.25);
+        border: 3px solid #4caf50;
+        outline: 4px solid rgba(76, 175, 80, 0.2);
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
 
         /* Soft shadow */
         box-shadow:
@@ -444,7 +480,7 @@
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
         }
         50% {
-          box-shadow: 0 8px 32px rgba(30, 144, 255, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+          box-shadow: 0 8px 32px rgba(76, 175, 80, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 20px rgba(76, 175, 80, 0.3);
         }
       }
 
@@ -533,7 +569,7 @@
       }
 
       .dropdown-header {
-        background: linear-gradient(135deg, rgba(0, 114, 255, 0.15), rgba(0, 170, 255, 0.1));
+        background: linear-gradient(135deg, rgba(61, 140, 111, 0.1), rgba(61, 140, 111, 0.05));
         padding: 12px 16px;
         border-radius: 8px;
         cursor: pointer;
@@ -541,12 +577,13 @@
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s ease;
-        border: 1px solid rgba(0, 170, 255, 0.2);
+        border: 1px solid rgba(76, 175, 80, 0.2);
       }
 
       .dropdown-header:hover {
-        background: linear-gradient(135deg, rgba(0, 114, 255, 0.25), rgba(0, 170, 255, 0.15));
-        border-color: rgba(0, 170, 255, 0.4);
+        background: linear-gradient(135deg, rgba(61, 140, 111, 0.15), rgba(61, 140, 111, 0.1));
+        border-color: #4caf50;
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
       }
 
       .dropdown-header strong {
@@ -597,7 +634,7 @@
 
       .tech-table td {
         padding: 8px 12px;
-        border-bottom: 1px solid rgba(0, 170, 255, 0.1);
+        border-bottom: 1px solid rgba(76, 175, 80, 0.15);
       }
 
       .tech-table tr:last-child td {
@@ -606,7 +643,7 @@
 
       .tech-table td:first-child {
         font-weight: 600;
-        color: #dff6ff;
+        color: #4caf50;
         width: 35%;
       }
 
@@ -619,89 +656,40 @@
     <div class="card header-flex">
       <div class="header-left">
         <div class="profile-header">
-          <img src="assets/profile.png" alt="Foto Muhammad Fadillah Fachmi" class="profile-photo" />
+          <img src="assets/profile.png" alt="Foto Eka Taris Ariyudi" class="profile-photo" />
 
           <div>
-            <h1>👨‍💻 Muhammad Fadillah Fachmi</h1>
+            <h1>👨‍💻 Eka Taris Ariyudi</h1>
             <h3>
-              System & Infrastructure Engineer
+              System Engineer
             </h3>
           </div>
         </div>
         <h2>
-          System & Infrastructure Engineer
+          System Engineer
         </h2>
         <div class="contact muted">
-          📍 Pamulang Tangerang Selatan, Indonesia &nbsp; • &nbsp; 📧 fachmy.analisprogram@gmail.com
-          &nbsp; • &nbsp; 📞 085714134580
+          📍 Tangerang, Indonesia &nbsp; • &nbsp; 📧 ekataris@mitrainfosarana.co.id
         </div>
         <div style="margin-top: 12px" class="logo-row">
-          <img
-            alt="k8s"
-            src="https://img.icons8.com/color/48/000000/kubernetes.png"
-            loading="lazy"
-          />
-          <img
-            alt="docker"
-            src="https://img.icons8.com/color/48/000000/docker.png"
-            loading="lazy"
-          />
-          <img
-            alt="gitlab"
-            src="https://img.icons8.com/color/48/000000/gitlab.png"
-            loading="lazy"
-          />
-          <img
-            alt="openshift"
-            src="https://img.icons8.com/color/48/000000/openshift.png"
-            loading="lazy"
-          />
-          <img alt="linux" src="https://img.icons8.com/color/48/000000/linux.png" loading="lazy" />
-          <img
-            src="https://img.icons8.com/color/48/000000/jenkins.png"
-            alt="Jenkins Logo"
-            width="36px"
-          />
-          <img
-            src="https://img.icons8.com/color/48/000000/ansible.png"
-            alt="Ansible Logo"
-            width="36px"
-          />
-          <img
-            src="https://img.icons8.com/color/48/000000/red-hat.png"
-            alt="Red Hat Logo"
-            width="36px"
-          />
+          <span style="font-weight: bold; color: #00bceb; font-size: 24px; margin-right: 12px;">CISCO</span>
+          <img alt="Dell" src="https://img.icons8.com/color/48/dell.png" loading="lazy" />
+          <img alt="HPE" src="https://img.icons8.com/color/48/hp.png" loading="lazy" />
+          <img alt="NetApp" src="https://img.icons8.com/color/48/netapp.png" loading="lazy" />
+          <img alt="Nutanix" src="https://img.icons8.com/color/48/nutanix.png" loading="lazy" />
+          <img alt="IBM" src="https://img.icons8.com/color/48/ibm.png" loading="lazy" width="36px" />
+          <span style="font-weight: bold; color: #ff0000; font-size: 20px; margin-right: 8px;">HUAWEI</span>
+          <img alt="VMware" src="https://img.icons8.com/color/48/vmware.png" loading="lazy" width="36px" />
         </div>
       </div>
 
       <div style="text-align: right">
         <div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center">
           <div style="text-align: center">
-            <div style="font-weight: 700; color: #dff6ff; margin-bottom: 6px">GitHub</div>
-            <div class="qr">
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://github.com/fachmi1407"
-                alt="QR GitHub"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div style="text-align: center">
-            <div style="font-weight: 700; color: #dff6ff; margin-bottom: 6px">Website</div>
-            <div class="qr">
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://fachmi1407.github.io/cv-fachmi/"
-                alt="QR Website"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div style="text-align: center">
             <div style="font-weight: 700; color: #dff6ff; margin-bottom: 6px">LinkedIn</div>
             <div class="qr">
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://www.linkedin.com/in/fachmy-fadillah-562965240/"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
                 alt="QR LinkedIn"
                 loading="lazy"
               />
@@ -716,8 +704,18 @@
     <div class="card" style="margin-bottom: 22px;">
       <div class="section-title">🌟 Profil Singkat</div>
       <p class="list">
-        Profesional IT Infrastructure, DevOps, QA, dan Technical Engineer dengan pengalaman lebih dari 5 tahun dalam pengelolaan infrastruktur enterprise, monitoring sistem, troubleshooting, deployment aplikasi, serta maintenance server dan production environment. Berpengalaman dalam instalasi dan konfigurasi server Linux & Windows, setup RAID, integrasi storage, automation deployment, containerization (Docker & Kubernetes), serta maintenance aplikasi enterprise di lingkungan development dan production. Memiliki pemahaman cloud computing sebagai AWS Cloud Practitioner dan sedang memperdalam bidang Security Penetration Testing dan Cyber Security, termasuk monitoring security event, log analysis, dan incident handling.
+        System Engineer dengan pengalaman lebih dari 7 tahun di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
       </p>
+    </div>
+    
+    <div class="card" style="margin-bottom: 22px;">
+      <div class="section-title">🎓 Pendidikan</div>
+      <ul class="list">
+        <li>
+          <strong>Strata 1 / Teknik Informatika</strong><br>
+          Universitas Mercu Buana, Jakarta (2017)
+        </li>
+      </ul>
     </div>
     
     <div class="container">
@@ -731,109 +729,102 @@
 <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
         <div class="dropdown">
           <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>🔧 DevOps & Infrastructure</strong>
+            <strong>� Storage & Infrastructure</strong>
             <span class="dropdown-icon">▼</span>
           </div>
           
           <div class="dropdown-content">
             <ul class="list">
-              <li>Docker</li>
-              <li>Kubernetes</li>
-              <li>Red Hat OpenShift</li>
-              <li>GitLab CI/CD</li>
-              <li>Helm</li>
-              <li>Argo CD (Basic)</li>
-              <li>Linux Server Administration (RHEL, Ubuntu, CentOS)</li>
-              <li>Windows Server Administration</li>
-              <li>Proxmox VE</li>
-              <li>Monitoring & Production Maintenance</li>
-              <li>Server Installation & Configuration</li>
-              <li>RAID Configuration & Storage Integration (NAS/SAN)</li>
-              <li>Server Hardware Troubleshooting & Maintenance</li>
-              <li>Web Server Configuration (Nginx, Apache, IIS)</li>
-              <li>SSL Certificate Installation & Management</li>
-              <li>Virtualization & Infrastructure Management</li>
-              <li>Backup & Restore Basic Administration</li>
+              <li>DellEMC Storage (Unity, PowerStore)</li>
+              <li>NetApp Hybrid Cloud & Storage</li>
+              <li>HPE Storage & Hybrid Cloud</li>
+              <li>Nutanix Multicloud Infrastructure</li>
+              <li>RAID Configuration & Storage Integration</li>
+              <li>NAS/SAN Configuration</li>
+              <li>Storage Replication (DC & DRC)</li>
+              <li>Tape Library Management</li>
+              <li>Veritas Backup Exec</li>
+              <li>Acronis Cloud Backup</li>
             </ul>
           </div>
         </div>
 
         <div class="dropdown">
           <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>✅ Quality Assurance</strong>
+            <strong>🌐 Networking</strong>
             <span class="dropdown-icon">▼</span>
           </div>
           <div class="dropdown-content">
             <ul class="list">
-              <li>Unit Testing</li>
-              <li>SIT (System Integration Testing)</li>
-              <li>UAT (User Acceptance Testing)</li>
-              <li>Regression Testing</li>
-              <li>Test Documentation & Reporting</li>
-              <li>API Troubleshooting</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>💻 Programming & Tools</strong>
-            <span class="dropdown-icon">▼</span>
-          </div>
-          <div class="dropdown-content">
-            <ul class="list">
-              <li>Kotlin (Basic)</li>
-              <li>Bash Scripting</li>
-              <li>LAMP Stack</li>
-              <li>XAMPP</li>
-              <li>Git / GitLab</li>
-              <li>Language: PHP, YAML, JavaScript, HTML, CSS, XML, JSON, SQL</li>
-              <li>Vibes Coding</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>🌐 Network & Security</strong>
-            <span class="dropdown-icon">▼</span>
-          </div>
-          <div class="dropdown-content">
-            <ul class="list">
+              <li>Cisco Networking (CCNA, CCNP Enterprise)</li>
+              <li>Huawei Networking (HCIA)</li>
               <li>TCP/IP Networking</li>
               <li>Subnetting & IP Addressing</li>
-              <li>Firewall Rules & Security Policy</li>
-              <li>IPTables / Basic Firewall Configuration</li>
-              <li>NAT (Network Address Translation)</li>
-              <li>Static & Basic Dynamic Routing</li>
-              <li>DNS Configuration & Troubleshooting</li>
-              <li>Reverse Proxy & Load Balancer Configuration</li>
-              <li>VPN Basic Configuration</li>
-              <li>Network Troubleshooting & Connectivity Analysis</li>
-              <li>Log Monitoring & Incident Analysis</li>
+              <li>Routing & Switching</li>
+              <li>Firewall Configuration</li>
+              <li>Network Troubleshooting</li>
+              <li>VLAN & Network Design</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>�️ Server & Hardware</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>Server Hardware Troubleshooting</li>
+              <li>Dell EMC Server Configuration</li>
+              <li>HPE Server Infrastructure</li>
+              <li>IBM Power Systems (AIX)</li>
+              <li>Lenovo Data Center Configuration</li>
+              <li>Linux Server Administration</li>
+              <li>Windows Server Administration</li>
+              <li>Virtualization (VMware, Proxmox)</li>
+              <li>Server Installation & Configuration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">
+            <strong>☁️ Cloud & Virtualization</strong>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="dropdown-content">
+            <ul class="list">
+              <li>Hybrid Cloud Solutions</li>
+              <li>Nutanix AHV & Virtualization</li>
+              <li>HPE Morpheus</li>
+              <li>Sangfor HCI</li>
+              <li>Cloud Infrastructure Management</li>
+              <li>Virtual Machine Management</li>
+              <li>Backup & Disaster Recovery</li>
             </ul>
           </div>
         </div>
         </div>
 
 
-        <div class="section-title">� Soft Skills</div>
+        <div class="section-title">🤝 Soft Skills</div>
         <table class="tech-table">
           <tr>
             <td>Komunikasi</td>
-            <td>Komunikasi efektif</td>
+            <td>Komunikasi efektif dengan klien dan tim</td>
           </tr>
           <tr>
             <td>Problem Solving</td>
-            <td>Problem solving analitis</td>
+            <td>Analisis dan troubleshooting infrastruktur</td>
           </tr>
           <tr>
             <td>Kolaborasi</td>
-            <td>Teamwork & kolaborasi DevOps</td>
+            <td>Kerja tim lintas departemen</td>
           </tr>
           <tr>
             <td>Manajemen</td>
-            <td>Time management</td>
+            <td>Manajemen proyek dan waktu</td>
           </tr>
           <tr>
             <td>Adaptasi</td>
@@ -848,111 +839,74 @@
         <div class="section-title">🔍 Tech Summary</div>
         <table class="tech-table">
           <tr>
-            <td>CI/CD Pipeline</td>
-            <td>Implementasi dan pengelolaan CI/CD Pipeline menggunakan GitLab dan Jenkins</td>
+            <td>Storage Management</td>
+            <td>Konfigurasi dan manajemen storage DellEMC, NetApp, HPE, Nutanix</td>
           </tr>
           <tr>
-            <td>Automation Deployment</td>
-            <td>Automation deployment environment Development, Staging, hingga Production</td>
+            <td>Server Infrastructure</td>
+            <td>Instalasi dan konfigurasi server DellEMC, HPE, IBM, Lenovo</td>
           </tr>
           <tr>
-            <td>Containerization</td>
-            <td>Containerization dan orchestration menggunakan Kubernetes dan Red Hat OpenShift</td>
+            <td>Networking</td>
+            <td>Cisco & Huawei networking, routing, switching, dan firewall</td>
           </tr>
           <tr>
-            <td>Enterprise Maintenance</td>
-            <td>Maintenance aplikasi banking enterprise, termasuk proyek CCMS BTN dan sistem pendukung operasional lainnya</td>
-          </tr>
-          <tr>
-            <td>Server Administration</td>
-            <td>Instalasi, konfigurasi, dan maintenance server Linux & Windows Server</td>
-          </tr>
-          <tr>
-            <td>Storage & RAID</td>
-            <td>Konfigurasi RAID server, storage connection, mounting NAS/SAN, serta management infrastructure server</td>
-          </tr>
-          <tr>
-            <td>Troubleshooting</td>
-            <td>Troubleshooting server, API, network connectivity, dan performa aplikasi production</td>
-          </tr>
-          <tr>
-            <td>Monitoring</td>
-            <td>Monitoring stability, reliability, resource utilization, dan availability aplikasi maupun server</td>
-          </tr>
-          <tr>
-            <td>Docker & Microservices</td>
-            <td>Pengalaman deployment aplikasi berbasis Docker dan microservices architecture</td>
-          </tr>
-          <tr>
-            <td>Security</td>
-            <td>Basic knowledge terkait security hardening, SSL certificate, reverse proxy, dan web server configuration (Nginx/IIS/Apache)</td>
+            <td>Hybrid Cloud</td>
+            <td>Implementasi solusi hybrid cloud dengan HPE, Nutanix, dan Sangfor</td>
           </tr>
           <tr>
             <td>Virtualization</td>
-            <td>Familiar dengan environment virtualisasi dan infrastructure enterprise environment</td>
+            <td>VMware, Proxmox, Nutanix AHV virtualization management</td>
+          </tr>
+          <tr>
+            <td>Backup & Recovery</td>
+            <td>Veritas Backup Exec, Acronis, dan disaster recovery solutions</td>
+          </tr>
+          <tr>
+            <td>Hardware Support</td>
+            <td>Troubleshooting dan maintenance hardware server dan storage</td>
+          </tr>
+          <tr>
+            <td>Enterprise Projects</td>
+            <td>Pengalaman dengan Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dll</td>
           </tr>
         </table>
 
         <div class="section-title">📜 Sertifikasi</div>
         <ul class="list">
-          <li><a href="assets/Sertifikat Engeener/P. AWS SimuLearn Cloud.pdf" target="_blank" style="color: #bfeaff">AWS Cloud Practitioner — SimuLearn (2026)</a></li>
-          <li><a href="assets/Sertifikat Engeener/R. Getting_Started_with_Cisco_Packet_Tracer_certificate_fachmy-analisprogram-gmail-com_b7cc2abb-d04b-4765-ae6b-77dc94ee3fc0.pdf" target="_blank" style="color: #bfeaff">Cisco Packet Tracer — Getting Started (2026)</a></li>
-          <li><a href="assets/Sertifikat Engeener/S. Introduction_to_Cybersecurity_certificate_fachmy-analisprogram-gmail-com_94c4d2f2-5b5b-43c6-944a-3ffb89af0226.pdf" target="_blank" style="color: #bfeaff">Introduction to Cybersecurity — Cisco (2026)</a></li>
-          <li><a href="assets/Sertifikat Engeener/J. eceset N2KC Muhammad Fadillah Fachmi.png" target="_blank" style="color: #bfeaff">ECESET N2KC — Prosperita (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/K. RedHatCertificate20251203-30-5ekzlv.pdf" target="_blank" style="color: #bfeaff">Red Hat Ansible Automation Platform: Seller (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/L. RedHatCertificate20251203-30-ohbw4u.pdf" target="_blank" style="color: #bfeaff">Red Hat Portfolio: Foundational (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/M. RedHatCertificate20251203-30-6mz04c.pdf" target="_blank" style="color: #bfeaff">Red Hat OpenShift: Seller (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/N. RedHatCertificate20251205-29-g8zwx0.pdf" target="_blank" style="color: #bfeaff">Red Hat Certificate (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/O. RedHatCertificate20251205-32-2z6yjd.pdf" target="_blank" style="color: #bfeaff">Red Hat Certificate (2025)</a></li>
-          <li><a href="assets/Sertifikat Engeener/H. KodeKloud CertifieG. d Kubernetes Administrator with Practice Tests.pdf" target="_blank" style="color: #bfeaff">CKA — Kubernetes Administrator (KodeKloud, 2023)</a></li>
-          <li><a href="assets/Sertifikat Engeener/I. Certified Kubernetes Administrator (CKA) with Practice Tests.jpg" target="_blank" style="color: #bfeaff">Kubernetes Admin — Udemy (2023)</a></li>
-          <li><a href="assets/Sertifikat Engeener/G. Udemy (RHCSA - EX200).pdf" target="_blank" style="color: #bfeaff">RHCSA — Udemy (2022)</a></li>
-          <li><a href="assets/Sertifikat Engeener/F. Certificate Docker Udemy.pdf" target="_blank" style="color: #bfeaff">Docker — Udemy (2021)</a></li>
-          <li><a href="assets/Sertifikat Engeener/C. Kotlin Dicoding.pdf" target="_blank" style="color: #bfeaff">Kotlin — Dicoding (2020)</a></li>
-          <li><a href="assets/Sertifikat Engeener/D. Basic MongoDB.pdf" target="_blank" style="color: #bfeaff">MongoDB Basic — MongoDB University (2020)</a></li>
-          <li><a href="assets/Sertifikat Engeener/E. Sertificate android kominfo.pdf" target="_blank" style="color: #bfeaff">Android Kominfo (2020)</a></li>
-          <li><a href="assets/Sertifikat Engeener/B. Ibm Storewise.pdf" target="_blank" style="color: #bfeaff">IBM — Storwize Deep Dive Enablement for Pre-sales (IBM, 2019)</a></li>
-          <li><a href="assets/Sertifikat Engeener/A. code development.jpg" target="_blank" style="color: #bfeaff">Code Indonesia (2019)</a></li>
+          <li>HPE Product Certified — HPE Morpheus VM Essentials Software (2026)</li>
+          <li>HPE Tech Jam Bangkok (2026)</li>
+          <li>Sangfor Certified Technical Associate — HCI (2025)</li>
+          <li>HPE Accredited Technical Professional — Hybrid Cloud (2024)</li>
+          <li>VSE Veritas Backup Exec 22 (2024)</li>
+          <li>Nutanix Certified Professional — Multicloud Infrastructure 6 (NCP-MCI) (2023)</li>
+          <li>Cisco Certified Network Professional Enterprise — CCNP (2023)</li>
+          <li>Cisco Certified Specialist — Enterprise Core (2023)</li>
+          <li>NetApp Hybrid Cloud Associate Accreditation (2023)</li>
+          <li>Huawei Certified ICT Associate — HCIA (2023)</li>
+          <li>Nutanix Certified Systems Engineer Core — NCSE-Core (2022)</li>
+          <li>Acronis Cloud Tech Fundamentals — CyberFit Academy (2022)</li>
+          <li>HPE Accredited Technical Professional — Hybrid IT Solution V2 (2021)</li>
+          <li>Palo Alto Networks System Engineer - PSE: Strata Associate (2021)</li>
+          <li>Dell EMC Server Credential (2020)</li>
+          <li>Dell EMC MidRange Storage Credential (2019)</li>
+          <li>IBM Power Systems for AIX — Virtualization: Implementing Virtualization (2019)</li>
+          <li>Cisco Certified Network Associate Routing and Switching — CCNA (2019)</li>
+          <li>Huawei Certified Network Associate Routing and Switching — HCIA (2019)</li>
+          <li>Huawei Certified Pre-sales Associate — Storage Presales Specialist (2019)</li>
+          <li>Lenovo Data Center Group Configuration (2019)</li>
         </ul>
 
         <div class="section-title">📦 Tech Logos</div>
         <div class="logo-row">
-          <img
-            alt="k8s"
-            src="https://img.icons8.com/color/48/000000/kubernetes.png"
-            loading="lazy"
-          />
-          <img
-            alt="docker"
-            src="https://img.icons8.com/color/48/000000/docker.png"
-            loading="lazy"
-          />
-          <img
-            alt="gitlab"
-            src="https://img.icons8.com/color/48/000000/gitlab.png"
-            loading="lazy"
-          />
-          <img
-            alt="openshift"
-            src="https://img.icons8.com/color/48/000000/openshift.png"
-            loading="lazy"
-          />
-          <img alt="linux" src="https://img.icons8.com/color/48/000000/linux.png" loading="lazy" />
-          <img
-            src="https://img.icons8.com/color/48/000000/jenkins.png"
-            alt="Jenkins Logo"
-            width="36px"
-          />
-          <img
-            src="https://img.icons8.com/color/48/000000/ansible.png"
-            alt="Ansible Logo"
-            width="36px"
-          />
-          <img
-            src="https://img.icons8.com/color/48/000000/red-hat.png"
-            alt="Red Hat Logo"
-            width="36px"
-          />
+          <span style="font-weight: bold; color: #00bceb; font-size: 24px; margin-right: 12px;">CISCO</span>
+          <img alt="Dell" src="https://img.icons8.com/color/48/dell.png" loading="lazy" />
+          <img alt="HPE" src="https://img.icons8.com/color/48/hp.png" loading="lazy" />
+          <img alt="NetApp" src="https://img.icons8.com/color/48/netapp.png" loading="lazy" />
+          <img alt="Nutanix" src="https://img.icons8.com/color/48/nutanix.png" loading="lazy" />
+          <img alt="IBM" src="https://img.icons8.com/color/48/ibm.png" loading="lazy" width="36px" />
+          <span style="font-weight: bold; color: #ff0000; font-size: 20px; margin-right: 8px;">HUAWEI</span>
+          <img alt="VMware" src="https://img.icons8.com/color/48/vmware.png" loading="lazy" width="36px" />
         </div>
       </div>
       <div class="right-col">
@@ -961,159 +915,156 @@
           <canvas id="experienceChart" style="max-height: 300px;"></canvas>
         </div>
         <div class="project">
-          <h3>🔥 2026 – Sekarang | Maintenance Aplikasi Production CCMS Versi 3</h3>
+          <h3>🔥 2026 – Technical Support | Pengadaan Storage DellEMC Unity 300</h3>
           <ul class="list">
-            <li>Maintenance aplikasi production CCMS Versi 3 untuk memastikan operasional berjalan stabil.</li>
-            <li>Monitoring dan troubleshooting issue operasional pada environment production.</li>
-            <li>Implementasi patch dan perbaikan bug untuk meningkatkan stabilitas aplikasi.</li>
-            <li>Koordinasi dengan tim development untuk deployment update dan enhancement.</li>
+            <li>Instalasi dan konfigurasi system storage DellEMC Unity 300</li>
+            <li>Cabling system storage dan konfigurasi file resources</li>
+            <li>Konfigurasi hosts dan replication DC & DRC</li>
+            <li>Mapping volume baru dan integrasi storage</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🔥 2025 – Deployment & Management of OKD (OpenShift Community Platform)</h3>
-          <!-- <div class="muted">PT Mitra Infosarana – PT Quadrant Solutions</div> -->
+          <h3>🔥 2025 – System Engineer | Hybrid Cloud Infrastructure Implementation</h3>
           <ul class="list">
-            <li>Setup & Instalasi OKD (OpenShift Community Platform).</li>
-            <li>Deployment Aplikasi & Operational Workloads.</li>
-            <li>Mengimplementasikan CI/CD pipeline menggunakan Jenkins integrated OpenShift.</li>
-            <li>
-              Menganalisa root cause dari aplikasi yang gagal (failed scheduling, memory limit).
-            </li>
+            <li>Implementasi hybrid cloud infrastructure dengan HPE dan Nutanix</li>
+            <li>Konfigurasi cloud integration dan disaster recovery</li>
+            <li>Setup automation dan monitoring cloud resources</li>
+            <li>Optimasi performa dan cost cloud environment</li>
           </ul>
         </div>
         <div class="project">
-          <h3>
-            🔥 2025 – Implementasi Private Cloud Storage berbasis Nextcloud (EFSS - Enterprise File
-            Sync and Share)
-          </h3>
-          <!-- <div class="muted">PT Mitra Infosarana – Klinik Suhada</div> -->
+          <h3>🔥 2024 – System Engineer | Storage Migration & Upgrade</h3>
           <ul class="list">
-            <li>
-              Menyiapkan Ubuntu Server (20.04/22.04) meliputi update, firewall, dan tuning kernel.
-            </li>
-            <li>Instalasi Docker Engine & Docker Compose sebagai environment utama.</li>
-            <li>Membuat struktur folder persistent storage untuk container Nextcloud.</li>
-            <li>Install Nextcloud Talk (Nextalk) = fitur chat, voice call, dan video meeting.</li>
+            <li>Migrasi data antar storage systems</li>
+            <li>Upgrade storage firmware dan software</li>
+            <li>Implementasi storage virtualization</li>
+            <li>Testing dan validation storage performance</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🔥 2024–2025 – DevOps & QA | PWA Replenishment PJPUR – Fase 1</h3>
-          <!-- <div class="muted">PT Mitra Infosarana – BTN</div> -->
+          <h3>🔥 2023 – System Engineer | Network Infrastructure Optimization</h3>
           <ul class="list">
-            <li>Melakukan Unit Test, SIT, UAT untuk modul PWA</li>
-            <li>Implementasi CI/CD GitLab untuk backend & frontend</li>
-            <li>Deployment ke server development dan production</li>
-            <li>Dokumentasi pipeline & source code</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <h3>🔥 2024 – DevOps & QA | CCMS – Fase 3</h3>
-          <!-- <div class="muted">PT Mitra Infosarana – BTN</div> -->
-          <ul class="list">
-            <li>QA Testing (Unit Test, SIT, UAT)</li>
-            <li>Preventive & Corrective aplikasi CCMS</li>
-            <li>Bug Fixing & Production Support</li>
-            <li>Deployment CI/CD ke production</li>
-          </ul>
-        </div>
-
-        <div class="project">
-          <h3>🔧 2023 – QA & Programmer | CCMS – Fase 2</h3>
-          <div class="muted">Testing & bug fixing, deployment improvement release</div>
-          <ul class="list">
-            <li>Mengelola siklus QA untuk patch dan perbaikan fitur CCMS.</li>
-            <li>Menjalankan eksekusi tes dan validasi hasil untuk memastikan kualitas.</li>
-            <li>Meningkatkan proses deployment dan stabilitas release.</li>
+            <li>Optimasi network infrastructure dengan Cisco dan Huawei</li>
+            <li>Implementasi network security dan firewall</li>
+            <li>Configuration management network devices</li>
+            <li>Troubleshooting network connectivity issues</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🛠️ 2022 – Programmer | CCMS – Fase 1</h3>
-          <div class="muted">Preventive & corrective issue, bug fixing development environment</div>
+          <h3>🔥 2022 – System Engineer | Server Virtualization Project</h3>
           <ul class="list">
-            <li>Memperbaiki issue teknis dan bug pada lingkungan development CCMS.</li>
-            <li>Melakukan debugging, patching, dan verifikasi fix.</li>
-            <li>Mendukung tim dalam penyiapan environment dev yang stabil.</li>
+            <li>Implementasi server virtualization dengan VMware dan Nutanix</li>
+            <li>Setup cluster dan high availability</li>
+            <li>Migrasi physical servers ke virtual environment</li>
+            <li>Optimasi resource allocation dan performance</li>
           </ul>
         </div>
         <div class="project">
-          <h3>✅ 2021 – QA | CCMS – Fase 1</h3>
-          <div class="muted">Unit Test, SIT, UAT</div>
+          <h3>🔥 2021 – System Engineer | Backup & Disaster Recovery</h3>
           <ul class="list">
-            <li>
-              Menjalankan Unit Testing, System Integration Testing, dan User Acceptance Testing.
-            </li>
-            <li>Melakukan validasi fitur CCMS dan identifikasi regresi.</li>
-            <li>Menyusun laporan test dan rekomendasi perbaikan.</li>
+            <li>Implementasi backup solution dengan Veritas Backup Exec</li>
+            <li>Setup disaster recovery plan dan testing</li>
+            <li>Konfigurasi backup automation dan scheduling</li>
+            <li>Monitoring backup success dan recovery testing</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🌐 2021 – Programmer | CEWS BMKG</h3>
-          <div class="muted">Preventive & Corrective CEWS Portal & Map</div>
+          <h3>🔥 2020 – System Engineer | Data Center Maintenance</h3>
           <ul class="list">
-            <li>Memperbaiki bug dan meningkatkan stabilitas portal serta peta BMKG.</li>
-            <li>Mendukung integrasi data cuaca real-time dan visualisasi peta.</li>
-            <li>Melakukan monitoring aplikasi dan perbaikan issue operasional.</li>
+            <li>Maintenance rutin data center infrastructure</li>
+            <li>Monitoring server dan storage health</li>
+            <li>Implementasi preventive maintenance schedule</li>
+            <li>Troubleshooting hardware dan software issues</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🖥️ 2020 – Engineer | Migrasi Server Universitas Pertahanan</h3>
-          <div class="muted">Instalasi Proxmox IaaS, migrasi database & web perpustakaan</div>
+          <h3>🔥 2019 – Technical Support | Pengadaan Server Lenovo SR550 dan VMware</h3>
           <ul class="list">
-            <li>
-              Melakukan instalasi dan konfigurasi Proxmox VE untuk infrastruktur virtualisasi.
-            </li>
-            <li>Mengelola migrasi database dan website perpustakaan ke server baru.</li>
-            <li>Menangani maintenance server dan optimasi operasional.</li>
+            <li>Install dan configure server Lenovo SR550</li>
+            <li>Setup VMware environment</li>
+            <li>Create virtual machines</li>
+            <li>Konfigurasi dan testing server</li>
           </ul>
         </div>
         <div class="project">
-          <h3>📊 2020 – Programmer | CEWS BMKG</h3>
-          <div class="muted">Monitoring & maintenance aplikasi CEWS</div>
+          <h3>🔥 2018 – Technical Support | ESP Project</h3>
           <ul class="list">
-            <li>Memantau performa aplikasi dan mendeteksi issue proaktif.</li>
-            <li>Mengatasi masalah operasional dan menjaga aplikasi tetap berjalan.</li>
-            <li>Mendokumentasikan masalah dan tindakan perbaikan.</li>
+            <li>Instalasi software sistem</li>
+            <li>Troubleshooting dan perbaikan software</li>
+            <li>Support, maintain, dan memelihara sistem komputer</li>
           </ul>
         </div>
         <div class="project">
-          <h3>🔧 2019 – Junior Engineer | Klimate BMKG</h3>
-          <div class="muted">Perawatan Rocks Cluster Server</div>
+          <h3>🔥 2018 – Technical Support | SSCS Project</h3>
           <ul class="list">
-            <li>Melakukan perawatan dan pengecekan hardware server cluster.</li>
-            <li>Mendukung kestabilan lingkungan produksi untuk sistem monitoring.</li>
-            <li>Menangani konfigurasi dan perbaikan pada server produksi.</li>
+            <li>Import dan Export Tape Library</li>
+            <li>Troubleshooting dan perbaikan hardware</li>
+            <li>Maintenance sistem storage</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>🔥 2018 – Technical Support | Dell Project</h3>
+          <ul class="list">
+            <li>Troubleshooting dan perbaikan hardware Dell</li>
+            <li>Maintenance server dan perangkat IT</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>🔥 2018 – Technical Support | Server Monitoring IBM AS/400</h3>
+          <ul class="list">
+            <li>Check DASD Used, CPU Used dan Memory Used</li>
+            <li>Health Check Activity server IBM AS/400</li>
+            <li>Monitoring performa sistem</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>🔥 2017 – Technical Support | Smart Digital Banking (SDB)</h3>
+          <ul class="list">
+            <li>Instalasi hardware sistem perbankan</li>
+            <li>Troubleshooting dan perbaikan hardware</li>
+            <li>Support, maintain, dan memelihara perangkat IT</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>🔥 2017 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
+          <ul class="list">
+            <li>Instalasi hardware dan software sistem SKCK online</li>
+            <li>Troubleshooting dan perbaikan hardware</li>
+            <li>Support, maintain, dan memelihara sistem komputer</li>
+          </ul>
+        </div>
+        <div class="project">
+          <h3>🔥 2016 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
+          <ul class="list">
+            <li>Instalasi hardware dan software sistem SKCK online</li>
+            <li>Troubleshooting dan perbaikan hardware</li>
+            <li>Support, maintain, dan memelihara sistem komputer</li>
           </ul>
         </div>
 
         <div class="section-title">📌 Contact & Links</div>
         <ul class="list">
           <li>
-            GitHub:
-            <a style="color: #bfeaff" href="https://github.com/fachmi1407" target="_blank"
-              >github.com/fachmi1407</a
+            Email:
+            <a style="color: #bfeaff" href="mailto:ekataris@mitrainfosarana.co.id" target="_blank"
+              >ekataris@mitrainfosarana.co.id</a
             >
           </li>
           <li>
             LinkedIn:
             <a
               style="color: #bfeaff"
-              href="https://www.linkedin.com/in/fachmy-fadillah-562965240/"
+              href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
               target="_blank"
-              >linkedin.com/in/fachmy-fadillah-562965240</a
-            >
-          </li>
-          <li>
-            Website:
-            <a style="color: #bfeaff" href="https://fachmi1407.github.io/cv-fachmi/" target="_blank"
-              >fachmi1407.github.io/cv-fachmi</a
+              >linkedin.com/in/eka-taris-ariyudi-632847218</a
             >
           </li>
         </ul>
+        <button class="download-btn" onclick="requestPhoneNumber()" style="margin-top: 15px; width: 100%;">📞 Request Phone Number</button>
       </div>
     </div>
 
-    <footer>Generated by Fachmi • M. Fadillah Fachmi Tech Edition</footer>
+    <footer>Generated by Eka • Eka Taris Ariyudi Tech Edition</footer>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -1127,63 +1078,74 @@
         dropdown.classList.toggle('open');
       }
 
+      function requestPhoneNumber() {
+        const subject = encodeURIComponent('Request Phone Number - CV Eka Taris Ariyudi');
+        const body = encodeURIComponent('Dear Eka,\n\nI would like to request your phone number for further communication regarding your CV.\n\nThank you.');
+        window.location.href = `mailto:ekataris@mitrainfosarana.co.id?subject=${subject}&body=${body}`;
+      }
+
       // Skill Distribution Chart
       document.addEventListener('DOMContentLoaded', function() {
+        Chart.register(ChartDataLabels);
+        
         const ctx = document.getElementById('skillChart').getContext('2d');
         
         new Chart(ctx, {
-          type: 'radar',
+          type: 'pie',
           data: {
-            labels: ['DevOps & Infrastructure', 'Quality Assurance', 'Programming & Tools', 'Network & Security'],
+            labels: ['Storage & Infrastructure', 'Networking', 'Server & Hardware', 'Cloud & Virtualization'],
             datasets: [{
               label: 'Skill Distribution',
-              data: [17, 6, 7, 11],
-              backgroundColor: 'rgba(0, 114, 255, 0.2)',
-              borderColor: 'rgba(0, 114, 255, 1)',
-              borderWidth: 2,
-              pointBackgroundColor: 'rgba(0, 170, 255, 1)',
-              pointBorderColor: '#fff',
-              pointHoverBackgroundColor: '#fff',
-              pointHoverBorderColor: 'rgba(0, 114, 255, 1)'
+              data: [10, 8, 9, 7],
+              backgroundColor: [
+                'rgba(76, 175, 80, 0.7)',
+                'rgba(61, 140, 111, 0.65)',
+                'rgba(46, 125, 50, 0.6)',
+                'rgba(27, 94, 32, 0.5)'
+              ],
+              borderColor: 'rgba(76, 175, 80, 1)',
+              borderWidth: 2
             }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: true,
-            scales: {
-              r: {
-                beginAtZero: true,
-                max: 20,
-                ticks: {
-                  stepSize: 5,
-                  color: '#9fb7d9',
-                  backdropColor: 'transparent'
-                },
-                grid: {
-                  color: 'rgba(0, 170, 255, 0.1)'
-                },
-                angleLines: {
-                  color: 'rgba(0, 170, 255, 0.1)'
-                },
-                pointLabels: {
-                  color: '#dff6ff',
-                  font: {
-                    size: 12,
-                    weight: '500'
-                  }
-                }
-              }
-            },
             plugins: {
               legend: {
-                display: false
+                display: true,
+                position: 'right',
+                labels: {
+                  color: '#ffffff',
+                  font: {
+                    size: 12
+                  }
+                }
               },
               tooltip: {
-                backgroundColor: 'rgba(7, 18, 38, 0.9)',
-                titleColor: '#dff6ff',
-                bodyColor: '#d9eefc',
-                borderColor: 'rgba(0, 170, 255, 0.3)',
-                borderWidth: 1
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                titleColor: '#4caf50',
+                bodyColor: '#ffffff',
+                borderColor: 'rgba(76, 175, 80, 0.5)',
+                borderWidth: 1,
+                callbacks: {
+                  label: function(context) {
+                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                    const percentage = ((context.parsed / total) * 100).toFixed(1);
+                    return `${context.label}: ${percentage}%`;
+                  }
+                }
+              },
+              datalabels: {
+                color: '#ffffff',
+                font: {
+                  weight: 'bold',
+                  size: 14
+                },
+                formatter: function(value, context) {
+                  const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                  const percentage = ((value / total) * 100).toFixed(1);
+                  return percentage + '%';
+                }
               }
             }
           }
@@ -1193,60 +1155,59 @@
         const expCtx = document.getElementById('experienceChart').getContext('2d');
         
         new Chart(expCtx, {
-          type: 'bar',
+          type: 'doughnut',
           data: {
-            labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Jumlah Proyek',
-              data: [1, 2, 2, 1, 1, 2, 2, 1],
+              data: [1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1],
               backgroundColor: [
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 114, 255, 0.6)',
-                'rgba(0, 170, 255, 0.8)'
+                'rgba(76, 175, 80, 0.7)',
+                'rgba(61, 140, 111, 0.68)',
+                'rgba(46, 125, 50, 0.65)',
+                'rgba(27, 94, 32, 0.62)',
+                'rgba(0, 77, 64, 0.6)',
+                'rgba(27, 94, 32, 0.62)',
+                'rgba(46, 125, 50, 0.65)',
+                'rgba(61, 140, 111, 0.68)',
+                'rgba(76, 175, 80, 0.7)',
+                'rgba(76, 175, 80, 0.75)',
+                'rgba(76, 175, 80, 0.8)'
               ],
-              borderColor: 'rgba(0, 114, 255, 1)',
-              borderWidth: 1
+              borderColor: 'rgba(76, 175, 80, 1)',
+              borderWidth: 2
             }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 3,
-                ticks: {
-                  stepSize: 1,
-                  color: '#9fb7d9'
-                },
-                grid: {
-                  color: 'rgba(0, 170, 255, 0.1)'
-                }
-              },
-              x: {
-                ticks: {
-                  color: '#9fb7d9'
-                },
-                grid: {
-                  display: false
-                }
-              }
-            },
             plugins: {
               legend: {
-                display: false
+                display: true,
+                position: 'right',
+                labels: {
+                  color: '#ffffff',
+                  font: {
+                    size: 12
+                  }
+                }
               },
               tooltip: {
-                backgroundColor: 'rgba(7, 18, 38, 0.9)',
-                titleColor: '#dff6ff',
-                bodyColor: '#d9eefc',
-                borderColor: 'rgba(0, 170, 255, 0.3)',
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                titleColor: '#4caf50',
+                bodyColor: '#ffffff',
+                borderColor: 'rgba(76, 175, 80, 0.5)',
                 borderWidth: 1
+              },
+              datalabels: {
+                color: '#ffffff',
+                font: {
+                  weight: 'bold',
+                  size: 12
+                },
+                formatter: function(value, context) {
+                  return value;
+                }
               }
             }
           }
