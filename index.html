@@ -35,22 +35,24 @@
           'Helvetica Neue',
           Arial,
           sans-serif;
-        background: #1a0b2e;
+        background: #0a0f0a;
         background-image: 
-          linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #1a0b2e 100%),
-          radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
-        background-size: 100% 100%, 100% 100%, 100% 100%;
+          linear-gradient(45deg, #1a2a1a 25%, transparent 25%),
+          linear-gradient(-45deg, #1a2a1a 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #1a2a1a 75%),
+          linear-gradient(-45deg, transparent 75%, #1a2a1a 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
         color: #ffffff;
         margin: 24px;
         line-height: 1.6;
       }
       .card {
-        background: linear-gradient(145deg, #2d1b4e, #1a0b2e);
+        background: linear-gradient(135deg, #0f1510, #1a251a);
         padding: 18px;
-        border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(138, 43, 226, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        border: 3px solid #ffd700;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(50, 150, 100, 0.2);
+        border: 2px solid #3d8c6f;
         position: relative;
         overflow: hidden;
       }
@@ -61,8 +63,8 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.15), transparent);
-        animation: shine 3s infinite;
+        background: linear-gradient(90deg, transparent, rgba(61, 140, 111, 0.08), transparent);
+        animation: shine 4s infinite;
       }
       @keyframes shine {
         0% { left: -100%; }
@@ -80,18 +82,16 @@
       }
       h2 {
         margin: 0 0 8px 0;
-        font-weight: 700;
-        color: #ffd700;
+        font-weight: 500;
+        color: #4caf50;
         text-transform: uppercase;
         letter-spacing: 2px;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
       }
       h3 {
         font-size: 16px;
         font-weight: 700;
-        color: #ff6b35;
+        color: #66bb6a;
         margin: 10px 0 5px 0;
-        text-shadow: 0 0 8px rgba(255, 107, 53, 0.5);
       }
       .muted {
         color: #9fb7d9;
@@ -102,9 +102,9 @@
         font-weight: 700;
         margin-top: 20px;
         padding-bottom: 8px;
-        border-bottom: 3px solid #ffd700;
-        color: #ffd700;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        border-bottom: 3px solid #4caf50;
+        color: #4caf50;
+        text-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
         text-transform: uppercase;
         letter-spacing: 1px;
       }
@@ -123,19 +123,19 @@
       .list-columns {
         column-count: 2;
         column-gap: 20px;
-        column-rule: 1px solid rgba(255, 215, 0, 0.2);
+        column-rule: 1px solid rgba(76, 175, 80, 0.15);
       }
       .list-columns li {
         break-inside: avoid;
         margin-bottom: 6px;
       }
       .project {
-        background: linear-gradient(180deg, rgba(138, 43, 226, 0.15), rgba(138, 43, 226, 0.05));
+        background: linear-gradient(180deg, rgba(61, 140, 111, 0.08), rgba(61, 140, 111, 0.03));
         padding: 12px;
-        border-radius: 12px;
+        border-radius: 10px;
         margin-bottom: 15px;
-        border-left: 4px solid #ffd700;
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        border-left: 4px solid #4caf50;
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
       }
       .qr img {
         height: 170px;
@@ -167,28 +167,27 @@
 
       /* Gaya untuk Tombol Download PDF */
       .download-btn {
-        background: linear-gradient(180deg, #ffd700, #ff8c00);
-        color: #1a0b2e;
-        padding: 14px 24px;
+        background: linear-gradient(135deg, #4caf50, #388e3c);
+        color: #ffffff;
+        padding: 12px 20px;
         border: none;
-        border-radius: 12px;
+        border-radius: 8px;
         cursor: pointer;
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 700;
         margin-top: 15px;
         margin-bottom: 5px;
         display: inline-block;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
         text-transform: uppercase;
         letter-spacing: 1px;
-        border: 2px solid #ff6b35;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+        border: 1px solid #66bb6a;
       }
       .download-btn:hover {
-        background: linear-gradient(180deg, #ff8c00, #ff6b35);
-        box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3);
-        transform: translateY(-3px) scale(1.02);
+        background: linear-gradient(135deg, #66bb6a, #4caf50);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        transform: translateY(-2px);
       }
 
       @media (max-width: 900px) {
@@ -208,6 +207,15 @@
         }
         .contact {
           margin-bottom: 12px;
+        }
+        .contact.muted[style*="text-align: center"] {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          align-items: center;
+        }
+        .contact.muted[style*="text-align: center"] a {
+          display: inline-block;
         }
         .section-title {
           margin-top: 15px;
@@ -410,9 +418,9 @@
         transition: all 0.35s ease;
 
         /* Double ring */
-        border: 3px solid #ffd700;
-        outline: 4px solid rgba(255, 215, 0, 0.3);
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        border: 3px solid #4caf50;
+        outline: 4px solid rgba(76, 175, 80, 0.2);
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
 
         /* Soft shadow */
         box-shadow:
@@ -481,7 +489,7 @@
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
         }
         50% {
-          box-shadow: 0 8px 32px rgba(255, 215, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 215, 0, 0.4);
+          box-shadow: 0 8px 32px rgba(76, 175, 80, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 20px rgba(76, 175, 80, 0.3);
         }
       }
 
@@ -570,21 +578,21 @@
       }
 
       .dropdown-header {
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+        background: linear-gradient(135deg, rgba(61, 140, 111, 0.1), rgba(61, 140, 111, 0.05));
         padding: 12px 16px;
-        border-radius: 12px;
+        border-radius: 8px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
         transition: all 0.3s ease;
-        border: 2px solid rgba(255, 215, 0, 0.3);
+        border: 1px solid rgba(76, 175, 80, 0.2);
       }
 
       .dropdown-header:hover {
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(138, 43, 226, 0.2));
-        border-color: #ffd700;
-        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        background: linear-gradient(135deg, rgba(61, 140, 111, 0.15), rgba(61, 140, 111, 0.1));
+        border-color: #4caf50;
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
       }
 
       .dropdown-header strong {
@@ -635,7 +643,7 @@
 
       .tech-table td {
         padding: 8px 12px;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        border-bottom: 1px solid rgba(76, 175, 80, 0.15);
       }
 
       .tech-table tr:last-child td {
@@ -644,7 +652,7 @@
 
       .tech-table td:first-child {
         font-weight: 600;
-        color: #ffd700;
+        color: #4caf50;
         width: 35%;
       }
 
@@ -665,12 +673,6 @@
               System Engineer
             </h3>
           </div>
-        </div>
-        <h2>
-          System Engineer
-        </h2>
-        <div class="contact muted">
-          📍 Tangerang, Indonesia &nbsp; • &nbsp; 📧 ekataris@mitrainfosarana.co.id &nbsp; • &nbsp; 🌐 <a href="https://etariyudi-create.github.io/my-cv/" target="_blank" style="color: #9fb7d9; text-decoration: none;">etariyudi-create.github.io/my-cv/</a>
         </div>
         <div style="margin-top: 12px" class="logo-row">
           <span style="font-weight: bold; color: #00bceb; font-size: 24px; margin-right: 12px;">CISCO</span>
@@ -708,6 +710,12 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <div class="contact muted" style="text-align: center; margin-top: 15px; font-size: 15px;">
+      📍Tangerang, Indonesia<br>
+      📧ekataris@gmail.com<br>
+      <a href="https://etariyudi-create.github.io/my-cv/" target="_blank" style="color: #9fb7d9; text-decoration: none;">etariyudi-create.github.io/my-cv/</a>
     </div>
     <button class="download-btn" onclick="window.print()">⬇️ Download CV (PDF)</button>
     <button class="download-btn" onclick="downloadWordDoc()">⬇️ Download CV (Word)</button>
@@ -1147,10 +1155,10 @@
                 }
               },
               tooltip: {
-                backgroundColor: 'rgba(26, 11, 46, 0.95)',
-                titleColor: '#ffd700',
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                titleColor: '#4caf50',
                 bodyColor: '#ffffff',
-                borderColor: 'rgba(255, 215, 0, 0.5)',
+                borderColor: 'rgba(76, 175, 80, 0.5)',
                 borderWidth: 1,
                 callbacks: {
                   label: function(context) {
@@ -1230,10 +1238,10 @@
                 }
               },
               tooltip: {
-                backgroundColor: 'rgba(26, 11, 46, 0.95)',
-                titleColor: '#ffd700',
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                titleColor: '#4caf50',
                 bodyColor: '#ffffff',
-                borderColor: 'rgba(255, 215, 0, 0.5)',
+                borderColor: 'rgba(76, 175, 80, 0.5)',
                 borderWidth: 1
               },
               datalabels: {
