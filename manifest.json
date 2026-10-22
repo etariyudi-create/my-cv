@@ -1,11 +1,11 @@
 {
-  "name": "CV Muhammad Fadillah Fachmi",
-  "short_name": "CV Fachmi",
-  "description": "Professional CV of Muhammad Fadillah Fachmi - System & Infrastructure Engineer",
+  "name": "CV Eka Taris Ariyudi",
+  "short_name": "CV Eka",
+  "description": "Professional CV of Eka Taris Ariyudi - System Engineer (Storage, Server, Networking & Hybrid Cloud)",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#071226",
-  "theme_color": "#071226",
+  "background_color": "#0a0f0a",
+  "theme_color": "#0a0f0a",
   "orientation": "portrait",
   "scope": "./",
   "icons": [

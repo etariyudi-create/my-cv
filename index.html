@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>CV Eka Taris Ariyudi</title>
@@ -348,9 +351,11 @@
           padding: 0 !important;
         }
 
-        /* Sembunyikan QR Code */
-        .qr {
-          display: none !important;
+        /* Tampilkan QR Code dengan ukuran kecil agar bisa di-scan dari versi cetak */
+        .qr img {
+          width: 90px !important;
+          height: 90px !important;
+          padding: 0 !important;
         }
 
         /* Gaya Teks Cetak */
@@ -563,13 +568,59 @@
         color: #fff;
       }
 
-      .logo-row img {
-        transition: transform 0.3s ease, filter 0.3s ease;
+      /* Logo vendor resmi (assets/logos) di atas chip putih agar kontras di tema gelap & saat print */
+      .logo-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
       }
-
-      .logo-row img:hover {
-        transform: scale(1.15);
-        filter: brightness(1.2);
+      .logo-row .logo-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: 34px;
+        padding: 0 12px;
+        background: #ffffff;
+        border-radius: 999px;
+        color: #1d2a1d;
+        font-size: 13px;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .logo-row .logo-chip img {
+        height: 20px;
+        width: auto;
+        margin: 0;
+        filter: none;
+      }
+      .logo-row .logo-chip--wordmark img {
+        height: 22px;
+      }
+      .logo-row .logo-chip:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.35);
+      }
+      @media (max-width: 600px) {
+        .logo-row .logo-chip {
+          height: 30px;
+          padding: 0 10px;
+          font-size: 12px;
+        }
+        .logo-row .logo-chip img {
+          height: 18px;
+        }
+      }
+      @media print {
+        .logo-row .logo-chip {
+          box-shadow: none;
+          border: 1px solid #cccccc;
+          height: 26px;
+        }
+        .logo-row .logo-chip img {
+          height: 16px !important;
+        }
       }
 
       /* Dropdown styles */
@@ -675,14 +726,14 @@
           </div>
         </div>
         <div style="margin-top: 12px" class="logo-row">
-          <span style="font-weight: bold; color: #00bceb; font-size: 24px; margin-right: 12px;">CISCO</span>
-          <img alt="Dell" src="https://img.icons8.com/color/48/dell.png" loading="lazy" />
-          <img alt="HPE" src="https://img.icons8.com/color/48/hp.png" loading="lazy" />
-          <img alt="NetApp" src="https://img.icons8.com/color/48/netapp.png" loading="lazy" />
-          <img alt="Nutanix" src="https://img.icons8.com/color/48/nutanix.png" loading="lazy" />
-          <img alt="IBM" src="https://img.icons8.com/color/48/ibm.png" loading="lazy" width="36px" />
-          <span style="font-weight: bold; color: #ff0000; font-size: 20px; margin-right: 8px;">HUAWEI</span>
-          <img alt="VMware" src="https://img.icons8.com/color/48/vmware.png" loading="lazy" width="36px" />
+          <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
+          <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
+          <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
+          <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
+          <span class="logo-chip"><img alt="Nutanix" src="assets/logos/nutanix.svg" />Nutanix</span>
+          <span class="logo-chip logo-chip--wordmark"><img alt="IBM" src="assets/logos/ibm.svg" /></span>
+          <span class="logo-chip"><img alt="Huawei" src="assets/logos/huawei.svg" />Huawei</span>
+          <span class="logo-chip"><img alt="VMware" src="assets/logos/vmware.svg" />VMware</span>
         </div>
       </div>
 
@@ -723,7 +774,7 @@
     <div class="card" style="margin-bottom: 22px;">
       <div class="section-title">🌟 Profil Singkat</div>
       <p class="list">
-        System Engineer dengan pengalaman lebih dari 7 tahun di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
+        System Engineer dengan pengalaman sejak 2016 (hampir 10 tahun), termasuk di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
       </p>
     </div>
     
@@ -748,7 +799,7 @@
 <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
         <div class="dropdown">
           <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>� Storage & Infrastructure</strong>
+            <strong>💾 Storage & Infrastructure</strong>
             <span class="dropdown-icon">▼</span>
           </div>
           
@@ -789,7 +840,7 @@
 
         <div class="dropdown">
           <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>�️ Server & Hardware</strong>
+            <strong>🖥️ Server & Hardware</strong>
             <span class="dropdown-icon">▼</span>
           </div>
           <div class="dropdown-content">
@@ -894,7 +945,6 @@
         <div class="section-title">📜 Sertifikasi</div>
         <ul class="list">
           <li>HPE Product Certified — HPE Morpheus VM Essentials Software (2026)</li>
-          <li>HPE Tech Jam Bangkok (2026)</li>
           <li>Sangfor Certified Technical Associate — HCI (2025)</li>
           <li>HPE Accredited Technical Professional — Hybrid Cloud (2024)</li>
           <li>VSE Veritas Backup Exec 22 (2024)</li>
@@ -916,16 +966,21 @@
           <li>Lenovo Data Center Group Configuration (2019)</li>
         </ul>
 
+        <div class="section-title">🎤 Event & Training</div>
+        <ul class="list">
+          <li>HPE Tech Jam Bangkok (2026)</li>
+        </ul>
+
         <div class="section-title">📦 Tech Logos</div>
         <div class="logo-row">
-          <span style="font-weight: bold; color: #00bceb; font-size: 24px; margin-right: 12px;">CISCO</span>
-          <img alt="Dell" src="https://img.icons8.com/color/48/dell.png" loading="lazy" />
-          <img alt="HPE" src="https://img.icons8.com/color/48/hp.png" loading="lazy" />
-          <img alt="NetApp" src="https://img.icons8.com/color/48/netapp.png" loading="lazy" />
-          <img alt="Nutanix" src="https://img.icons8.com/color/48/nutanix.png" loading="lazy" />
-          <img alt="IBM" src="https://img.icons8.com/color/48/ibm.png" loading="lazy" width="36px" />
-          <span style="font-weight: bold; color: #ff0000; font-size: 20px; margin-right: 8px;">HUAWEI</span>
-          <img alt="VMware" src="https://img.icons8.com/color/48/vmware.png" loading="lazy" width="36px" />
+          <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
+          <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
+          <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
+          <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
+          <span class="logo-chip"><img alt="Nutanix" src="assets/logos/nutanix.svg" />Nutanix</span>
+          <span class="logo-chip logo-chip--wordmark"><img alt="IBM" src="assets/logos/ibm.svg" /></span>
+          <span class="logo-chip"><img alt="Huawei" src="assets/logos/huawei.svg" />Huawei</span>
+          <span class="logo-chip"><img alt="VMware" src="assets/logos/vmware.svg" />VMware</span>
         </div>
       </div>
       <div class="right-col">
@@ -1045,15 +1100,7 @@
           </ul>
         </div>
         <div class="project">
-          <h3>🔥 2017 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
-          <ul class="list">
-            <li>Instalasi hardware dan software sistem SKCK online</li>
-            <li>Troubleshooting dan perbaikan hardware</li>
-            <li>Support, maintain, dan memelihara sistem komputer</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2016 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
+          <h3>🔥 2016 – 2017 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
           <ul class="list">
             <li>Instalasi hardware dan software sistem SKCK online</li>
             <li>Troubleshooting dan perbaikan hardware</li>
@@ -1301,7 +1348,8 @@
           a, a:link, a:visited { color: #000 !important; text-decoration: none !important; }
           .card, .project { background: none !important; box-shadow: none !important; border: none !important; }
           .download-btn, .qr { display: none !important; }
-          .logo-row img, .profile-photo { max-width: 100% !important; height: auto !important; }
+          .profile-photo { max-width: 100% !important; height: auto !important; }
+          .logo-chip img { height: 18px !important; width: auto !important; }
           .dropdown-header strong { color: #000 !important; }
         </style>`;
 
@@ -1310,7 +1358,7 @@
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'CV-Muhammad-Fadillah-Fachmi.doc';
+        link.download = 'CV-Eka-Taris-Ariyudi.doc';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
