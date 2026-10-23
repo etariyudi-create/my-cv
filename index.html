@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>CV Eka Taris Ariyudi</title>
+    <title>CV Eka Taris Ariyudi — System Engineer</title>
 
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#080c09" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -26,635 +26,305 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
     <style>
-      /* CSS Clean-up & Optimasi */
+      /* ========================================================
+         MODERN HIGH-END DARK TECH THEME (Linear / Vercel Aesthetic)
+         ======================================================== */
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family:
-          'Inter',
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          'Segoe UI',
-          Roboto,
-          'Helvetica Neue',
-          Arial,
-          sans-serif;
-        background: #0a0f0a;
+        font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: #080c09;
         background-image: 
-          linear-gradient(45deg, #1a2a1a 25%, transparent 25%),
-          linear-gradient(-45deg, #1a2a1a 25%, transparent 25%),
-          linear-gradient(45deg, transparent 75%, #1a2a1a 75%),
-          linear-gradient(-45deg, transparent 75%, #1a2a1a 75%);
-        background-size: 40px 40px;
-        background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-        color: #ffffff;
-        margin: 24px;
-        line-height: 1.6;
+          radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.16) 0%, transparent 45%),
+          radial-gradient(circle at 100% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+          radial-gradient(circle at 0% 75%, rgba(21, 128, 61, 0.09) 0%, transparent 40%),
+          radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+        background-attachment: fixed;
+        color: #f1f5f9;
+        margin: 28px auto;
+        max-width: 1240px;
+        padding: 0 20px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
       }
+
+      /* Glassmorphism Cards */
       .card {
-        background: linear-gradient(135deg, #0f1510, #1a251a);
-        padding: 18px;
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(50, 150, 100, 0.2);
-        border: 2px solid #3d8c6f;
+        background: rgba(13, 20, 15, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(74, 222, 128, 0.18);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
         position: relative;
-        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       }
-      .card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(61, 140, 111, 0.08), transparent);
-        animation: shine 4s infinite;
+
+      .card:hover {
+        border-color: rgba(74, 222, 128, 0.35);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(74, 222, 128, 0.08);
       }
-      @keyframes shine {
-        0% { left: -100%; }
-        50%, 100% { left: 100%; }
+
+      /* Hero Header Card */
+      .header-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 22px;
       }
-      .container {
-        display: grid;
-        grid-template-columns: 36% 64%;
-        gap: 22px;
-        margin-top: 18px;
-      }
-      h1 {
-        margin: 0 0 6px 0;
-        font-size: 24px;
-      }
-      h2 {
-        margin: 0 0 8px 0;
-        font-weight: 500;
-        color: #4caf50;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-      h3 {
-        font-size: 16px;
-        font-weight: 700;
-        color: #66bb6a;
-        margin: 10px 0 5px 0;
-      }
-      .muted {
-        color: #9fb7d9;
-        font-size: 14px;
-      }
-      .section-title {
-        font-size: 18px;
-        font-weight: 700;
-        margin-top: 20px;
-        padding-bottom: 8px;
-        border-bottom: 3px solid #4caf50;
-        color: #4caf50;
-        text-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .logo-row img {
-        height: 36px;
-        margin-right: 8px;
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
-        vertical-align: middle;
-      }
-      .list,
-      .soft-list {
-        margin: 8px 0 0 0;
-        padding-left: 16px;
-        color: #d9eefc;
-      }
-      .list-columns {
-        column-count: 2;
-        column-gap: 20px;
-        column-rule: 1px solid rgba(76, 175, 80, 0.15);
-      }
-      .list-columns li {
-        break-inside: avoid;
-        margin-bottom: 6px;
-      }
-      .project {
-        background: linear-gradient(180deg, rgba(61, 140, 111, 0.08), rgba(61, 140, 111, 0.03));
-        padding: 12px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        border-left: 4px solid #4caf50;
-        box-shadow: 0 0 10px rgba(76, 175, 80, 0.15);
-      }
-      .qr img {
-        height: 170px;
-        width: 170px;
-        border-radius: 8px;
-        background: white;
-        padding: 6px;
-        object-fit: contain;
-      }
-      .header-flex {
+
+      .profile-header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .header-left {
-        max-width: 60%;
-      }
-      .contact {
-        margin-top: 8px;
-        color: #b9d9f7;
-      }
-      footer {
-        margin-top: 30px;
-        color: #8aaed6;
-        font-size: 13px;
-        text-align: center;
+        gap: 24px;
+        flex-wrap: wrap;
       }
 
-      /* Gaya untuk Tombol Download PDF */
-      .download-btn {
-        background: linear-gradient(135deg, #4caf50, #388e3c);
-        color: #ffffff;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 700;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        display: inline-block;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: 1px solid #66bb6a;
-      }
-      .download-btn:hover {
-        background: linear-gradient(135deg, #66bb6a, #4caf50);
-        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-        transform: translateY(-2px);
-      }
-
-      @media (max-width: 900px) {
-        .container {
-          grid-template-columns: 1fr;
-        }
-        .qr img {
-          height: 100px;
-          width: 100px;
-        }
-        .header-left {
-          max-width: 100%;
-        }
-        .header-flex {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .contact {
-          margin-bottom: 12px;
-        }
-        .contact.muted[style*="text-align: center"] {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          align-items: center;
-        }
-        .contact.muted[style*="text-align: center"] a {
-          display: inline-block;
-        }
-        .section-title {
-          margin-top: 15px;
-        }
-        .list-columns {
-          column-count: 1;
-        }
-      }
-
-      @media (max-width: 768px) {
-        body {
-          margin: 16px;
-        }
-        h1 {
-          font-size: 20px;
-        }
-        .section-title {
-          font-size: 16px;
-        }
-        .download-btn {
-          padding: 10px 16px;
-          font-size: 14px;
-          margin-right: 8px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        body {
-          margin: 12px;
-          font-size: 14px;
-        }
-        .profile-photo {
-          width: 84px;
-          height: 84px;
-        }
-        h1 {
-          font-size: 18px;
-        }
-        h2 {
-          font-size: 14px;
-        }
-        h3 {
-          font-size: 14px;
-        }
-        .section-title {
-          font-size: 15px;
-          margin-top: 12px;
-        }
-        .muted {
-          font-size: 12px;
-        }
-        .contact {
-          font-size: 12px;
-        }
-        .download-btn {
-          padding: 8px 12px;
-          font-size: 13px;
-          margin-bottom: 8px;
-          display: block;
-          width: 100%;
-          box-sizing: border-box;
-          margin-right: 0;
-          margin-bottom: 8px;
-        }
-        .logo-row img {
-          height: 28px;
-          margin-right: 6px;
-        }
-        .list {
-          padding-left: 12px;
-          font-size: 13px;
-        }
-        .list li {
-          margin-bottom: 4px;
-        }
-        .project {
-          padding: 10px;
-          margin-bottom: 12px;
-        }
-        .project h3 {
-          font-size: 13px;
-          margin: 8px 0 4px 0;
-        }
-        .list-columns {
-          column-count: 1;
-          column-gap: 0;
-          column-rule: none;
-        }
-      }
-
-      /* ==================================== */
-      /* PERBAIKAN KHUSUS UNTUK CETAK (PDF) */
-      /* ==================================== */
-      @media print {
-        /* Hapus semua margin/padding dari body untuk memaksimalkan area cetak */
-        body {
-          background: white !important;
-          color: black !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          font-size: 10pt; /* Ukuran font lebih kecil agar muat */
-        }
-
-        /* Tombol Download wajib disembunyikan */
-        .download-btn,
-        footer {
-          display: none !important;
-        }
-
-        /* Atur Ulang Tata Letak Container ke Blok Standar */
-        .container {
-          display: block !important;
-          width: 100% !important;
-          margin: 0 !important;
-          padding: 10px;
-        }
-        .left-col,
-        .right-col {
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 !important;
-        }
-
-        /* Sederhanakan Tampilan Card/Header */
-        .card,
-        .project {
-          background: none !important;
-          box-shadow: none !important;
-          border: none !important;
-          padding: 0 !important;
-        }
-
-        /* Tampilkan QR Code dengan ukuran kecil agar bisa di-scan dari versi cetak */
-        .qr img {
-          width: 90px !important;
-          height: 90px !important;
-          padding: 0 !important;
-        }
-
-        /* Gaya Teks Cetak */
-        h1,
-        h2,
-        h3,
-        .section-title {
-          color: black !important;
-          margin-top: 10px;
-          padding-bottom: 4px;
-        }
-        .muted,
-        .contact {
-          color: #555 !important;
-        }
-
-        /* Pastikan elemen List tidak merusak layout */
-        .list {
-          padding-left: 5px !important;
-        }
-        .list li {
-          margin-bottom: 2px;
-        }
-
-        /* Expand semua dropdown saat print */
-        .dropdown-content {
-          max-height: none !important;
-          display: block !important;
-        }
-        .dropdown-icon {
-          display: none !important;
-        }
-        .dropdown-header {
-          background: none !important;
-          border: none !important;
-          padding: 5px 0 !important;
-        }
-        .dropdown-header strong {
-          color: black !important;
-        }
-
-        /* Tampilkan chart dengan ukuran yang sesuai */
-        canvas {
-          max-height: 250px !important;
-          max-width: 100% !important;
-        }
-
-        /* Perbaiki layout untuk print */
-        .profile-photo {
-          width: 80px !important;
-          height: 80px !important;
-        }
-        .logo-row img {
-          height: 24px !important;
-          width: auto !important;
-        }
-      }
       .profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
         object-fit: cover;
-
-        /* Elegant effect */
-        transition: all 0.35s ease;
-
-        /* Double ring */
-        border: 3px solid #4caf50;
-        outline: 4px solid rgba(76, 175, 80, 0.2);
-        box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
-
-        /* Soft shadow */
-        box-shadow:
-          0 8px 24px rgba(0, 0, 0, 0.45),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+        border: 3px solid #22c55e;
+        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.18), 0 12px 28px rgba(0, 0, 0, 0.6);
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
-      /* Hover effect */
       .profile-photo:hover {
-        transform: scale(1.04);
-      }
-      .profile-header {
-        position: relative;
+        transform: scale(1.06) rotate(1deg);
       }
 
-      .profile-photo::after {
-        content: '';
-        position: absolute;
-        inset: -6px;
-        border-radius: 50%;
+      .profile-info {
+        flex: 1;
+        min-width: 280px;
       }
 
-      @media (max-width: 600px) {
-        .profile-photo {
-          width: 84px;
-          height: 84px;
-        }
+      .profile-title-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 8px;
       }
 
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .profile-title-row h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: #ffffff;
       }
 
-      @keyframes fadeInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      .role-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 14px;
+        background: rgba(34, 197, 94, 0.14);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.35);
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
       }
 
-      @keyframes fadeInRight {
-        from {
-          opacity: 0;
-          transform: translateX(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      .header-contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        color: #94a3b8;
+        font-size: 14px;
+        margin-top: 6px;
       }
 
-      @keyframes pulse {
-        0%, 100% {
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-        }
-        50% {
-          box-shadow: 0 8px 32px rgba(76, 175, 80, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 20px rgba(76, 175, 80, 0.3);
-        }
+      .header-contact-row a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s ease;
       }
 
-      @keyframes shimmer {
-        0% {
-          background-position: -200% 0;
-        }
-        100% {
-          background-position: 200% 0;
-        }
+      .header-contact-row a:hover {
+        color: #4ade80;
       }
 
-      .card {
-        animation: fadeInUp 0.8s ease-out;
+      .header-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        padding-top: 4px;
       }
 
-      .left-col > div,
-      .right-col > div {
-        animation: fadeInLeft 0.6s ease-out;
-        animation-fill-mode: both;
-      }
-
-      .left-col > div:nth-child(1) { animation-delay: 0.1s; }
-      .left-col > div:nth-child(2) { animation-delay: 0.2s; }
-      .left-col > div:nth-child(3) { animation-delay: 0.3s; }
-      .left-col > div:nth-child(4) { animation-delay: 0.4s; }
-      .left-col > div:nth-child(5) { animation-delay: 0.5s; }
-      .left-col > div:nth-child(6) { animation-delay: 0.6s; }
-
-      .right-col > div:nth-child(1) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.1s; animation-fill-mode: both; }
-      .right-col > div:nth-child(2) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.2s; animation-fill-mode: both; }
-      .right-col > div:nth-child(3) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.3s; animation-fill-mode: both; }
-      .right-col > div:nth-child(4) { animation: fadeInRight 0.6s ease-out; animation-delay: 0.4s; animation-fill-mode: both; }
-
-      .project {
-        animation: fadeInUp 0.5s ease-out;
-        animation-fill-mode: both;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 114, 255, 0.3);
-      }
-
-      .section-title {
-        animation: fadeInUp 0.5s ease-out;
-        animation-fill-mode: both;
-      }
-
-      .profile-photo {
-        animation: pulse 3s ease-in-out infinite;
-      }
-
+      /* Modern Button Styles */
       .download-btn {
-        animation: fadeInUp 0.8s ease-out 0.3s;
-        animation-fill-mode: both;
-        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 22px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
       }
 
-      .download-btn:hover {
+      .btn-primary {
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #4ade80, #22c55e);
+        box-shadow: 0 6px 24px rgba(34, 197, 94, 0.5);
         transform: translateY(-2px);
       }
 
-      .list li {
-        transition: transform 0.2s ease, color 0.2s ease;
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.06);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       }
 
-      .list li:hover {
-        transform: translateX(5px);
-        color: #fff;
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(74, 222, 128, 0.4);
+        color: #ffffff;
+        transform: translateY(-2px);
       }
 
-      /* Logo vendor resmi (assets/logos) di atas chip putih agar kontras di tema gelap & saat print */
+      /* Logo Chips */
       .logo-row {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
+        margin-top: 4px;
       }
+
       .logo-row .logo-chip {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        height: 34px;
-        padding: 0 12px;
+        gap: 8px;
+        height: 36px;
+        padding: 0 14px;
         background: #ffffff;
         border-radius: 999px;
-        color: #1d2a1d;
+        color: #0f172a;
         font-size: 13px;
         font-weight: 700;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
+
+      .logo-row .logo-chip:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+      }
+
       .logo-row .logo-chip img {
         height: 20px;
         width: auto;
         margin: 0;
         filter: none;
       }
+
       .logo-row .logo-chip--wordmark img {
         height: 22px;
       }
-      .logo-row .logo-chip:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.35);
-      }
-      @media (max-width: 600px) {
-        .logo-row .logo-chip {
-          height: 30px;
-          padding: 0 10px;
-          font-size: 12px;
-        }
-        .logo-row .logo-chip img {
-          height: 18px;
-        }
-      }
-      @media print {
-        .logo-row .logo-chip {
-          box-shadow: none;
-          border: 1px solid #cccccc;
-          height: 26px;
-        }
-        .logo-row .logo-chip img {
-          height: 16px !important;
-        }
+
+      /* Section Titles */
+      .section-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: #4ade80;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 14px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(74, 222, 128, 0.2);
       }
 
-      /* Dropdown styles */
+      /* Grid Container */
+      .container {
+        display: grid;
+        grid-template-columns: 36% 64%;
+        gap: 22px;
+        margin-top: 22px;
+      }
+
+      .left-col, .right-col {
+        min-width: 0;
+      }
+
+      /* List & Content */
+      .list {
+        margin: 8px 0 0 0;
+        padding-left: 20px;
+        color: #cbd5e1;
+      }
+
+      .list li {
+        margin-bottom: 6px;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .list li:hover {
+        color: #ffffff;
+      }
+
+      .muted {
+        color: #94a3b8;
+        font-size: 14px;
+      }
+
+      /* Dropdown Styles */
       .dropdown {
         margin-bottom: 10px;
       }
 
       .dropdown-header {
-        background: linear-gradient(135deg, rgba(61, 140, 111, 0.1), rgba(61, 140, 111, 0.05));
+        background: rgba(255, 255, 255, 0.03);
         padding: 12px 16px;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(76, 175, 80, 0.2);
+        transition: all 0.25s ease;
+        border: 1px solid rgba(74, 222, 128, 0.16);
       }
 
       .dropdown-header:hover {
-        background: linear-gradient(135deg, rgba(61, 140, 111, 0.15), rgba(61, 140, 111, 0.1));
-        border-color: #4caf50;
-        box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+        background: rgba(34, 197, 94, 0.08);
+        border-color: rgba(74, 222, 128, 0.35);
       }
 
       .dropdown-header strong {
-        color: #dff6ff;
-        font-size: 15px;
+        color: #e2e8f0;
+        font-size: 14px;
       }
 
       .dropdown-icon {
         transition: transform 0.3s ease;
-        color: #bde0ff;
-        font-size: 18px;
+        color: #4ade80;
+        font-size: 16px;
       }
 
       .dropdown.open .dropdown-icon {
@@ -664,14 +334,13 @@
       .dropdown-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 0 0 8px 8px;
-        margin-top: 2px;
+        transition: max-height 0.35s ease;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 10px 10px;
       }
 
       .dropdown.open .dropdown-content {
-        max-height: 500px;
+        max-height: 600px;
       }
 
       .dropdown-content ul {
@@ -681,11 +350,11 @@
 
       .dropdown-content li {
         padding: 4px 0;
-        color: #d9eefc;
-        font-size: 14px;
+        color: #cbd5e1;
+        font-size: 13.5px;
       }
 
-      /* Table styles */
+      /* Tech Table */
       .tech-table {
         width: 100%;
         border-collapse: collapse;
@@ -693,8 +362,9 @@
       }
 
       .tech-table td {
-        padding: 8px 12px;
-        border-bottom: 1px solid rgba(76, 175, 80, 0.15);
+        padding: 9px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 13.5px;
       }
 
       .tech-table tr:last-child td {
@@ -702,181 +372,437 @@
       }
 
       .tech-table td:first-child {
-        font-weight: 600;
-        color: #4caf50;
-        width: 35%;
+        font-weight: 700;
+        color: #4ade80;
+        width: 36%;
       }
 
       .tech-table td:last-child {
-        color: #d9eefc;
+        color: #cbd5e1;
+      }
+
+      /* Year Group Accordion */
+      .year-group {
+        margin-bottom: 14px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(74, 222, 128, 0.18);
+        background: rgba(13, 20, 15, 0.5);
+        transition: all 0.25s ease;
+      }
+
+      .year-group:hover {
+        border-color: rgba(74, 222, 128, 0.35);
+      }
+
+      .year-group summary {
+        list-style: none;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 14px 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        user-select: none;
+        transition: background 0.2s ease;
+      }
+
+      .year-group summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .year-group summary:hover {
+        background: rgba(34, 197, 94, 0.08);
+      }
+
+      .year-group[open] summary {
+        background: rgba(34, 197, 94, 0.1);
+        border-bottom: 1px solid rgba(74, 222, 128, 0.18);
+      }
+
+      .year-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #f1f5f9;
+      }
+
+      .year-label::before {
+        content: '▶';
+        font-size: 10px;
+        color: #4ade80;
+        transition: transform 0.25s ease;
+        display: inline-block;
+      }
+
+      .year-group[open] .year-label::before {
+        transform: rotate(90deg);
+      }
+
+      .year-count {
+        background: rgba(34, 197, 94, 0.15);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.35);
+        border-radius: 999px;
+        padding: 3px 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .year-projects {
+        padding: 16px 14px 4px 14px;
+      }
+
+      /* Project Cards */
+      .project {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-left: 4px solid #22c55e;
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin-bottom: 14px;
+        transition: all 0.25s ease;
+      }
+
+      .project:hover {
+        background: rgba(34, 197, 94, 0.04);
+        border-color: rgba(34, 197, 94, 0.28);
+        border-left-color: #4ade80;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .project h3 {
+        margin: 0 0 8px 0;
+        font-size: 15px;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.45;
+      }
+
+      .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        font-size: 13px;
+        color: #94a3b8;
+        margin-bottom: 10px;
+      }
+
+      .role-badge {
+        padding: 2px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .role-se {
+        background: rgba(34, 197, 94, 0.15);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+      }
+
+      .role-ts {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+
+      .role-de {
+        background: rgba(251, 146, 60, 0.15);
+        color: #fb923c;
+        border: 1px solid rgba(251, 146, 60, 0.3);
+      }
+
+      /* QR Codes */
+      .qr img {
+        height: 150px;
+        width: 150px;
+        border-radius: 10px;
+        background: #ffffff;
+        padding: 6px;
+        object-fit: contain;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Contact Closing Card */
+      .contact-card {
+        margin-top: 24px;
+        padding: 26px 28px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 36px;
+        margin-bottom: 12px;
+        color: #64748b;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* Responsive Layout */
+      @media (max-width: 960px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          justify-items: center;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body {
+          margin: 16px auto;
+          padding: 0 14px;
+        }
+        .profile-photo {
+          width: 86px;
+          height: 86px;
+        }
+        .profile-title-row h1 {
+          font-size: 22px;
+        }
+        .qr img {
+          height: 120px;
+          width: 120px;
+        }
+        .logo-row .logo-chip {
+          height: 32px;
+          padding: 0 10px;
+          font-size: 12px;
+        }
+        .logo-row .logo-chip img {
+          height: 18px;
+        }
+      }
+
+      /* Print Optimizations */
+      @media print {
+        body {
+          background: #ffffff !important;
+          color: #000000 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          font-size: 9.5pt;
+        }
+        .download-btn, footer {
+          display: none !important;
+        }
+        .container {
+          display: block !important;
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        .card, .project {
+          background: none !important;
+          box-shadow: none !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+        .qr img {
+          width: 85px !important;
+          height: 85px !important;
+          padding: 0 !important;
+        }
+        h1, h2, h3, .section-title {
+          color: #000000 !important;
+        }
+        .muted, .contact {
+          color: #555555 !important;
+        }
+        .dropdown-content {
+          max-height: none !important;
+          display: block !important;
+        }
+        .dropdown-icon {
+          display: none !important;
+        }
+        .year-group {
+          border: 1px solid #ccc !important;
+          background: none !important;
+          margin-bottom: 10px !important;
+          page-break-inside: avoid;
+        }
+        .year-group summary {
+          background: #f0f0f0 !important;
+          color: #000 !important;
+          border-bottom: 1px solid #ccc !important;
+          padding: 5px 8px !important;
+        }
+        .year-label {
+          color: #000 !important;
+        }
+        .year-label::before {
+          display: none !important;
+        }
+        .year-count {
+          background: #e0e0e0 !important;
+          color: #000 !important;
+          border: 1px solid #999 !important;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="card header-flex">
-      <div class="header-left">
-        <div class="profile-header">
-          <img src="assets/profile.png" alt="Foto Eka Taris Ariyudi" class="profile-photo" />
+    <div class="card header-card">
+      <div class="profile-header">
+        <img src="assets/profile.png" alt="Foto Eka Taris Ariyudi" class="profile-photo" />
 
-          <div>
+        <div class="profile-info">
+          <div class="profile-title-row">
             <h1>👨‍💻 Eka Taris Ariyudi</h1>
-            <h3>
-              System Engineer
-            </h3>
+            <span class="role-tag">System Engineer</span>
           </div>
-        </div>
-        <div style="margin-top: 12px" class="logo-row">
-          <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
-          <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
-          <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
-          <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
-          <span class="logo-chip"><img alt="Nutanix" src="assets/logos/nutanix.svg" />Nutanix</span>
-          <span class="logo-chip logo-chip--wordmark"><img alt="IBM" src="assets/logos/ibm.svg" /></span>
-          <span class="logo-chip"><img alt="Huawei" src="assets/logos/huawei.svg" />Huawei</span>
-          <span class="logo-chip"><img alt="VMware" src="assets/logos/vmware.svg" />VMware</span>
+          <div class="header-contact-row">
+            <span>📍 Tangerang, Indonesia</span>
+            <span>•</span>
+            <a href="mailto:ekataris@gmail.com">📧 ekataris@gmail.com</a>
+            <span>•</span>
+            <a href="https://etariyudi-create.github.io/my-cv/" target="_blank">🌐 etariyudi-create.github.io/my-cv/</a>
+          </div>
         </div>
       </div>
 
-      <div style="text-align: right">
-        <div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center">
-          <div style="text-align: center">
-            <div style="font-weight: 700; color: #dff6ff; margin-bottom: 6px">LinkedIn</div>
-            <div class="qr">
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
-                alt="QR LinkedIn"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div style="text-align: center">
-            <div style="font-weight: 700; color: #dff6ff; margin-bottom: 6px">Website</div>
-            <div class="qr">
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://etariyudi-create.github.io/my-cv/"
-                alt="QR Website"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+      <div class="header-actions">
+        <button class="download-btn btn-primary" onclick="window.print()">⬇️ Download CV (PDF)</button>
+        <button class="download-btn btn-secondary" onclick="downloadWordDoc()">⬇️ Download CV (Word)</button>
+      </div>
+
+      <div class="logo-row">
+        <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
+        <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
+        <span class="logo-chip logo-chip--wordmark"><img alt="Dell EMC" src="assets/logos/dellemc.svg" /></span>
+        <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
+        <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
+        <span class="logo-chip"><img alt="Nutanix" src="assets/logos/nutanix.svg" />Nutanix</span>
+        <span class="logo-chip logo-chip--wordmark"><img alt="IBM" src="assets/logos/ibm.svg" /></span>
+        <span class="logo-chip"><img alt="Huawei" src="assets/logos/huawei.svg" />Huawei</span>
+        <span class="logo-chip"><img alt="VMware" src="assets/logos/vmware.svg" />VMware</span>
+        <span class="logo-chip"><img alt="Sangfor" src="assets/logos/sangfor.svg" />Sangfor</span>
       </div>
     </div>
-    
-    <div class="contact muted" style="text-align: center; margin-top: 15px; font-size: 15px;">
-      📍Tangerang, Indonesia<br>
-      📧ekataris@gmail.com<br>
-      <a href="https://etariyudi-create.github.io/my-cv/" target="_blank" style="color: #9fb7d9; text-decoration: none;">etariyudi-create.github.io/my-cv/</a>
-    </div>
-    <button class="download-btn" onclick="window.print()">⬇️ Download CV (PDF)</button>
-    <button class="download-btn" onclick="downloadWordDoc()">⬇️ Download CV (Word)</button>
-    
+
     <div class="card" style="margin-bottom: 22px;">
       <div class="section-title">🌟 Profil Singkat</div>
       <p class="list">
-        System Engineer dengan pengalaman sejak 2016 (hampir 10 tahun), termasuk di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
+        System Engineer dengan pengalaman sejak 2016 (10 tahun), termasuk di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
       </p>
     </div>
-    
+
     <div class="card" style="margin-bottom: 22px;">
       <div class="section-title">🎓 Pendidikan</div>
       <ul class="list">
         <li>
-          <strong>Strata 1 / Teknik Informatika</strong><br>
+          <strong>Strata 1 / Teknik Informatika</strong><br />
           Universitas Mercu Buana, Jakarta (2017)
         </li>
       </ul>
     </div>
-    
+
     <div class="container">
       <div class="left-col">
-               
         <div class="section-title">📊 Distribusi Keahlian</div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
           <canvas id="skillChart" style="max-height: 300px;"></canvas>
         </div>
-<div class="section-title">🛠️ Keahlian Inti (Tech Stack)</div>
-<div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>💾 Storage & Infrastructure</strong>
-            <span class="dropdown-icon">▼</span>
-          </div>
-          
-          <div class="dropdown-content">
-            <ul class="list">
-              <li>DellEMC Storage (Unity, PowerStore)</li>
-              <li>NetApp Hybrid Cloud & Storage</li>
-              <li>HPE Storage & Hybrid Cloud</li>
-              <li>Nutanix Multicloud Infrastructure</li>
-              <li>RAID Configuration & Storage Integration</li>
-              <li>NAS/SAN Configuration</li>
-              <li>Storage Replication (DC & DRC)</li>
-              <li>Tape Library Management</li>
-              <li>Veritas Backup Exec</li>
-              <li>Acronis Cloud Backup</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>🌐 Networking</strong>
-            <span class="dropdown-icon">▼</span>
+        <div class="section-title">🛠️ Keahlian Inti (Tech Stack)</div>
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <strong>💾 Storage & Infrastructure</strong>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <ul class="list">
+                <li>DellEMC Storage (Unity, PowerStore)</li>
+                <li>NetApp Hybrid Cloud & Storage</li>
+                <li>HPE Storage & Hybrid Cloud</li>
+                <li>Nutanix Multicloud Infrastructure</li>
+                <li>RAID Configuration & Storage Integration</li>
+                <li>NAS/SAN Configuration</li>
+                <li>Storage Replication (DC & DRC)</li>
+                <li>Tape Library Management</li>
+                <li>Veritas Backup Exec</li>
+                <li>Acronis Cloud Backup</li>
+              </ul>
+            </div>
           </div>
-          <div class="dropdown-content">
-            <ul class="list">
-              <li>Cisco Networking (CCNA, CCNP Enterprise)</li>
-              <li>Huawei Networking (HCIA)</li>
-              <li>TCP/IP Networking</li>
-              <li>Subnetting & IP Addressing</li>
-              <li>Routing & Switching</li>
-              <li>Firewall Configuration</li>
-              <li>Network Troubleshooting</li>
-              <li>VLAN & Network Design</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>🖥️ Server & Hardware</strong>
-            <span class="dropdown-icon">▼</span>
+          <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <strong>🌐 Networking</strong>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <ul class="list">
+                <li>Cisco Networking (CCNA, CCNP Enterprise)</li>
+                <li>Huawei Networking (HCIA)</li>
+                <li>TCP/IP Networking</li>
+                <li>Subnetting & IP Addressing</li>
+                <li>Routing & Switching</li>
+                <li>Firewall Configuration</li>
+                <li>Network Troubleshooting</li>
+                <li>VLAN & Network Design</li>
+              </ul>
+            </div>
           </div>
-          <div class="dropdown-content">
-            <ul class="list">
-              <li>Server Hardware Troubleshooting</li>
-              <li>Dell EMC Server Configuration</li>
-              <li>HPE Server Infrastructure</li>
-              <li>IBM Power Systems (AIX)</li>
-              <li>Lenovo Data Center Configuration</li>
-              <li>Linux Server Administration</li>
-              <li>Windows Server Administration</li>
-              <li>Virtualization (VMware, Proxmox)</li>
-              <li>Server Installation & Configuration</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">
-            <strong>☁️ Cloud & Virtualization</strong>
-            <span class="dropdown-icon">▼</span>
+          <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <strong>🖥️ Server & Hardware</strong>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <ul class="list">
+                <li>Server Hardware Troubleshooting</li>
+                <li>Dell EMC Server Configuration</li>
+                <li>HPE Server Infrastructure</li>
+                <li>IBM Power Systems (AIX)</li>
+                <li>Lenovo Data Center Configuration</li>
+                <li>Linux Server Administration</li>
+                <li>Windows Server Administration</li>
+                <li>Virtualization (VMware, Proxmox)</li>
+                <li>Server Installation & Configuration</li>
+              </ul>
+            </div>
           </div>
-          <div class="dropdown-content">
-            <ul class="list">
-              <li>Hybrid Cloud Solutions</li>
-              <li>Nutanix AHV & Virtualization</li>
-              <li>HPE Morpheus</li>
-              <li>Sangfor HCI</li>
-              <li>Cloud Infrastructure Management</li>
-              <li>Virtual Machine Management</li>
-              <li>Backup & Disaster Recovery</li>
-            </ul>
-          </div>
-        </div>
-        </div>
 
+          <div class="dropdown">
+            <div class="dropdown-header" onclick="toggleDropdown(this)">
+              <strong>☁️ Cloud & Virtualization</strong>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div class="dropdown-content">
+              <ul class="list">
+                <li>Hybrid Cloud Solutions</li>
+                <li>Nutanix AHV & Virtualization</li>
+                <li>HPE Morpheus</li>
+                <li>Sangfor HCI</li>
+                <li>Cloud Infrastructure Management</li>
+                <li>Virtual Machine Management</li>
+                <li>Backup & Disaster Recovery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div class="section-title">🤝 Soft Skills</div>
         <table class="tech-table">
@@ -906,7 +832,7 @@
           </tr>
         </table>
 
-        <div class="section-title">🔍 Tech Summary</div>
+        <div class="section-title" style="margin-top: 24px;">🔍 Tech Summary</div>
         <table class="tech-table">
           <tr>
             <td>Storage Management</td>
@@ -942,7 +868,7 @@
           </tr>
         </table>
 
-        <div class="section-title">📜 Sertifikasi</div>
+        <div class="section-title" style="margin-top: 24px;">📜 Sertifikasi</div>
         <ul class="list">
           <li>HPE Product Certified — HPE Morpheus VM Essentials Software (2026)</li>
           <li>Sangfor Certified Technical Associate — HCI (2025)</li>
@@ -966,180 +892,984 @@
           <li>Lenovo Data Center Group Configuration (2019)</li>
         </ul>
 
-        <div class="section-title">🎤 Event & Training</div>
+        <div class="section-title" style="margin-top: 24px;">🎤 Event & Training</div>
         <ul class="list">
           <li>HPE Tech Jam Bangkok (2026)</li>
         </ul>
-
-        <div class="section-title">📦 Tech Logos</div>
-        <div class="logo-row">
-          <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
-          <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
-          <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
-          <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
-          <span class="logo-chip"><img alt="Nutanix" src="assets/logos/nutanix.svg" />Nutanix</span>
-          <span class="logo-chip logo-chip--wordmark"><img alt="IBM" src="assets/logos/ibm.svg" /></span>
-          <span class="logo-chip"><img alt="Huawei" src="assets/logos/huawei.svg" />Huawei</span>
-          <span class="logo-chip"><img alt="VMware" src="assets/logos/vmware.svg" />VMware</span>
-        </div>
       </div>
+
       <div class="right-col">
         <div class="section-title">🧩 Pengalaman Kerja & Proyek Utama</div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 10px; margin-bottom: 15px;">
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.05);">
           <canvas id="experienceChart" style="max-height: 300px;"></canvas>
         </div>
-        <div class="project">
-          <h3>🔥 2026 – Technical Support | Pengadaan Storage DellEMC Unity 300</h3>
-          <ul class="list">
-            <li>Instalasi dan konfigurasi system storage DellEMC Unity 300</li>
-            <li>Cabling system storage dan konfigurasi file resources</li>
-            <li>Konfigurasi hosts dan replication DC & DRC</li>
-            <li>Mapping volume baru dan integrasi storage</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2025 – System Engineer | Hybrid Cloud Infrastructure Implementation</h3>
-          <ul class="list">
-            <li>Implementasi hybrid cloud infrastructure dengan HPE dan Nutanix</li>
-            <li>Konfigurasi cloud integration dan disaster recovery</li>
-            <li>Setup automation dan monitoring cloud resources</li>
-            <li>Optimasi performa dan cost cloud environment</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2024 – System Engineer | Storage Migration & Upgrade</h3>
-          <ul class="list">
-            <li>Migrasi data antar storage systems</li>
-            <li>Upgrade storage firmware dan software</li>
-            <li>Implementasi storage virtualization</li>
-            <li>Testing dan validation storage performance</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2023 – System Engineer | Network Infrastructure Optimization</h3>
-          <ul class="list">
-            <li>Optimasi network infrastructure dengan Cisco dan Huawei</li>
-            <li>Implementasi network security dan firewall</li>
-            <li>Configuration management network devices</li>
-            <li>Troubleshooting network connectivity issues</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2022 – System Engineer | Server Virtualization Project</h3>
-          <ul class="list">
-            <li>Implementasi server virtualization dengan VMware dan Nutanix</li>
-            <li>Setup cluster dan high availability</li>
-            <li>Migrasi physical servers ke virtual environment</li>
-            <li>Optimasi resource allocation dan performance</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2021 – System Engineer | Backup & Disaster Recovery</h3>
-          <ul class="list">
-            <li>Implementasi backup solution dengan Veritas Backup Exec</li>
-            <li>Setup disaster recovery plan dan testing</li>
-            <li>Konfigurasi backup automation dan scheduling</li>
-            <li>Monitoring backup success dan recovery testing</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2020 – System Engineer | Data Center Maintenance</h3>
-          <ul class="list">
-            <li>Maintenance rutin data center infrastructure</li>
-            <li>Monitoring server dan storage health</li>
-            <li>Implementasi preventive maintenance schedule</li>
-            <li>Troubleshooting hardware dan software issues</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2019 – Technical Support | Pengadaan Server Lenovo SR550 dan VMware</h3>
-          <ul class="list">
-            <li>Install dan configure server Lenovo SR550</li>
-            <li>Setup VMware environment</li>
-            <li>Create virtual machines</li>
-            <li>Konfigurasi dan testing server</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2018 – Technical Support | ESP Project</h3>
-          <ul class="list">
-            <li>Instalasi software sistem</li>
-            <li>Troubleshooting dan perbaikan software</li>
-            <li>Support, maintain, dan memelihara sistem komputer</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2018 – Technical Support | SSCS Project</h3>
-          <ul class="list">
-            <li>Import dan Export Tape Library</li>
-            <li>Troubleshooting dan perbaikan hardware</li>
-            <li>Maintenance sistem storage</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2018 – Technical Support | Dell Project</h3>
-          <ul class="list">
-            <li>Troubleshooting dan perbaikan hardware Dell</li>
-            <li>Maintenance server dan perangkat IT</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2018 – Technical Support | Server Monitoring IBM AS/400</h3>
-          <ul class="list">
-            <li>Check DASD Used, CPU Used dan Memory Used</li>
-            <li>Health Check Activity server IBM AS/400</li>
-            <li>Monitoring performa sistem</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2017 – Technical Support | Smart Digital Banking (SDB)</h3>
-          <ul class="list">
-            <li>Instalasi hardware sistem perbankan</li>
-            <li>Troubleshooting dan perbaikan hardware</li>
-            <li>Support, maintain, dan memelihara perangkat IT</li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>🔥 2016 – 2017 – Technical Support | SKCK Online Integrated POLRES dan POLSEK</h3>
-          <ul class="list">
-            <li>Instalasi hardware dan software sistem SKCK online</li>
-            <li>Troubleshooting dan perbaikan hardware</li>
-            <li>Support, maintain, dan memelihara sistem komputer</li>
-          </ul>
-        </div>
 
-        <div class="section-title">📌 Contact & Links</div>
-        <ul class="list">
-          <li>
-            Email:
-            <a style="color: #bfeaff" href="mailto:ekataris@gmail.com" target="_blank"
-              >ekataris@gmail.com</a
-            >
-          </li>
-          <li>
-            LinkedIn:
-            <a
-              style="color: #bfeaff"
-              href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
-              target="_blank"
-              >linkedin.com/in/eka-taris-ariyudi-632847218</a
-            >
-          </li>
-          <li>
-            Website:
-            <a
-              style="color: #bfeaff"
-              href="https://etariyudi-create.github.io/my-cv/"
-              target="_blank"
-              >etariyudi-create.github.io/my-cv/</a
-            >
-          </li>
-        </ul>
-        <button class="download-btn" onclick="requestPhoneNumber()" style="margin-top: 15px; width: 100%;">📞 Request Phone Number</button>
+        <details class="year-group" open>
+          <summary>
+            <span class="year-label">Tahun 2026</span>
+            <span class="year-count">5 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Sangfor Hyper Converged Infrastructure (HCI) Beserta Migrasi VMware ke Sangfor</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Equity Life Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Equipment Hardware Start-up</li>
+                <li>Reimage Sangfor OS</li>
+                <li>Provisioning Cluster Sangfor</li>
+                <li>Provisioning Storage and Network</li>
+                <li>Configure VLAN and Trunk Switch</li>
+                <li>Migrating VMs from VMware to Sangfor HCI using SCMT</li>
+                <li>Client Access Testing</li>
+                <li>Testing and Comissioning</li>
+                <li>Review all installation-implementation and  configuration</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Renewal License & Garansi Nutanix Hyper Converged Infrastructure (HCI) Data Center dan Disaster Recovery Center PT BPD Sultra</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Pembangunan Daerah Sulawesi Tenggara (BPD Sultra)</span>
+                <span>📍 Kendari dan Cibitung</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Peruntukan Mobile Banking Dan Internet Banking Business</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Bitera</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Renewal Maintenance Hardware Aplikasi Sistem Pembayaran Swift</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Bitera</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Hard Token CMS dan Active Directory</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul, Bitera dan OC</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group" open>
+          <summary>
+            <span class="year-label">Tahun 2025</span>
+            <span class="year-count">7 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Server Dell PowerEdge R760xs Beserta Migrasi VMware ke Proxmox VE (Virtual Enterprise)</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Tokai Dharma Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Equipment Hardware Start-up</li>
+                <li>Reimage Proxmox OS</li>
+                <li>Provisioning Storage and Network</li>
+                <li>Configure VLAN Network</li>
+                <li>Migrating VMs from VMware to Proxmox</li>
+                <li>Client Access Testing</li>
+                <li>Testing and Comissioning</li>
+                <li>Review all installation-implementation and  configuration</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pengadaan CCTV RCOM Jakarta</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Installation of 44 CCTV Hikvision camera</li>
+                <li>CCTV network installation</li>
+                <li>Installation of CCTV monitor</li>
+                <li>Cabling, HDMI, and switch configure</li>
+                <li>NAS, HCP & pStore server configuration</li>
+                <li>Configuration, Commisioning & Training</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server ThinkSystem SR650 V3, Expansion Storage NetApp DS224C, dan VMware ESXi 8</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Yamaha Motor Parts Manufacturing Indonesia</span>
+                <span>📍 Karawang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (ESXi 8)</li>
+                <li>Zoning SAN Switch</li>
+                <li>Deploy and Configure vCenter 7</li>
+                <li>Create Data Center and Cluster</li>
+                <li>Initial Setup System Storage</li>
+                <li>Cabling System Storage</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resource</li>
+                <li>Configure Hosts and Volumes</li>
+                <li>Mapping New Volume</li>
+                <li>Mapping Datastore Server</li>
+                <li>Test vMotion and HA</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pengadaan Migrasi Perangkat DRC Surabaya ke Bitera DC</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Surabaya dan Bitera</span>
+                
+              </div>
+              <ul class="list">
+                <li>Shutdown machine di DRC Surabaya</li>
+                <li>Unplug cable (FO, LAN, Power)</li>
+                <li>Dismantle device</li>
+                <li>Unmounting machine</li>
+                <li>Unloading and Assembling di DRC Bitera</li>
+                <li>Mounting to Rack</li>
+                <li>Cabling and Labeling</li>
+                <li>Power on Test</li>
+                <li>Upgrade Firmware (if needed)</li>
+                <li>Reconfiguring IP Adress</li>
+                <li>Connection test</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan NAS Untuk Backup Data Aplikasi BIFast Peruntukan Divisi ITOD</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul</span>
+                
+              </div>
+              <ul class="list">
+                <li>Mounting Hardware to Rack</li>
+                <li>Cabling:  Power Cable, UTP Cable and FO Cable</li>
+                <li>Initial Setup Network</li>
+                <li>Configure Array and Volume</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resources</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Server Lenovo SR650 V4 dan Memory Server Lenovo</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PDAM Tirta Kerta Raharja (PDAM Tangerang)</span>
+                <span>📍 Tangerang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 8 Server Aplikasi Irekon HPE DL360 G10</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Bitera</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group" open>
+          <summary>
+            <span class="year-label">Tahun 2024</span>
+            <span class="year-count">4 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 10 Server Lenovo SR630 & SR650, VMware ESXi 8</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT Chandra Asri Petrochemical Tbk (CAP)</span>
+                <span>📍 Cilegon</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (ESXi 8)</li>
+                <li>Deploy and Configure vCenter 8</li>
+                <li>Create Data Center and Cluster</li>
+                <li>Mapping Datastore Server</li>
+                <li>Test vMotion and HA</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C7000</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta, Sentul, Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install Support jika ada instalasi dan konfigurasi perangkat lunak</li>
+                <li>Support perbaikan terhadap perangkat lunak</li>
+                <li>Service on call support (24 jam x 7 hari) dan on site jika diperlukan</li>
+                <li>Health check 1 (satu) bulan sekali yang mancakup pemeriksaan software</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 4 Server Aplikasi Opics HPE DL360 G10 dan Upgrade disk 14 Server BI-RTGS dan SKNBI</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+                <li>Upgrade Disk Server</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2023</span>
+            <span class="year-count">5 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 2 Server HPE DL360 G10, HPE SN3600B (SAN Switch), Storage NetApp FAS2750, dan VMware ESXi 7</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Yamaha Motor Parts Manufacturing Indonesia</span>
+                <span>📍 Karawang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (ESXi 7)</li>
+                <li>Zoning SAN Switch</li>
+                <li>Deploy and Configure vCenter 7</li>
+                <li>Create Data Center and Cluster</li>
+                <li>Initial Setup System Storage</li>
+                <li>Cabling System Storage</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resource</li>
+                <li>Configure Hosts and Volumes</li>
+                <li>Mapping New Volume</li>
+                <li>Mapping Datastore Server</li>
+                <li>Test vMotion and HA</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta, Sentul, Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install RedHat Satellite Server</li>
+                <li>Install RedHat Satellite Capsule Jakarta, Sentul, Surabaya</li>
+                <li>Add RedHat Satellite Capsule to RedHat Satellite Server</li>
+                <li>Configuration ( Subscription,Repository,Activation Key, etc)</li>
+                <li>Register RHEL Server to Satellite Server</li>
+                <li>Create Host Collection</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Perangkat Switch Hub</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Configure Hostname</li>
+                <li>Configure Date&Time</li>
+                <li>Configure IP Management</li>
+                <li>Configure Trunk</li>
+                <li>Configure Default Route</li>
+                <li>Configure Web User</li>
+                <li>Configure Local Username</li>
+                <li>Configure SSH</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 6 Server Lenovo ThinkAgile HX3331</h3>
+              <div class="project-meta">
+                <span class="role-badge role-se">System Engineer</span>
+                <span>🏢 PT Chandra Asri Petrochemical Tbk (CAP)</span>
+                <span>📍 Jakarta dan Cilegon</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Server DC & DRC Bank Sultra</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Pembangunan Daerah Sulawesi Tenggara (Bank Sultra)</span>
+                <span>📍 Kendari</span>
+                
+              </div>
+              <ul class="list">
+                <li>Equipment Hardware Start-up</li>
+                <li>Reimage Nutanix OS with Acropolis/VMWare/Hyper-V</li>
+                <li>Provisioning Cluster Nutanix</li>
+                <li>Provisioning Storage and Network</li>
+                <li>Configure VLAN and Trunk Switch</li>
+                <li>Client Access Testing</li>
+                <li>Testing and Comissioning</li>
+                <li>Review all installation-implementation and  configuration</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2022</span>
+            <span class="year-count">6 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server BI-RTGS dan SKNBI</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server BI Fast HPE DL360 G10</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server HPE DL360 G10</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 2 Server Lenovo SR650, Storage Lenovo DE2000H, dan VMware ESXi 7</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
+                <span>📍 Cibitung</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (ESXi 7)</li>
+                <li>Deploy and Configure vCenter 7</li>
+                <li>Create Data Center and Cluster</li>
+                <li>Initial Setup System Storage</li>
+                <li>Cabling System Storage</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resource</li>
+                <li>Configure Hosts and Volumes</li>
+                <li>Mapping New Volume</li>
+                <li>Mapping Datastore Server</li>
+                <li>Test vMotion and HA</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server HPE DL360 G10</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta, Sentul, Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 2 Server DellEMC R750, Storage DellEMC PowerStore, dan VMware ESXi 7</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
+                <span>📍 Tangerang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (ESXi 7)</li>
+                <li>Deploy and Configure vCenter 7</li>
+                <li>Create Data Center and Cluster</li>
+                <li>Initial Setup System Storage</li>
+                <li>Cabling System Storage</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resource</li>
+                <li>Configure Hosts and Volumes</li>
+                <li>Mapping New Volume</li>
+                <li>Mapping Datastore Server</li>
+                <li>Test vMotion and HA</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2021</span>
+            <span class="year-count">5 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Storage Lenovo Nutanix HX Series, Storage DellEMC Unity 500 dan DellEMC XtremIO X2-S</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Pelabuhan Indonesia III (Pelindo III)</span>
+                <span>📍 Surabaya dan Semarang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C7000</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Sentul dan Surabaya</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C3000</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
+                <span>📍 Jakarta dan Sentul</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
+                <li>Melakukan upgrade firmware jika diperlukan</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Cabling New Office dan Switch+WAP Cisco</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Kohler Indonesia</span>
+                <span>📍 Indonesia</span>
+                
+              </div>
+              <ul class="list">
+                <li>Cabling and Labeling</li>
+                <li>Switch L2 Configuration</li>
+                <li>Switch L3 Configuration</li>
+                <li>Configure VLAN</li>
+                <li>Configure Routing Table</li>
+                <li>Assign VLAN to Each Access Port</li>
+                <li>Configure Trunk Port</li>
+                <li>Configure Virtual Routing and Forwarding</li>
+                <li>Configure to IP Address to Accsess Point</li>
+                <li>Provisioning All AP to Controller</li>
+                <li>OS Upgrade or Firmware Upgraded if Needed</li>
+                <li>Test Network Connectivity from All WAP Configured</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 20 WAP Cisco 2802E</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
+                <span>📍 Cikarang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Configure to IP Address to Accsess Point</li>
+                <li>Provisioning All AP to Controller</li>
+                <li>OS Upgrade or Firmware Upgraded if Needed</li>
+                <li>Test Network Connectivity from All WAP Configured</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2020</span>
+            <span class="year-count">4 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server DellEMC R740, 1 Storage DellEMC Unity 380</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
+                <span>📍 Cikarang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server (Oracle VM and RHEL)</li>
+                <li>Initial Setup System Storage</li>
+                <li>Cabling System Storage</li>
+                <li>Configure System Storage</li>
+                <li>Configure File Resource</li>
+                <li>Configure Hosts</li>
+                <li>Mapping New Volume</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Perangkat Cisco, 3 Core Switch 3850, 1 Router ISR 4431, 2 Wireless Controller 5520, 25 Access Point 3802I/3802E</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
+                <span>📍 Cikarang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Cisco Device</li>
+                <li>Switch L2 Configuration</li>
+                <li>Switch L3 Configuration</li>
+                <li>Configure VLAN</li>
+                <li>Configure Routing Table</li>
+                <li>Assign VLAN to Each Access Port</li>
+                <li>Configure Trunk Port</li>
+                <li>Configure Virtual Routing and Forwarding</li>
+                <li>Configure Stacking</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 4 Server HPE DL580 Gen10,  HPE MSA 2050 SAN, dan HPE SN3600B Switch</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Pulsa Media Bersama</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Initial Setup System Storage</li>
+                <li>Configure Storage</li>
+                <li>Zoning SAN Switch</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 2 Server DellEMC R740 dan CentOS</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 PT. Kejora Gasbumi Mandiri</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2019</span>
+            <span class="year-count">7 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan IBM Expansion V7000</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Bank Muamalat Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install the enclosure in the rack</li>
+                <li>Attach the power and SAS cables</li>
+                <li>Add enclosures</li>
+                <li>Create new mdisk</li>
+                <li>Extend new mdisk to pool existing</li>
+                <li>Extend size volume existing</li>
+                <li>Mapping new volume</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Proof of Concept (PoC) Dell Server</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Pefindo Biro Kredit</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Instalasi baik software maupun hardware</li>
+                <li>Menguasai secara mendalam salah satu atau berapa platform / network operating system untuk membangun suatu data warehouse yang aman dan terintegrasi</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Network & Data Center Audit</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Fonterra Brands Indonesia</span>
+                <span>📍 Jakarta, Cikarang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memahami konsep dan desain infrastruktur yang ada</li>
+                <li>Menguasai secara teknis dan praktis mengenai keamanan jaringan</li>
+                <li>Memeriksa keadaan data center seperti suhu, penerangan, kelembaban, kebersihan, dan keamanan</li>
+                <li>Memeriksa ketersediaan port yang ada</li>
+                <li>Memeriksa jalur port antar switch</li>
+                <li>Mendokumentasikan access point yang ada</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Preventive Maintenance Server IBM & Lenovo</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
+                <span>📍 Jakarta, Tangerang, Bekasi, Karawang, Cirebon</span>
+                
+              </div>
+              <ul class="list">
+                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
+                <li>Troubleshooting dan perbaikan system</li>
+                <li>Membuat laporan pekerjaan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan 3 Server DellEMC R740 dan R440</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support Hardware</span>
+                <span>🏢 Rumah Sakit Ibu dan Anak Sepatan Tangerang</span>
+                <span>📍 Tangerang</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and Configure Server</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Sistem Integrated</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support</span>
+                <span>🏢 YAMAHA INDONESIA MANUFACTURING</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Instalasi Dell R740 dan EMC 380 Unity</li>
+                <li>Configurasi VMware</li>
+                <li>Men-support / maintain Membuat Materi Pelatihan</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Server Lenovo SR550 dan Windows Server 2016</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and configure server</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2018</span>
+            <span class="year-count">7 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Server Lenovo SR550 dan VMware</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Synthetic Rubber Indonesia</span>
+                <span>📍 Cilegon</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install and configure server</li>
+                <li>Create VM</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Technical Support For The ESP Project.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-de">Desktop Engineer</span>
+                <span>🏢 PT. Ingredion Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Instalasi software</li>
+                <li>Troubleshooting dan perbaikan software</li>
+                <li>Men-support / maintain / memelihara sistem komputer</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Technical Support For The ESP Project.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-de">Desktop Engineer</span>
+                <span>🏢 PT. Abbott Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Instalasi software</li>
+                <li>Troubleshooting dan perbaikan software</li>
+                <li>Men-support / maintain / memelihara sistem komputer</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Technical Support For The SSCS Project.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Shell Indonesia, Tbk</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Import and Export Tape Library</li>
+                <li>Troubleshooting dan perbaikan hardware</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Technical Support For The Dell Project.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. NCR Indonesia</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Troubleshooting dan perbaikan hardware</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Technical Support For The Server Monitoring IBM AS/400.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Bank Syariah Bukopin, Tbk</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Check DASD Used</li>
+                <li>Check CPU Used and Memory Used</li>
+                <li>Health Check Activity</li>
+              </ul>
+            </article>
+            <article class="project">
+              <h3>Pekerjaan Pengadaan Storage DellEMC Unity 300</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Bank Commonwealth</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Install system storage</li>
+                <li>Cabling system storage</li>
+                <li>Configure system storage</li>
+                <li>Configure file resources</li>
+                <li>Configure hosts</li>
+                <li>Configure replications DC & DRC</li>
+                <li>Mapping new volume</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2017</span>
+            <span class="year-count">1 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Technical Support For The Smart Digital Banking (SDB).</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Bank Tabungan Pensiunan Nasional, Tbk</span>
+                <span>📍 Jakarta</span>
+                
+              </div>
+              <ul class="list">
+                <li>Instalasi hardware</li>
+                <li>Troubleshooting dan perbaikan hardware</li>
+                <li>Men-support / maintain / memelihara perangkat IT</li>
+              </ul>
+            </article>
+          </div>
+        </details>
+        <details class="year-group">
+          <summary>
+            <span class="year-label">Tahun 2016</span>
+            <span class="year-count">1 Proyek</span>
+          </summary>
+          <div class="year-projects">
+            <article class="project">
+              <h3>Pengadaan SKCK Online Integrated POLRES dan POLSEK (APBNP) TA 2016.</h3>
+              <div class="project-meta">
+                <span class="role-badge role-ts">Technical Support  Hardware</span>
+                <span>🏢 PT. Astra Graphia, Tbk</span>
+                <span>📍 Jakarta</span>
+                <span>🗓️ 2016 - 2017</span>
+              </div>
+              <ul class="list">
+                <li>Instalasi hardware dan software</li>
+                <li>Troubleshooting dan perbaikan hardware</li>
+                <li>Men-support / maintain / memelihara sistem komputer</li>
+              </ul>
+            </article>
+          </div>
+        </details>
       </div>
     </div>
 
-    <footer>Generated by Eka • Eka Taris Ariyudi Tech Edition</footer>
+    <div class="card contact-card">
+      <div class="section-title">📌 Hubungi & Terhubung</div>
+      <div class="contact-grid">
+        <div>
+          <ul class="list" style="margin: 0; padding-left: 0; list-style: none;">
+            <li style="margin-bottom: 12px;">
+              <strong style="color: #4ade80;">📧 Email:</strong> 
+              <a style="color: #93c5fd; text-decoration: none;" href="mailto:ekataris@gmail.com" target="_blank">ekataris@gmail.com</a>
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong style="color: #4ade80;">💼 LinkedIn:</strong> 
+              <a style="color: #93c5fd; text-decoration: none;" href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/" target="_blank">linkedin.com/in/eka-taris-ariyudi-632847218</a>
+            </li>
+            <li style="margin-bottom: 14px;">
+              <strong style="color: #4ade80;">🌐 Website Portofolio:</strong> 
+              <a style="color: #93c5fd; text-decoration: none;" href="https://etariyudi-create.github.io/my-cv/" target="_blank">etariyudi-create.github.io/my-cv/</a>
+            </li>
+          </ul>
+          <button class="download-btn btn-secondary" onclick="requestPhoneNumber()" style="margin-top: 8px;">📞 Request Phone Number</button>
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+          <div style="text-align: center;">
+            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 8px; font-size: 13px;">LinkedIn</div>
+            <div class="qr">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
+                alt="QR LinkedIn"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 8px; font-size: 13px;">Website</div>
+            <div class="qr">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://etariyudi-create.github.io/my-cv/"
+                alt="QR Website"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Generated by Eka • Eka Taris Ariyudi Tech Edition • 2026</footer>
 
     <script>
       if ('serviceWorker' in navigator) {
@@ -1148,41 +1878,86 @@
         });
       }
 
-      function toggleDropdown(header) {
-        const dropdown = header.parentElement;
+      function toggleDropdown(element) {
+        const dropdown = element.parentElement;
         dropdown.classList.toggle('open');
       }
 
       function requestPhoneNumber() {
-        const subject = encodeURIComponent('Request Phone Number - CV Eka Taris Ariyudi');
-        const body = encodeURIComponent('Dear Eka,\n\nI would like to request your phone number for further communication regarding your CV.\n\nThank you.');
-        window.location.href = `mailto:ekataris@gmail.com?subject=${subject}&body=${body}`;
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = '1000';
+        modal.style.backdropFilter = 'blur(8px)';
+
+        const modalContent = document.createElement('div');
+        modalContent.style.background = '#0e1611';
+        modalContent.style.padding = '30px';
+        modalContent.style.borderRadius = '16px';
+        modalContent.style.border = '1px solid #22c55e';
+        modalContent.style.maxWidth = '420px';
+        modalContent.style.width = '90%';
+        modalContent.style.textAlign = 'center';
+        modalContent.style.color = '#fff';
+        modalContent.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.7)';
+
+        modalContent.innerHTML = `
+          <h3 style="color: #4ade80; margin-top: 0; font-size: 20px;">Request Phone Number</h3>
+          <p style="color: #cbd5e1; font-size: 14px; margin: 15px 0;">Silakan hubungi melalui email atau LinkedIn untuk mendapatkan kontak nomor telepon langsung.</p>
+          <div style="margin: 20px 0;">
+            <a href="mailto:ekataris@gmail.com" style="color: #38bdf8; text-decoration: none; display: block; margin: 8px 0; font-weight: 500;">📧 ekataris@gmail.com</a>
+            <a href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/" target="_blank" style="color: #38bdf8; text-decoration: none; display: block; margin: 8px 0; font-weight: 500;">💼 LinkedIn Profile</a>
+          </div>
+          <button id="closeModalBtn" class="download-btn btn-primary" style="margin-top: 10px; width: 100%;">Tutup</button>
+        `;
+
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+          modal.remove();
+        });
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.remove();
+        });
       }
 
-      // Skill Distribution Chart
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
+        // Register datalabels
         Chart.register(ChartDataLabels);
-        
-        const ctx = document.getElementById('skillChart').getContext('2d');
-        
-        new Chart(ctx, {
-          type: 'pie',
+
+        // Technical Skills Donut Chart
+        const skillCtx = document.getElementById('skillChart').getContext('2d');
+        new Chart(skillCtx, {
+          type: 'doughnut',
           data: {
-            labels: ['Storage & Infrastructure', 'Networking', 'Server & Hardware', 'Cloud & Virtualization'],
+            labels: [
+              'Storage & Infrastructure',
+              'Networking',
+              'Server & Hardware',
+              'Cloud & Virtualization'
+            ],
             datasets: [{
-              label: 'Skill Distribution',
-              data: [10, 8, 9, 7],
+              data: [35, 25, 25, 15],
               backgroundColor: [
-                'rgba(255, 215, 0, 0.7)',
-                'rgba(138, 43, 226, 0.7)',
-                'rgba(255, 107, 53, 0.7)',
-                'rgba(33, 150, 243, 0.7)'
+                'rgba(34, 197, 94, 0.85)',
+                'rgba(56, 189, 248, 0.85)',
+                'rgba(251, 146, 60, 0.85)',
+                'rgba(168, 85, 247, 0.85)'
               ],
               borderColor: [
-                'rgba(255, 215, 0, 1)',
-                'rgba(138, 43, 226, 1)',
-                'rgba(255, 107, 53, 1)',
-                'rgba(33, 150, 243, 1)'
+                'rgba(34, 197, 94, 1)',
+                'rgba(56, 189, 248, 1)',
+                'rgba(251, 146, 60, 1)',
+                'rgba(168, 85, 247, 1)'
               ],
               borderWidth: 2
             }]
@@ -1193,37 +1968,34 @@
             plugins: {
               legend: {
                 display: true,
-                position: 'right',
+                position: 'bottom',
                 labels: {
-                  color: '#ffffff',
+                  color: '#e2e8f0',
+                  padding: 12,
                   font: {
-                    size: 12
+                    size: 11.5,
+                    family: 'Inter'
                   }
                 }
               },
               tooltip: {
-                backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                titleColor: '#4caf50',
+                backgroundColor: 'rgba(8, 12, 9, 0.95)',
+                titleColor: '#4ade80',
                 bodyColor: '#ffffff',
-                borderColor: 'rgba(76, 175, 80, 0.5)',
+                borderColor: 'rgba(74, 222, 128, 0.4)',
                 borderWidth: 1,
-                callbacks: {
-                  label: function(context) {
-                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                    const percentage = ((context.parsed / total) * 100).toFixed(1);
-                    return `${context.label}: ${percentage}%`;
-                  }
-                }
+                padding: 10
               },
               datalabels: {
                 color: '#ffffff',
                 font: {
                   weight: 'bold',
-                  size: 14
+                  size: 13,
+                  family: 'Inter'
                 },
-                formatter: function(value, context) {
+                formatter: function (value, context) {
                   const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                  const percentage = ((value / total) * 100).toFixed(1);
+                  const percentage = ((value / total) * 100).toFixed(0);
                   return percentage + '%';
                 }
               }
@@ -1231,42 +2003,29 @@
           }
         });
 
-        // Work Experience Bar Chart
+        // Work Experience Donut Chart
         const expCtx = document.getElementById('experienceChart').getContext('2d');
-        
         new Chart(expCtx, {
           type: 'doughnut',
           data: {
             labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
               label: 'Jumlah Proyek',
-              data: [1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1],
+              data: [1, 1, 7, 7, 4, 5, 6, 5, 4, 7, 5],
               backgroundColor: [
-                'rgba(255, 215, 0, 0.7)',
-                'rgba(138, 43, 226, 0.7)',
-                'rgba(255, 107, 53, 0.7)',
-                'rgba(33, 150, 243, 0.7)',
-                'rgba(0, 188, 212, 0.7)',
-                'rgba(255, 193, 7, 0.7)',
-                'rgba(156, 39, 176, 0.7)',
-                'rgba(255, 87, 34, 0.7)',
-                'rgba(76, 175, 80, 0.7)',
-                'rgba(255, 112, 67, 0.7)',
-                'rgba(38, 198, 218, 0.7)'
+                'rgba(250, 204, 21, 0.8)',
+                'rgba(168, 85, 247, 0.8)',
+                'rgba(249, 115, 22, 0.8)',
+                'rgba(59, 130, 246, 0.8)',
+                'rgba(6, 182, 212, 0.8)',
+                'rgba(234, 179, 8, 0.8)',
+                'rgba(192, 132, 252, 0.8)',
+                'rgba(244, 63, 94, 0.8)',
+                'rgba(34, 197, 94, 0.8)',
+                'rgba(251, 146, 60, 0.8)',
+                'rgba(45, 212, 191, 0.8)'
               ],
-              borderColor: [
-                'rgba(255, 215, 0, 1)',
-                'rgba(138, 43, 226, 1)',
-                'rgba(255, 107, 53, 1)',
-                'rgba(33, 150, 243, 1)',
-                'rgba(0, 188, 212, 1)',
-                'rgba(255, 193, 7, 1)',
-                'rgba(156, 39, 176, 1)',
-                'rgba(255, 87, 34, 1)',
-                'rgba(76, 175, 80, 1)',
-                'rgba(255, 112, 67, 1)',
-                'rgba(38, 198, 218, 1)'
-              ],
+              borderColor: 'rgba(8, 12, 9, 0.8)',
               borderWidth: 2
             }]
           },
@@ -1278,26 +2037,35 @@
                 display: true,
                 position: 'right',
                 labels: {
-                  color: '#ffffff',
+                  color: '#e2e8f0',
+                  padding: 8,
                   font: {
-                    size: 12
+                    size: 11,
+                    family: 'Inter'
                   }
                 }
               },
               tooltip: {
-                backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                titleColor: '#4caf50',
+                backgroundColor: 'rgba(8, 12, 9, 0.95)',
+                titleColor: '#4ade80',
                 bodyColor: '#ffffff',
-                borderColor: 'rgba(76, 175, 80, 0.5)',
-                borderWidth: 1
+                borderColor: 'rgba(74, 222, 128, 0.4)',
+                borderWidth: 1,
+                padding: 10,
+                callbacks: {
+                  label: function (context) {
+                    return ' ' + context.label + ': ' + context.raw + ' Proyek';
+                  }
+                }
               },
               datalabels: {
                 color: '#ffffff',
                 font: {
                   weight: 'bold',
-                  size: 12
+                  size: 11,
+                  family: 'Inter'
                 },
-                formatter: function(value, context) {
+                formatter: function (value) {
                   return value;
                 }
               }
@@ -1323,18 +2091,14 @@
                 img.src = await blobToDataURL(blob);
                 return;
               }
-            } catch (error) {
-              // fallback below
-            }
+            } catch (error) {}
             try {
               const response = await fetch(img.src, { mode: 'no-cors' });
               if (response.ok || response.type === 'opaque') {
                 const blob = await response.blob();
                 img.src = await blobToDataURL(blob);
               }
-            } catch (error) {
-              // Jika gambar eksternal tidak bisa diambil, biarkan saja
-            }
+            } catch (error) {}
           })
         );
 
@@ -1343,14 +2107,18 @@
           .join('');
 
         const wordStyle = `<style>
-          body { background: #fff !important; color: #000 !important; }
+          body { background: #fff !important; color: #000 !important; font-family: Arial, sans-serif !important; }
           p, span, div, li, h1, h2, h3, h4, h5, h6, a { color: #000 !important; background: transparent !important; }
           a, a:link, a:visited { color: #000 !important; text-decoration: none !important; }
-          .card, .project { background: none !important; box-shadow: none !important; border: none !important; }
+          .card, .project { background: none !important; box-shadow: none !important; border: 1px solid #ddd !important; margin-bottom: 12px !important; }
           .download-btn, .qr { display: none !important; }
-          .profile-photo { max-width: 100% !important; height: auto !important; }
+          .profile-photo { max-width: 100px !important; height: auto !important; }
           .logo-chip img { height: 18px !important; width: auto !important; }
           .dropdown-header strong { color: #000 !important; }
+          .year-group { border: 1px solid #ccc !important; }
+          .year-group summary { background: #eee !important; color: #000 !important; }
+          .year-label { color: #000 !important; }
+          .year-count { background: #ddd !important; color: #000 !important; }
         </style>`;
 
         const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${document.title}</title>${styleTags}${wordStyle}</head><body>${clone.innerHTML}</body></html>`;

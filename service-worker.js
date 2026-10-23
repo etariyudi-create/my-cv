@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cv-eka-v5';
+const CACHE_NAME = 'cv-eka-v8';
 const OFFLINE_URL = 'offline.html';
 const ASSETS = [
   './',
@@ -7,7 +7,19 @@ const ASSETS = [
   './offline.html',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  'https://cdn.jsdelivr.net/npm/chart.js'
+  './assets/profile.png',
+  './assets/logos/cisco.svg',
+  './assets/logos/dell.svg',
+  './assets/logos/dellemc.svg',
+  './assets/logos/hpe.svg',
+  './assets/logos/netapp.svg',
+  './assets/logos/nutanix.svg',
+  './assets/logos/ibm.svg',
+  './assets/logos/huawei.svg',
+  './assets/logos/vmware.svg',
+  './assets/logos/sangfor.svg',
+  'https://cdn.jsdelivr.net/npm/chart.js',
+  'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0'
 ];
 
 self.addEventListener('install', e => {
