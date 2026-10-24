@@ -1,101 +1,88 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>CV Eka Taris Ariyudi — System Engineer</title>
-
+    <title id="docTitle">Eka Taris Ariyudi — Senior System Engineer | Enterprise IT Infrastructure</title>
+    <meta name="description" content="Senior System Engineer with 10 years of enterprise IT experience in servers, storage systems (Dell EMC, NetApp, HPE), and hybrid virtualization (VMware, Proxmox, Nutanix, Sangfor)." />
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#080c09" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="CV Eka" />
-    <link rel="apple-touch-icon" href="icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
-
+    <meta name="theme-color" content="#22c55e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
     <style>
-      /* ========================================================
-         MODERN HIGH-END DARK TECH THEME (Linear / Vercel Aesthetic)
-         ======================================================== */
+      :root {
+        --primary: #22c55e;
+        --primary-glow: rgba(34, 197, 94, 0.4);
+        --bg-main: #080c09;
+        --card-bg: rgba(13, 20, 15, 0.85);
+        --card-border: rgba(74, 222, 128, 0.2);
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --text-dim: #64748b;
+      }
+
       * {
         box-sizing: border-box;
       }
 
       body {
-        font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background-color: #080c09;
-        background-image: 
-          radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.16) 0%, transparent 45%),
-          radial-gradient(circle at 100% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-          radial-gradient(circle at 0% 75%, rgba(21, 128, 61, 0.09) 0%, transparent 40%),
-          radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-        background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
-        background-attachment: fixed;
-        color: #f1f5f9;
         margin: 28px auto;
-        max-width: 1240px;
         padding: 0 20px;
-        line-height: 1.65;
+        max-width: 1200px;
+        background-color: var(--bg-main);
+        background-image:
+          radial-gradient(ellipse at top left, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+        background-attachment: fixed;
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
 
-      /* Glassmorphism Cards */
+      /* Card Styling */
       .card {
-        background: rgba(13, 20, 15, 0.72);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(74, 222, 128, 0.18);
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
         border-radius: 18px;
-        padding: 24px;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        position: relative;
-        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        padding: 22px 24px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
       }
 
       .card:hover {
         border-color: rgba(74, 222, 128, 0.35);
-        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(74, 222, 128, 0.08);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(34, 197, 94, 0.08);
       }
 
-      /* Hero Header Card */
+      /* Header Card */
       .header-card {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        padding: 26px 28px;
         margin-bottom: 22px;
       }
 
       .profile-header {
         display: flex;
-        align-items: center;
         gap: 24px;
+        align-items: center;
         flex-wrap: wrap;
       }
 
       .profile-photo {
-        width: 110px;
-        height: 110px;
+        width: 104px;
+        height: 104px;
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #22c55e;
-        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.18), 0 12px 28px rgba(0, 0, 0, 0.6);
-        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      .profile-photo:hover {
-        transform: scale(1.06) rotate(1deg);
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
+        flex-shrink: 0;
       }
 
       .profile-info {
@@ -106,97 +93,90 @@
       .profile-title-row {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 8px;
+        flex-wrap: wrap;
       }
 
       .profile-title-row h1 {
         margin: 0;
-        font-size: 28px;
+        font-size: 27px;
         font-weight: 800;
-        letter-spacing: -0.5px;
         color: #ffffff;
+        letter-spacing: -0.5px;
       }
 
       .role-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 4px 14px;
-        background: rgba(34, 197, 94, 0.14);
+        background: rgba(34, 197, 94, 0.15);
         color: #4ade80;
-        border: 1px solid rgba(34, 197, 94, 0.35);
+        border: 1px solid rgba(74, 222, 128, 0.35);
+        padding: 4px 12px;
         border-radius: 999px;
-        font-size: 13px;
+        font-size: 12.5px;
         font-weight: 700;
-        letter-spacing: 0.6px;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
       }
 
       .header-contact-row {
+        margin-top: 8px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 14px;
-        color: #94a3b8;
-        font-size: 14px;
-        margin-top: 6px;
+        gap: 12px;
+        font-size: 13.5px;
+        color: #cbd5e1;
       }
 
       .header-contact-row a {
-        color: #94a3b8;
+        color: #38bdf8;
         text-decoration: none;
         transition: color 0.2s ease;
       }
 
       .header-contact-row a:hover {
-        color: #4ade80;
+        color: #7dd3fc;
+        text-decoration: underline;
       }
 
+      /* Action Bar */
       .header-actions {
         display: flex;
+        gap: 10px;
+        margin-top: 18px;
+        margin-bottom: 14px;
         flex-wrap: wrap;
-        gap: 12px;
         align-items: center;
-        padding-top: 4px;
       }
 
-      /* Modern Button Styles */
       .download-btn {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 22px;
+        gap: 7px;
+        border: none;
         border-radius: 10px;
-        font-size: 14px;
+        padding: 10px 18px;
+        font-size: 13px;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.25s ease;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        border: none;
-        outline: none;
       }
 
       .btn-primary {
         background: linear-gradient(135deg, #22c55e, #16a34a);
-        color: #ffffff;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+        color: #080c09;
+        box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
       }
 
       .btn-primary:hover {
         background: linear-gradient(135deg, #4ade80, #22c55e);
-        box-shadow: 0 6px 24px rgba(34, 197, 94, 0.5);
         transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(34, 197, 94, 0.5);
       }
 
       .btn-secondary {
         background: rgba(255, 255, 255, 0.06);
         color: #e2e8f0;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.15);
       }
 
       .btn-secondary:hover {
@@ -206,58 +186,108 @@
         transform: translateY(-2px);
       }
 
+      .btn-lang {
+        background: rgba(56, 189, 248, 0.12);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        margin-left: auto;
+      }
+
+      .btn-lang:hover {
+        background: rgba(56, 189, 248, 0.22);
+        border-color: #38bdf8;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
       /* Logo Chips */
       .logo-row {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 10px;
-        margin-top: 4px;
+        gap: 8px;
+        margin-top: 14px;
       }
 
       .logo-row .logo-chip {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        height: 36px;
-        padding: 0 14px;
+        gap: 7px;
+        height: 34px;
+        padding: 0 12px;
         background: #ffffff;
         border-radius: 999px;
         color: #0f172a;
-        font-size: 13px;
+        font-size: 12.5px;
         font-weight: 700;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
 
       .logo-row .logo-chip:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 6px 16px rgba(34, 197, 94, 0.3);
       }
 
       .logo-row .logo-chip img {
-        height: 20px;
+        height: 18px;
         width: auto;
         margin: 0;
-        filter: none;
       }
 
       .logo-row .logo-chip--wordmark img {
-        height: 22px;
+        height: 20px;
+      }
+
+      /* Metrics Strip (Impact Highlights) */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .metric-card {
+        background: rgba(13, 20, 15, 0.6);
+        border: 1px solid rgba(74, 222, 128, 0.22);
+        border-radius: 14px;
+        padding: 14px 16px;
+        text-align: center;
+        transition: all 0.25s ease;
+      }
+
+      .metric-card:hover {
+        border-color: rgba(74, 222, 128, 0.45);
+        transform: translateY(-2px);
+      }
+
+      .metric-val {
+        font-size: 22px;
+        font-weight: 800;
+        color: #4ade80;
+        line-height: 1.2;
+      }
+
+      .metric-label {
+        font-size: 11.5px;
+        color: #94a3b8;
+        font-weight: 600;
+        margin-top: 4px;
+        line-height: 1.3;
       }
 
       /* Section Titles */
       .section-title {
-        font-size: 15px;
+        font-size: 14.5px;
         font-weight: 800;
         color: #4ade80;
         text-transform: uppercase;
-        letter-spacing: 1.2px;
+        letter-spacing: 1.1px;
         display: flex;
         align-items: center;
         gap: 8px;
         margin: 0 0 14px 0;
-        padding-bottom: 10px;
+        padding-bottom: 8px;
         border-bottom: 1px solid rgba(74, 222, 128, 0.2);
       }
 
@@ -266,14 +296,13 @@
         display: grid;
         grid-template-columns: 36% 64%;
         gap: 22px;
-        margin-top: 22px;
       }
 
       .left-col, .right-col {
         min-width: 0;
       }
 
-      /* List & Content */
+      /* Lists */
       .list {
         margin: 8px 0 0 0;
         padding-left: 20px;
@@ -282,16 +311,6 @@
 
       .list li {
         margin-bottom: 6px;
-        transition: transform 0.2s ease, color 0.2s ease;
-      }
-
-      .list li:hover {
-        color: #ffffff;
-      }
-
-      .muted {
-        color: #94a3b8;
-        font-size: 14px;
       }
 
       /* Dropdown Styles */
@@ -301,7 +320,7 @@
 
       .dropdown-header {
         background: rgba(255, 255, 255, 0.03);
-        padding: 12px 16px;
+        padding: 11px 15px;
         border-radius: 10px;
         cursor: pointer;
         display: flex;
@@ -318,13 +337,13 @@
 
       .dropdown-header strong {
         color: #e2e8f0;
-        font-size: 14px;
+        font-size: 13.5px;
       }
 
       .dropdown-icon {
         transition: transform 0.3s ease;
         color: #4ade80;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .dropdown.open .dropdown-icon {
@@ -344,27 +363,28 @@
       }
 
       .dropdown-content ul {
-        padding: 12px 16px 12px 32px;
+        padding: 10px 14px 10px 28px;
         margin: 0;
       }
 
       .dropdown-content li {
-        padding: 4px 0;
+        padding: 3px 0;
         color: #cbd5e1;
-        font-size: 13.5px;
+        font-size: 13px;
       }
 
-      /* Tech Table */
+      /* Tech & Soft Skills Table */
       .tech-table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 8px;
+        margin-top: 6px;
       }
 
       .tech-table td {
-        padding: 9px 12px;
+        padding: 8px 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        font-size: 13.5px;
+        font-size: 13px;
+        vertical-align: top;
       }
 
       .tech-table tr:last-child td {
@@ -374,131 +394,154 @@
       .tech-table td:first-child {
         font-weight: 700;
         color: #4ade80;
-        width: 36%;
+        width: 38%;
       }
 
       .tech-table td:last-child {
         color: #cbd5e1;
       }
 
-      /* Year Group Accordion */
-      .year-group {
-        margin-bottom: 14px;
+      /* Project Filter Bar */
+      .project-filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+        align-items: center;
+      }
+
+      .filter-btn {
+        background: rgba(255, 255, 255, 0.04);
+        color: #94a3b8;
+        border: 1px solid rgba(74, 222, 128, 0.2);
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 11.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .filter-btn:hover {
+        background: rgba(34, 197, 94, 0.12);
+        color: #4ade80;
+        border-color: rgba(74, 222, 128, 0.4);
+      }
+
+      .filter-btn.active {
+        background: #22c55e;
+        color: #080c09;
+        font-weight: 700;
+        border-color: #22c55e;
+        box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
+      }
+
+      /* Responsive Table & Project Table */
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .project-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 13px;
+        background: rgba(13, 20, 15, 0.45);
         border-radius: 12px;
         overflow: hidden;
         border: 1px solid rgba(74, 222, 128, 0.18);
-        background: rgba(13, 20, 15, 0.5);
-        transition: all 0.25s ease;
+        margin-bottom: 8px;
       }
 
-      .year-group:hover {
-        border-color: rgba(74, 222, 128, 0.35);
-      }
-
-      .year-group summary {
-        list-style: none;
-        background: rgba(255, 255, 255, 0.03);
-        padding: 14px 18px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        user-select: none;
-        transition: background 0.2s ease;
-      }
-
-      .year-group summary::-webkit-details-marker {
-        display: none;
-      }
-
-      .year-group summary:hover {
-        background: rgba(34, 197, 94, 0.08);
-      }
-
-      .year-group[open] summary {
-        background: rgba(34, 197, 94, 0.1);
-        border-bottom: 1px solid rgba(74, 222, 128, 0.18);
-      }
-
-      .year-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 15px;
-        font-weight: 700;
-        color: #f1f5f9;
-      }
-
-      .year-label::before {
-        content: '▶';
-        font-size: 10px;
+      .project-table th {
+        background: rgba(34, 197, 94, 0.12);
         color: #4ade80;
-        transition: transform 0.25s ease;
-        display: inline-block;
-      }
-
-      .year-group[open] .year-label::before {
-        transform: rotate(90deg);
-      }
-
-      .year-count {
-        background: rgba(34, 197, 94, 0.15);
-        color: #4ade80;
-        border: 1px solid rgba(34, 197, 94, 0.35);
-        border-radius: 999px;
-        padding: 3px 12px;
-        font-size: 11px;
+        font-size: 11.5px;
         font-weight: 700;
-        letter-spacing: 0.5px;
         text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 9px 10px;
+        text-align: left;
+        border-bottom: 1px solid rgba(74, 222, 128, 0.22);
       }
 
-      .year-projects {
-        padding: 16px 14px 4px 14px;
+      .project-table th.th-no { width: 4%; text-align: center; }
+      .project-table th.th-year { width: 7%; text-align: center; }
+      .project-table th.th-project { width: 37%; }
+      .project-table th.th-role { width: 14%; }
+      .project-table th.th-tasks { width: 38%; }
+
+      .project-table td {
+        padding: 10px 10px;
+        vertical-align: top;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: #cbd5e1;
+        line-height: 1.4;
       }
 
-      /* Project Cards */
-      .project {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-left: 4px solid #22c55e;
-        border-radius: 12px;
-        padding: 16px 18px;
-        margin-bottom: 14px;
-        transition: all 0.25s ease;
+      .project-table tr:last-child td {
+        border-bottom: none;
       }
 
-      .project:hover {
+      .project-table tr:hover td {
         background: rgba(34, 197, 94, 0.04);
-        border-color: rgba(34, 197, 94, 0.28);
-        border-left-color: #4ade80;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       }
 
-      .project h3 {
-        margin: 0 0 8px 0;
-        font-size: 15px;
+      .col-no {
+        text-align: center;
         font-weight: 700;
-        color: #f8fafc;
-        line-height: 1.45;
+        color: #94a3b8;
       }
 
-      .project-meta {
+      .col-year {
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .year-pill {
+        display: inline-block;
+        background: rgba(34, 197, 94, 0.12);
+        color: #4ade80;
+        border: 1px solid rgba(74, 222, 128, 0.3);
+        padding: 2px 7px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 11.5px;
+        white-space: nowrap;
+      }
+
+      .col-project .project-title {
+        color: #f1f5f9;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 1.35;
+        margin-bottom: 4px;
+      }
+
+      .col-project .project-meta-info {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
         align-items: center;
-        font-size: 13px;
+        gap: 6px;
+        font-size: 11.5px;
         color: #94a3b8;
-        margin-bottom: 10px;
+      }
+
+      .meta-sep {
+        color: rgba(74, 222, 128, 0.4);
+      }
+
+      .col-role {
+        white-space: nowrap;
       }
 
       .role-badge {
-        padding: 2px 10px;
+        display: inline-block;
+        padding: 2px 8px;
         border-radius: 6px;
-        font-size: 11px;
+        font-size: 10.5px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -522,36 +565,51 @@
         border: 1px solid rgba(251, 146, 60, 0.3);
       }
 
-      /* QR Codes */
-      .qr img {
-        height: 150px;
-        width: 150px;
-        border-radius: 10px;
-        background: #ffffff;
-        padding: 6px;
-        object-fit: contain;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      .col-tasks .task-list {
+        margin: 0;
+        padding-left: 16px;
+        color: #cbd5e1;
       }
 
-      /* Contact Closing Card */
+      .col-tasks .task-list li {
+        margin-bottom: 3px;
+        line-height: 1.3;
+        font-size: 12px;
+      }
+
+      .col-tasks .task-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* QR Codes & Contact Card */
+      .qr img {
+        height: 130px;
+        width: 130px;
+        border-radius: 10px;
+        background: #ffffff;
+        padding: 5px;
+        object-fit: contain;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      }
+
       .contact-card {
         margin-top: 24px;
-        padding: 26px 28px;
+        padding: 22px 26px;
       }
 
       .contact-grid {
         display: grid;
         grid-template-columns: 1fr auto;
-        gap: 28px;
+        gap: 24px;
         align-items: center;
       }
 
       /* Footer */
       footer {
-        margin-top: 36px;
+        margin-top: 32px;
         margin-bottom: 12px;
         color: #64748b;
-        font-size: 13px;
+        font-size: 12.5px;
         text-align: center;
       }
 
@@ -559,6 +617,9 @@
       @media (max-width: 960px) {
         .container {
           grid-template-columns: 1fr;
+        }
+        .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
         .contact-grid {
           grid-template-columns: 1fr;
@@ -569,111 +630,285 @@
 
       @media (max-width: 640px) {
         body {
-          margin: 16px auto;
-          padding: 0 14px;
+          margin: 14px auto;
+          padding: 0 12px;
         }
         .profile-photo {
-          width: 86px;
-          height: 86px;
+          width: 80px;
+          height: 80px;
         }
         .profile-title-row h1 {
-          font-size: 22px;
+          font-size: 21px;
         }
-        .qr img {
-          height: 120px;
-          width: 120px;
+        .metrics-grid {
+          grid-template-columns: 1fr;
         }
         .logo-row .logo-chip {
-          height: 32px;
-          padding: 0 10px;
-          font-size: 12px;
+          height: 30px;
+          padding: 0 8px;
+          font-size: 11.5px;
         }
         .logo-row .logo-chip img {
-          height: 18px;
+          height: 16px;
         }
       }
 
-      /* Print Optimizations */
+      /* ATS-Compliant Print Optimizations */
       @media print {
+        @page {
+          size: A4;
+          margin: 10mm 8mm;
+        }
         body {
           background: #ffffff !important;
-          color: #000000 !important;
+          color: #0f172a !important;
           margin: 0 !important;
           padding: 0 !important;
-          font-size: 9.5pt;
+          font-size: 8.5pt !important;
+          line-height: 1.3 !important;
+          font-family: Arial, Helvetica, sans-serif !important;
         }
-        .download-btn, footer {
+        .header-actions, .download-btn, .btn-lang, .project-filter-bar, footer {
           display: none !important;
+        }
+        .header-card {
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 0 10px 0 !important;
+          margin-bottom: 12px !important;
+          border-bottom: 2px solid #22c55e !important;
+        }
+        .profile-photo {
+          width: 70px !important;
+          height: auto !important;
+          border: 1px solid #94a3b8 !important;
+          box-shadow: none !important;
+        }
+        .profile-title-row h1 {
+          color: #0f172a !important;
+          font-size: 16pt !important;
+        }
+        .role-tag {
+          background: #f1f5f9 !important;
+          color: #0f172a !important;
+          border: 1px solid #94a3b8 !important;
+          font-size: 8pt !important;
+        }
+        .header-contact-row {
+          color: #334155 !important;
+          font-size: 8pt !important;
+        }
+        .header-contact-row a {
+          color: #0f172a !important;
+          text-decoration: none !important;
+        }
+        .logo-row {
+          margin-top: 6px !important;
+          gap: 6px !important;
+        }
+        .logo-chip {
+          height: 20px !important;
+          padding: 0 6px !important;
+          font-size: 7.5pt !important;
+          border: 1px solid #cbd5e1 !important;
+          box-shadow: none !important;
+        }
+        .logo-chip img {
+          height: 11px !important;
+        }
+        .metrics-grid {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 8px !important;
+          margin-bottom: 10px !important;
+        }
+        .metric-card {
+          background: #f8fafc !important;
+          border: 1px solid #cbd5e1 !important;
+          padding: 6px 8px !important;
+        }
+        .metric-val {
+          color: #166534 !important;
+          font-size: 11pt !important;
+        }
+        .metric-label {
+          color: #334155 !important;
+          font-size: 7pt !important;
         }
         .container {
           display: block !important;
           width: 100% !important;
           padding: 0 !important;
+          margin-top: 8px !important;
         }
-        .card, .project {
+        .card {
           background: none !important;
           box-shadow: none !important;
-          border: none !important;
-          padding: 0 !important;
+          border: 1px solid #cbd5e1 !important;
+          padding: 8px 10px !important;
+          margin-bottom: 10px !important;
+          page-break-inside: avoid;
         }
-        .qr img {
-          width: 85px !important;
-          height: 85px !important;
-          padding: 0 !important;
+        .section-title {
+          color: #166534 !important;
+          font-size: 9.5pt !important;
+          font-weight: 800 !important;
+          border-bottom: 1px solid #bbf7d0 !important;
+          padding-bottom: 3px !important;
+          margin: 0 0 6px 0 !important;
         }
-        h1, h2, h3, .section-title {
-          color: #000000 !important;
+        .tech-table td {
+          padding: 3px 6px !important;
+          font-size: 7.8pt !important;
+          border-bottom: 1px solid #e2e8f0 !important;
         }
-        .muted, .contact {
-          color: #555555 !important;
+        .tech-table td:first-child {
+          color: #15803d !important;
         }
-        .dropdown-content {
-          max-height: none !important;
-          display: block !important;
+        .tech-table td:last-child {
+          color: #334155 !important;
+        }
+        .dropdown {
+          margin-bottom: 4px !important;
+        }
+        .dropdown-header {
+          padding: 3px 6px !important;
+          background: #f8fafc !important;
+          border: 1px solid #e2e8f0 !important;
+          font-size: 8pt !important;
+        }
+        .dropdown-header strong {
+          color: #0f172a !important;
         }
         .dropdown-icon {
           display: none !important;
         }
-        .year-group {
-          border: 1px solid #ccc !important;
-          background: none !important;
-          margin-bottom: 10px !important;
+        .dropdown-content {
+          max-height: none !important;
+          display: block !important;
+          background: transparent !important;
+        }
+        .dropdown-content ul {
+          padding: 3px 10px !important;
+        }
+        .dropdown-content li {
+          font-size: 7.5pt !important;
+          color: #334155 !important;
+          padding: 1px 0 !important;
+        }
+        /* Project Table in Print */
+        .project-table {
+          width: 100% !important;
+          border-collapse: collapse !important;
+          border: 1px solid #cbd5e1 !important;
+          background: #ffffff !important;
+          font-size: 7.5pt !important;
+          page-break-inside: auto !important;
+          margin-bottom: 0 !important;
+        }
+        .project-table thead {
+          display: table-header-group !important;
+        }
+        .project-table th {
+          background: #f1f5f9 !important;
+          color: #0f172a !important;
+          border: 1px solid #94a3b8 !important;
+          padding: 3px 5px !important;
+          font-size: 7.5pt !important;
+          font-weight: 700 !important;
+          letter-spacing: 0 !important;
+          text-align: left !important;
+        }
+        .project-table th.th-no { text-align: center !important; width: 4% !important; }
+        .project-table th.th-year { text-align: center !important; width: 7% !important; }
+        .project-table th.th-project { width: 36% !important; }
+        .project-table th.th-role { width: 14% !important; }
+        .project-table th.th-tasks { width: 39% !important; }
+        .project-table td {
+          border: 1px solid #cbd5e1 !important;
+          padding: 3px 5px !important;
+          font-size: 7.2pt !important;
+          line-height: 1.25 !important;
+          color: #1e293b !important;
+          vertical-align: top !important;
+        }
+        .project-table tr {
+          page-break-inside: avoid !important;
+        }
+        .project-table tr:nth-child(even) td {
+          background: #f8fafc !important;
+        }
+        .col-no {
+          text-align: center !important;
+          font-weight: 700 !important;
+          color: #475569 !important;
+        }
+        .col-year {
+          text-align: center !important;
+          white-space: nowrap !important;
+        }
+        .year-pill {
+          background: #f1f5f9 !important;
+          color: #0f172a !important;
+          border: 1px solid #94a3b8 !important;
+          padding: 1px 4px !important;
+          font-weight: 700 !important;
+          font-size: 7pt !important;
+        }
+        .col-project .project-title {
+          color: #0f172a !important;
+          font-weight: 700 !important;
+          font-size: 7.5pt !important;
+          margin-bottom: 2px !important;
+        }
+        .col-project .project-meta-info {
+          color: #475569 !important;
+          font-size: 6.8pt !important;
+          gap: 4px !important;
+        }
+        .meta-sep {
+          color: #94a3b8 !important;
+        }
+        .role-badge {
+          display: inline-block !important;
+          font-size: 6.5pt !important;
+          padding: 1px 4px !important;
+          border-radius: 3px !important;
+          border: 1px solid #94a3b8 !important;
+          color: #0f172a !important;
+          background: #f1f5f9 !important;
+        }
+        .col-tasks .task-list {
+          margin: 0 !important;
+          padding-left: 10px !important;
+          color: #1e293b !important;
+        }
+        .col-tasks .task-list li {
+          font-size: 6.8pt !important;
+          line-height: 1.2 !important;
+          margin-bottom: 1px !important;
+        }
+        .contact-card, .qr {
           page-break-inside: avoid;
-        }
-        .year-group summary {
-          background: #f0f0f0 !important;
-          color: #000 !important;
-          border-bottom: 1px solid #ccc !important;
-          padding: 5px 8px !important;
-        }
-        .year-label {
-          color: #000 !important;
-        }
-        .year-label::before {
-          display: none !important;
-        }
-        .year-count {
-          background: #e0e0e0 !important;
-          color: #000 !important;
-          border: 1px solid #999 !important;
         }
       }
     </style>
   </head>
   <body>
+    <!-- Header Card -->
     <div class="card header-card">
       <div class="profile-header">
-        <img src="assets/profile.png" alt="Foto Eka Taris Ariyudi" class="profile-photo" />
+        <img src="assets/profile.png" alt="Photo Eka Taris Ariyudi" class="profile-photo" />
 
         <div class="profile-info">
           <div class="profile-title-row">
-            <h1>👨‍💻 Eka Taris Ariyudi</h1>
-            <span class="role-tag">System Engineer</span>
+            <h1>Eka Taris Ariyudi</h1>
+            <span class="role-tag" id="uiRoleTag">Senior System Engineer</span>
           </div>
           <div class="header-contact-row">
-            <span>📍 Tangerang, Indonesia</span>
+            <span id="uiLocation">📍 Greater Jakarta, Indonesia (Open to Remote / Relocation)</span>
             <span>•</span>
-            <a href="mailto:ekataris@gmail.com">📧 ekataris@gmail.com</a>
+            <a href="mailto:ekataris@gmail.com">✉️ ekataris@gmail.com</a>
             <span>•</span>
             <a href="https://etariyudi-create.github.io/my-cv/" target="_blank">🌐 etariyudi-create.github.io/my-cv/</a>
           </div>
@@ -681,13 +916,14 @@
       </div>
 
       <div class="header-actions">
-        <button class="download-btn btn-primary" onclick="window.print()">⬇️ Download CV (PDF)</button>
-        <button class="download-btn btn-secondary" onclick="downloadWordDoc()">⬇️ Download CV (Word)</button>
+        <button class="download-btn btn-primary" id="btnDownloadPdf" onclick="window.print()">⬇️ Download CV (PDF)</button>
+        <button class="download-btn btn-secondary" id="btnDownloadWord" onclick="downloadWordDoc()">⬇️ Download CV (Word)</button>
+        <button class="download-btn btn-lang" id="btnLangToggle" onclick="toggleLanguage()">🌐 Bahasa Indonesia</button>
       </div>
 
       <div class="logo-row">
         <span class="logo-chip"><img alt="Cisco" src="assets/logos/cisco.svg" />Cisco</span>
-        <span class="logo-chip"><img alt="Dell Technologies" src="assets/logos/dell.svg" />Dell</span>
+        <span class="logo-chip"><img alt="Red Hat" src="assets/logos/redhat.svg" />Red Hat</span>
         <span class="logo-chip logo-chip--wordmark"><img alt="Dell EMC" src="assets/logos/dellemc.svg" /></span>
         <span class="logo-chip logo-chip--wordmark"><img alt="Hewlett Packard Enterprise" src="assets/logos/hpe.svg" /></span>
         <span class="logo-chip"><img alt="NetApp" src="assets/logos/netapp.svg" />NetApp</span>
@@ -699,1154 +935,275 @@
       </div>
     </div>
 
-    <div class="card" style="margin-bottom: 22px;">
-      <div class="section-title">🌟 Profil Singkat</div>
-      <p class="list">
-        System Engineer dengan pengalaman sejak 2016 (10 tahun), termasuk di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.
+    <!-- Impact Metrics Strip -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val" id="uiMetric1Val">10+ Years</div>
+        <div class="metric-label" id="uiMetric1Label">Enterprise IT Experience</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="uiMetric2Val">52 Projects</div>
+        <div class="metric-label" id="uiMetric2Label">Enterprise Deployments Delivered</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="uiMetric3Val">15+ Certs</div>
+        <div class="metric-label" id="uiMetric3Label">Vendor Accreditations (Cisco, Nutanix, HPE)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" id="uiMetric4Val">Tier-1</div>
+        <div class="metric-label" id="uiMetric4Label">Banking & Enterprise Clients (BTN, Shell)</div>
+      </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="section-title" id="secTitleSummary">⭐ Professional Summary</div>
+      <p class="list" id="uiSummaryText" style="margin: 0; line-height: 1.65; color: #cbd5e1;">
+        Results-driven Senior System Engineer with 10 years of enterprise IT infrastructure experience specializing in mission-critical server environments, enterprise storage architectures (Dell EMC, NetApp, HPE), and hybrid-cloud virtualization (VMware, Nutanix AHV, Proxmox VE, Sangfor HCI). Proven track record delivering 50+ end-to-end infrastructure deployments, data center migrations, and high-availability operations for tier-1 financial institutions (Bank BTN, BPD Sultra) and multinational corporations (Shell Indonesia). Certified professional holding credentials including Cisco CCNP Enterprise, Nutanix NCP-MCI / NCSE-Core, HPE ATP, and Huawei HCIA.
       </p>
     </div>
 
-    <div class="card" style="margin-bottom: 22px;">
-      <div class="section-title">🎓 Pendidikan</div>
+    <!-- Education -->
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="section-title" id="secTitleEducation">🎓 Education</div>
       <ul class="list">
         <li>
-          <strong>Strata 1 / Teknik Informatika</strong><br />
-          Universitas Mercu Buana, Jakarta (2017)
+          <strong id="uiDegreeName">Bachelor of Science in Informatics Engineering (Computer Science)</strong><br />
+          <span id="uiDegreeInst" style="color: #94a3b8;">Universitas Mercu Buana, Jakarta (Graduated 2017)</span>
         </li>
       </ul>
     </div>
 
     <div class="container">
+      <!-- Left Column: Skills, Tech Profile, Certs -->
       <div class="left-col">
-        <div class="section-title">📊 Distribusi Keahlian</div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
-          <canvas id="skillChart" style="max-height: 300px;"></canvas>
+        <div class="section-title" id="secTitleSkillsDist">📊 Skills Distribution</div>
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <canvas id="skillChart" style="max-height: 280px;"></canvas>
         </div>
 
-        <div class="section-title">🛠️ Keahlian Inti (Tech Stack)</div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="section-title" id="secTitleCoreSkills">🛠️ Core Technical Competencies</div>
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
           <div class="dropdown">
             <div class="dropdown-header" onclick="toggleDropdown(this)">
-              <strong>💾 Storage & Infrastructure</strong>
+              <strong id="uiSkillStorageTitle">💾 Enterprise Storage & Backup</strong>
               <span class="dropdown-icon">▼</span>
             </div>
             <div class="dropdown-content">
               <ul class="list">
-                <li>DellEMC Storage (Unity, PowerStore)</li>
-                <li>NetApp Hybrid Cloud & Storage</li>
-                <li>HPE Storage & Hybrid Cloud</li>
-                <li>Nutanix Multicloud Infrastructure</li>
-                <li>RAID Configuration & Storage Integration</li>
-                <li>NAS/SAN Configuration</li>
-                <li>Storage Replication (DC & DRC)</li>
-                <li>Tape Library Management</li>
-                <li>Veritas Backup Exec</li>
-                <li>Acronis Cloud Backup</li>
+                <li>DellEMC Storage (Unity, PowerStore, XtremIO)</li>
+                <li>NetApp Hybrid Cloud & Storage (FAS, DS224C)</li>
+                <li>HPE Storage & Hybrid Cloud (MSA, StoreOnce)</li>
+                <li>Nutanix Multicloud Infrastructure & AHV</li>
+                <li>RAID Configuration & Storage Tiering</li>
+                <li>NAS/SAN Fabric Configuration (FC / iSCSI)</li>
+                <li>Storage Replication (DC & DRC Multipath)</li>
+                <li>Tape Library & Archive Management</li>
+                <li>Veritas Backup Exec & Acronis Cloud</li>
               </ul>
             </div>
           </div>
 
           <div class="dropdown">
             <div class="dropdown-header" onclick="toggleDropdown(this)">
-              <strong>🌐 Networking</strong>
+              <strong id="uiSkillNetworkTitle">🌐 Networking & Security</strong>
               <span class="dropdown-icon">▼</span>
             </div>
             <div class="dropdown-content">
               <ul class="list">
-                <li>Cisco Networking (CCNA, CCNP Enterprise)</li>
-                <li>Huawei Networking (HCIA)</li>
-                <li>TCP/IP Networking</li>
-                <li>Subnetting & IP Addressing</li>
-                <li>Routing & Switching</li>
-                <li>Firewall Configuration</li>
-                <li>Network Troubleshooting</li>
-                <li>VLAN & Network Design</li>
+                <li>Cisco Networking (CCNA, CCNP Enterprise Core)</li>
+                <li>Huawei Enterprise Networking (HCIA)</li>
+                <li>Brocade & HPE SAN Switch Fabric Zoning</li>
+                <li>TCP/IP, Routing & Multicast Switching</li>
+                <li>VLAN Segmentation & 802.1Q Trunking</li>
+                <li>Firewall Configuration & Perimeter Security</li>
+                <li>Network Diagnostics & Latency Troubleshooting</li>
               </ul>
             </div>
           </div>
 
           <div class="dropdown">
             <div class="dropdown-header" onclick="toggleDropdown(this)">
-              <strong>🖥️ Server & Hardware</strong>
+              <strong id="uiSkillServerTitle">🖥️ Server Infrastructure & OS</strong>
               <span class="dropdown-icon">▼</span>
             </div>
             <div class="dropdown-content">
               <ul class="list">
-                <li>Server Hardware Troubleshooting</li>
-                <li>Dell EMC Server Configuration</li>
-                <li>HPE Server Infrastructure</li>
-                <li>IBM Power Systems (AIX)</li>
-                <li>Lenovo Data Center Configuration</li>
-                <li>Linux Server Administration</li>
-                <li>Windows Server Administration</li>
-                <li>Virtualization (VMware, Proxmox)</li>
-                <li>Server Installation & Configuration</li>
+                <li>HPE ProLiant DL360 / DL580 / Blade C7000</li>
+                <li>Dell PowerEdge R760xs / R750 / R740 / R440</li>
+                <li>Lenovo ThinkSystem SR650 / SR630 & ThinkAgile</li>
+                <li>IBM Power Systems (AIX Virtualization)</li>
+                <li>Red Hat Enterprise Linux (RHEL) & CentOS</li>
+                <li>Windows Server Administration & Active Directory</li>
+                <li>Server Hardware Lifecycle & BIOS/UEFI Tuning</li>
               </ul>
             </div>
           </div>
 
           <div class="dropdown">
             <div class="dropdown-header" onclick="toggleDropdown(this)">
-              <strong>☁️ Cloud & Virtualization</strong>
+              <strong id="uiSkillCloudTitle">☁️ Cloud & Virtualization</strong>
               <span class="dropdown-icon">▼</span>
             </div>
             <div class="dropdown-content">
               <ul class="list">
-                <li>Hybrid Cloud Solutions</li>
-                <li>Nutanix AHV & Virtualization</li>
-                <li>HPE Morpheus</li>
-                <li>Sangfor HCI</li>
-                <li>Cloud Infrastructure Management</li>
-                <li>Virtual Machine Management</li>
-                <li>Backup & Disaster Recovery</li>
+                <li>VMware vSphere / ESXi 7 & 8 / vCenter HA</li>
+                <li>Sangfor Hyperconverged Infrastructure (HCI)</li>
+                <li>Proxmox Virtual Environment (VE) Management</li>
+                <li>Nutanix AHV Cluster Administration</li>
+                <li>HPE Morpheus Hybrid Cloud Orchestration</li>
+                <li>Live Workload Migration & Disaster Recovery</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="section-title">🤝 Soft Skills</div>
+        <div class="section-title" id="secTitleSoftSkills">🤝 Professional Competencies</div>
         <table class="tech-table">
           <tr>
-            <td>Komunikasi</td>
-            <td>Komunikasi efektif dengan klien dan tim</td>
+            <td id="uiSoft1Title">Communication</td>
+            <td id="uiSoft1Desc">Effective technical and executive coordination with clients and cross-functional teams</td>
           </tr>
           <tr>
-            <td>Problem Solving</td>
-            <td>Analisis dan troubleshooting infrastruktur</td>
+            <td id="uiSoft2Title">Problem Solving</td>
+            <td id="uiSoft2Desc">Advanced incident investigation, diagnostics, and high-availability disaster recovery</td>
           </tr>
           <tr>
-            <td>Kolaborasi</td>
-            <td>Kerja tim lintas departemen</td>
+            <td id="uiSoft3Title">Collaboration</td>
+            <td id="uiSoft3Desc">Seamless collaboration across multi-vendor teams, tier-1 clients, and engineering leads</td>
           </tr>
           <tr>
-            <td>Manajemen</td>
-            <td>Manajemen proyek dan waktu</td>
+            <td id="uiSoft4Title">Project & SLA</td>
+            <td id="uiSoft4Desc">Disciplined execution strictly aligned with enterprise SLAs, budgets, and project timelines</td>
           </tr>
           <tr>
-            <td>Adaptasi</td>
-            <td>Adaptasi cepat pada teknologi baru</td>
+            <td id="uiSoft5Title">Adaptability</td>
+            <td id="uiSoft5Desc">Fast-track mastery and vendor certification in emerging cloud and virtualization platforms</td>
           </tr>
           <tr>
-            <td>Dokumentasi</td>
-            <td>Dokumentasi teknis yang rapi</td>
+            <td id="uiSoft6Title">Documentation</td>
+            <td id="uiSoft6Desc">Rigorous system architecture diagrams, handover manuals, and audit-ready SOPs</td>
           </tr>
         </table>
 
-        <div class="section-title" style="margin-top: 24px;">🔍 Tech Summary</div>
+        <div class="section-title" style="margin-top: 22px;" id="secTitleTechSummary">🔍 Technical Profile Summary</div>
         <table class="tech-table">
           <tr>
-            <td>Storage Management</td>
-            <td>Konfigurasi dan manajemen storage DellEMC, NetApp, HPE, Nutanix</td>
+            <td id="uiTech1Title">Storage Architecture</td>
+            <td id="uiTech1Desc">Enterprise SAN/NAS configuration: Dell EMC, NetApp, HPE, Nutanix</td>
           </tr>
           <tr>
-            <td>Server Infrastructure</td>
-            <td>Instalasi dan konfigurasi server DellEMC, HPE, IBM, Lenovo</td>
+            <td id="uiTech2Title">Server Infrastructure</td>
+            <td id="uiTech2Desc">Multi-vendor server deployment: Dell PowerEdge, HPE ProLiant, IBM, Lenovo</td>
           </tr>
           <tr>
-            <td>Networking</td>
-            <td>Cisco & Huawei networking, routing, switching, dan firewall</td>
+            <td id="uiTech3Title">Enterprise Networking</td>
+            <td id="uiTech3Desc">Cisco & Huawei enterprise routing, switching, SAN fabric, and security</td>
           </tr>
           <tr>
-            <td>Hybrid Cloud</td>
-            <td>Implementasi solusi hybrid cloud dengan HPE, Nutanix, dan Sangfor</td>
+            <td id="uiTech4Title">Hybrid Cloud</td>
+            <td id="uiTech4Desc">Hybrid cloud design and orchestration with HPE, Nutanix, and Sangfor HCI</td>
           </tr>
           <tr>
-            <td>Virtualization</td>
-            <td>VMware, Proxmox, Nutanix AHV virtualization management</td>
+            <td id="uiTech5Title">Virtualization</td>
+            <td id="uiTech5Desc">VMware vSphere/vCenter, Proxmox VE, Nutanix AHV cluster administration</td>
           </tr>
           <tr>
-            <td>Backup & Recovery</td>
-            <td>Veritas Backup Exec, Acronis, dan disaster recovery solutions</td>
+            <td id="uiTech6Title">Backup & DR</td>
+            <td id="uiTech6Desc">Veritas Backup Exec, Acronis Cloud, DC-DRC synchronous replication</td>
           </tr>
           <tr>
-            <td>Hardware Support</td>
-            <td>Troubleshooting dan maintenance hardware server dan storage</td>
+            <td id="uiTech7Title">Hardware Diagnostics</td>
+            <td id="uiTech7Desc">Component-level diagnostics, corrective maintenance, and firmware updates</td>
           </tr>
           <tr>
-            <td>Enterprise Projects</td>
-            <td>Pengalaman dengan Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dll</td>
+            <td id="uiTech8Title">Enterprise Clients</td>
+            <td id="uiTech8Desc">Bank BTN, Bank Syariah Bukopin, Shell Indonesia, BPD Sultra, Tokai, Yamaha</td>
           </tr>
         </table>
 
-        <div class="section-title" style="margin-top: 24px;">📜 Sertifikasi</div>
-        <ul class="list">
-          <li>HPE Product Certified — HPE Morpheus VM Essentials Software (2026)</li>
-          <li>Sangfor Certified Technical Associate — HCI (2025)</li>
-          <li>HPE Accredited Technical Professional — Hybrid Cloud (2024)</li>
-          <li>VSE Veritas Backup Exec 22 (2024)</li>
-          <li>Nutanix Certified Professional — Multicloud Infrastructure 6 (NCP-MCI) (2023)</li>
-          <li>Cisco Certified Network Professional Enterprise — CCNP (2023)</li>
-          <li>Cisco Certified Specialist — Enterprise Core (2023)</li>
-          <li>NetApp Hybrid Cloud Associate Accreditation (2023)</li>
-          <li>Huawei Certified ICT Associate — HCIA (2023)</li>
-          <li>Nutanix Certified Systems Engineer Core — NCSE-Core (2022)</li>
-          <li>Acronis Cloud Tech Fundamentals — CyberFit Academy (2022)</li>
-          <li>HPE Accredited Technical Professional — Hybrid IT Solution V2 (2021)</li>
-          <li>Palo Alto Networks System Engineer - PSE: Strata Associate (2021)</li>
-          <li>Dell EMC Server Credential (2020)</li>
-          <li>Dell EMC MidRange Storage Credential (2019)</li>
-          <li>IBM Power Systems for AIX — Virtualization: Implementing Virtualization (2019)</li>
-          <li>Cisco Certified Network Associate Routing and Switching — CCNA (2019)</li>
-          <li>Huawei Certified Network Associate Routing and Switching — HCIA (2019)</li>
-          <li>Huawei Certified Pre-sales Associate — Storage Presales Specialist (2019)</li>
-          <li>Lenovo Data Center Group Configuration (2019)</li>
+        <div class="section-title" style="margin-top: 22px;" id="secTitleCertifications">📜 Certifications & Credentials</div>
+        <ul class="list" style="font-size: 13px;">
+          <li><strong>HPE Product Certified</strong> — HPE Morpheus VM Essentials Software (2026)</li>
+          <li><strong>Sangfor Certified Technical Associate</strong> — HCI (2025)</li>
+          <li><strong>HPE Accredited Technical Professional</strong> — Hybrid Cloud (2024)</li>
+          <li><strong>VSE Veritas Backup Exec 22</strong> (2024)</li>
+          <li><strong>Nutanix Certified Professional</strong> — Multicloud Infrastructure 6 (NCP-MCI) (2023)</li>
+          <li><strong>Cisco Certified Network Professional Enterprise</strong> — CCNP (2023)</li>
+          <li><strong>Cisco Certified Specialist</strong> — Enterprise Core (2023)</li>
+          <li><strong>NetApp Hybrid Cloud Associate Accreditation</strong> (2023)</li>
+          <li><strong>Huawei Certified ICT Associate</strong> — HCIA (2023)</li>
+          <li><strong>Nutanix Certified Systems Engineer Core</strong> — NCSE-Core (2022)</li>
+          <li><strong>Acronis Cloud Tech Fundamentals</strong> — CyberFit Academy (2022)</li>
+          <li><strong>HPE Accredited Technical Professional</strong> — Hybrid IT Solution V2 (2021)</li>
+          <li><strong>Palo Alto Networks System Engineer</strong> - PSE: Strata Associate (2021)</li>
+          <li><strong>Dell EMC Server Credential</strong> (2020)</li>
+          <li><strong>Dell EMC MidRange Storage Credential</strong> (2019)</li>
+          <li><strong>IBM Power Systems for AIX</strong> — Virtualization: Implementing Virtualization (2019)</li>
+          <li><strong>Cisco Certified Network Associate Routing and Switching</strong> — CCNA (2019)</li>
+          <li><strong>Huawei Certified Network Associate Routing and Switching</strong> — HCIA (2019)</li>
+          <li><strong>Huawei Certified Pre-sales Associate</strong> — Storage Presales Specialist (2019)</li>
+          <li><strong>Lenovo Data Center Group Configuration</strong> (2019)</li>
         </ul>
 
-        <div class="section-title" style="margin-top: 24px;">🎤 Event & Training</div>
-        <ul class="list">
-          <li>HPE Tech Jam Bangkok (2026)</li>
+        <div class="section-title" style="margin-top: 22px;" id="secTitleEvents">🎤 Specialized Training & Conferences</div>
+        <ul class="list" style="font-size: 13px;">
+          <li><strong>HPE Tech Jam Bangkok</strong> (Bangkok, Thailand — 2026)</li>
         </ul>
       </div>
 
+      <!-- Right Column: Projects & Experience Chart -->
       <div class="right-col">
-        <div class="section-title">🧩 Pengalaman Kerja & Proyek Utama</div>
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 18px; border: 1px solid rgba(255, 255, 255, 0.05);">
-          <canvas id="experienceChart" style="max-height: 300px;"></canvas>
+        <div class="section-title" id="secTitleProjects">🧩 Professional Experience & Enterprise Projects</div>
+        
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 16px; border-radius: 12px; margin-bottom: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <canvas id="experienceChart" style="max-height: 280px;"></canvas>
         </div>
 
-        <details class="year-group" open>
-          <summary>
-            <span class="year-label">Tahun 2026</span>
-            <span class="year-count">5 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Sangfor Hyper Converged Infrastructure (HCI) Beserta Migrasi VMware ke Sangfor</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Equity Life Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Equipment Hardware Start-up</li>
-                <li>Reimage Sangfor OS</li>
-                <li>Provisioning Cluster Sangfor</li>
-                <li>Provisioning Storage and Network</li>
-                <li>Configure VLAN and Trunk Switch</li>
-                <li>Migrating VMs from VMware to Sangfor HCI using SCMT</li>
-                <li>Client Access Testing</li>
-                <li>Testing and Comissioning</li>
-                <li>Review all installation-implementation and  configuration</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Renewal License & Garansi Nutanix Hyper Converged Infrastructure (HCI) Data Center dan Disaster Recovery Center PT BPD Sultra</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Pembangunan Daerah Sulawesi Tenggara (BPD Sultra)</span>
-                <span>📍 Kendari dan Cibitung</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Peruntukan Mobile Banking Dan Internet Banking Business</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Bitera</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Renewal Maintenance Hardware Aplikasi Sistem Pembayaran Swift</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Bitera</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Hard Token CMS dan Active Directory</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul, Bitera dan OC</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group" open>
-          <summary>
-            <span class="year-label">Tahun 2025</span>
-            <span class="year-count">7 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Server Dell PowerEdge R760xs Beserta Migrasi VMware ke Proxmox VE (Virtual Enterprise)</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Tokai Dharma Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Equipment Hardware Start-up</li>
-                <li>Reimage Proxmox OS</li>
-                <li>Provisioning Storage and Network</li>
-                <li>Configure VLAN Network</li>
-                <li>Migrating VMs from VMware to Proxmox</li>
-                <li>Client Access Testing</li>
-                <li>Testing and Comissioning</li>
-                <li>Review all installation-implementation and  configuration</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pengadaan CCTV RCOM Jakarta</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Installation of 44 CCTV Hikvision camera</li>
-                <li>CCTV network installation</li>
-                <li>Installation of CCTV monitor</li>
-                <li>Cabling, HDMI, and switch configure</li>
-                <li>NAS, HCP & pStore server configuration</li>
-                <li>Configuration, Commisioning & Training</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server ThinkSystem SR650 V3, Expansion Storage NetApp DS224C, dan VMware ESXi 8</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Yamaha Motor Parts Manufacturing Indonesia</span>
-                <span>📍 Karawang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (ESXi 8)</li>
-                <li>Zoning SAN Switch</li>
-                <li>Deploy and Configure vCenter 7</li>
-                <li>Create Data Center and Cluster</li>
-                <li>Initial Setup System Storage</li>
-                <li>Cabling System Storage</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resource</li>
-                <li>Configure Hosts and Volumes</li>
-                <li>Mapping New Volume</li>
-                <li>Mapping Datastore Server</li>
-                <li>Test vMotion and HA</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pengadaan Migrasi Perangkat DRC Surabaya ke Bitera DC</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Surabaya dan Bitera</span>
-                
-              </div>
-              <ul class="list">
-                <li>Shutdown machine di DRC Surabaya</li>
-                <li>Unplug cable (FO, LAN, Power)</li>
-                <li>Dismantle device</li>
-                <li>Unmounting machine</li>
-                <li>Unloading and Assembling di DRC Bitera</li>
-                <li>Mounting to Rack</li>
-                <li>Cabling and Labeling</li>
-                <li>Power on Test</li>
-                <li>Upgrade Firmware (if needed)</li>
-                <li>Reconfiguring IP Adress</li>
-                <li>Connection test</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan NAS Untuk Backup Data Aplikasi BIFast Peruntukan Divisi ITOD</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul</span>
-                
-              </div>
-              <ul class="list">
-                <li>Mounting Hardware to Rack</li>
-                <li>Cabling:  Power Cable, UTP Cable and FO Cable</li>
-                <li>Initial Setup Network</li>
-                <li>Configure Array and Volume</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resources</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Server Lenovo SR650 V4 dan Memory Server Lenovo</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PDAM Tirta Kerta Raharja (PDAM Tangerang)</span>
-                <span>📍 Tangerang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 8 Server Aplikasi Irekon HPE DL360 G10</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Bitera</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group" open>
-          <summary>
-            <span class="year-label">Tahun 2024</span>
-            <span class="year-count">4 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 10 Server Lenovo SR630 & SR650, VMware ESXi 8</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT Chandra Asri Petrochemical Tbk (CAP)</span>
-                <span>📍 Cilegon</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (ESXi 8)</li>
-                <li>Deploy and Configure vCenter 8</li>
-                <li>Create Data Center and Cluster</li>
-                <li>Mapping Datastore Server</li>
-                <li>Test vMotion and HA</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C7000</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta, Sentul, Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install Support jika ada instalasi dan konfigurasi perangkat lunak</li>
-                <li>Support perbaikan terhadap perangkat lunak</li>
-                <li>Service on call support (24 jam x 7 hari) dan on site jika diperlukan</li>
-                <li>Health check 1 (satu) bulan sekali yang mancakup pemeriksaan software</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 4 Server Aplikasi Opics HPE DL360 G10 dan Upgrade disk 14 Server BI-RTGS dan SKNBI</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-                <li>Upgrade Disk Server</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2023</span>
-            <span class="year-count">5 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 2 Server HPE DL360 G10, HPE SN3600B (SAN Switch), Storage NetApp FAS2750, dan VMware ESXi 7</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Yamaha Motor Parts Manufacturing Indonesia</span>
-                <span>📍 Karawang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (ESXi 7)</li>
-                <li>Zoning SAN Switch</li>
-                <li>Deploy and Configure vCenter 7</li>
-                <li>Create Data Center and Cluster</li>
-                <li>Initial Setup System Storage</li>
-                <li>Cabling System Storage</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resource</li>
-                <li>Configure Hosts and Volumes</li>
-                <li>Mapping New Volume</li>
-                <li>Mapping Datastore Server</li>
-                <li>Test vMotion and HA</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta, Sentul, Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install RedHat Satellite Server</li>
-                <li>Install RedHat Satellite Capsule Jakarta, Sentul, Surabaya</li>
-                <li>Add RedHat Satellite Capsule to RedHat Satellite Server</li>
-                <li>Configuration ( Subscription,Repository,Activation Key, etc)</li>
-                <li>Register RHEL Server to Satellite Server</li>
-                <li>Create Host Collection</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Perangkat Switch Hub</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Configure Hostname</li>
-                <li>Configure Date&Time</li>
-                <li>Configure IP Management</li>
-                <li>Configure Trunk</li>
-                <li>Configure Default Route</li>
-                <li>Configure Web User</li>
-                <li>Configure Local Username</li>
-                <li>Configure SSH</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 6 Server Lenovo ThinkAgile HX3331</h3>
-              <div class="project-meta">
-                <span class="role-badge role-se">System Engineer</span>
-                <span>🏢 PT Chandra Asri Petrochemical Tbk (CAP)</span>
-                <span>📍 Jakarta dan Cilegon</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Server DC & DRC Bank Sultra</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Pembangunan Daerah Sulawesi Tenggara (Bank Sultra)</span>
-                <span>📍 Kendari</span>
-                
-              </div>
-              <ul class="list">
-                <li>Equipment Hardware Start-up</li>
-                <li>Reimage Nutanix OS with Acropolis/VMWare/Hyper-V</li>
-                <li>Provisioning Cluster Nutanix</li>
-                <li>Provisioning Storage and Network</li>
-                <li>Configure VLAN and Trunk Switch</li>
-                <li>Client Access Testing</li>
-                <li>Testing and Comissioning</li>
-                <li>Review all installation-implementation and  configuration</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2022</span>
-            <span class="year-count">6 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server BI-RTGS dan SKNBI</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server BI Fast HPE DL360 G10</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server HPE DL360 G10</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 2 Server Lenovo SR650, Storage Lenovo DE2000H, dan VMware ESXi 7</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
-                <span>📍 Cibitung</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (ESXi 7)</li>
-                <li>Deploy and Configure vCenter 7</li>
-                <li>Create Data Center and Cluster</li>
-                <li>Initial Setup System Storage</li>
-                <li>Cabling System Storage</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resource</li>
-                <li>Configure Hosts and Volumes</li>
-                <li>Mapping New Volume</li>
-                <li>Mapping Datastore Server</li>
-                <li>Test vMotion and HA</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server HPE DL360 G10</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta, Sentul, Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 2 Server DellEMC R750, Storage DellEMC PowerStore, dan VMware ESXi 7</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
-                <span>📍 Tangerang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (ESXi 7)</li>
-                <li>Deploy and Configure vCenter 7</li>
-                <li>Create Data Center and Cluster</li>
-                <li>Initial Setup System Storage</li>
-                <li>Cabling System Storage</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resource</li>
-                <li>Configure Hosts and Volumes</li>
-                <li>Mapping New Volume</li>
-                <li>Mapping Datastore Server</li>
-                <li>Test vMotion and HA</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2021</span>
-            <span class="year-count">5 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Storage Lenovo Nutanix HX Series, Storage DellEMC Unity 500 dan DellEMC XtremIO X2-S</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Pelabuhan Indonesia III (Pelindo III)</span>
-                <span>📍 Surabaya dan Semarang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C7000</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Sentul dan Surabaya</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Maintenance Server Blade HPE C3000</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Bank Tabungan Negara (BTN)</span>
-                <span>📍 Jakarta dan Sentul</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Melakukan corrective maintenance jika terjadi kerusakan/gangguan</li>
-                <li>Melakukan upgrade firmware jika diperlukan</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Cabling New Office dan Switch+WAP Cisco</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Kohler Indonesia</span>
-                <span>📍 Indonesia</span>
-                
-              </div>
-              <ul class="list">
-                <li>Cabling and Labeling</li>
-                <li>Switch L2 Configuration</li>
-                <li>Switch L3 Configuration</li>
-                <li>Configure VLAN</li>
-                <li>Configure Routing Table</li>
-                <li>Assign VLAN to Each Access Port</li>
-                <li>Configure Trunk Port</li>
-                <li>Configure Virtual Routing and Forwarding</li>
-                <li>Configure to IP Address to Accsess Point</li>
-                <li>Provisioning All AP to Controller</li>
-                <li>OS Upgrade or Firmware Upgraded if Needed</li>
-                <li>Test Network Connectivity from All WAP Configured</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 20 WAP Cisco 2802E</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
-                <span>📍 Cikarang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Configure to IP Address to Accsess Point</li>
-                <li>Provisioning All AP to Controller</li>
-                <li>OS Upgrade or Firmware Upgraded if Needed</li>
-                <li>Test Network Connectivity from All WAP Configured</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2020</span>
-            <span class="year-count">4 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server DellEMC R740, 1 Storage DellEMC Unity 380</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
-                <span>📍 Cikarang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server (Oracle VM and RHEL)</li>
-                <li>Initial Setup System Storage</li>
-                <li>Cabling System Storage</li>
-                <li>Configure System Storage</li>
-                <li>Configure File Resource</li>
-                <li>Configure Hosts</li>
-                <li>Mapping New Volume</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Perangkat Cisco, 3 Core Switch 3850, 1 Router ISR 4431, 2 Wireless Controller 5520, 25 Access Point 3802I/3802E</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Kohler Manufacturing Indonesia</span>
-                <span>📍 Cikarang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Cisco Device</li>
-                <li>Switch L2 Configuration</li>
-                <li>Switch L3 Configuration</li>
-                <li>Configure VLAN</li>
-                <li>Configure Routing Table</li>
-                <li>Assign VLAN to Each Access Port</li>
-                <li>Configure Trunk Port</li>
-                <li>Configure Virtual Routing and Forwarding</li>
-                <li>Configure Stacking</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 4 Server HPE DL580 Gen10,  HPE MSA 2050 SAN, dan HPE SN3600B Switch</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Pulsa Media Bersama</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Initial Setup System Storage</li>
-                <li>Configure Storage</li>
-                <li>Zoning SAN Switch</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 2 Server DellEMC R740 dan CentOS</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 PT. Kejora Gasbumi Mandiri</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2019</span>
-            <span class="year-count">7 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan IBM Expansion V7000</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Bank Muamalat Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install the enclosure in the rack</li>
-                <li>Attach the power and SAS cables</li>
-                <li>Add enclosures</li>
-                <li>Create new mdisk</li>
-                <li>Extend new mdisk to pool existing</li>
-                <li>Extend size volume existing</li>
-                <li>Mapping new volume</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Proof of Concept (PoC) Dell Server</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Pefindo Biro Kredit</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Instalasi baik software maupun hardware</li>
-                <li>Menguasai secara mendalam salah satu atau berapa platform / network operating system untuk membangun suatu data warehouse yang aman dan terintegrasi</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Network & Data Center Audit</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Fonterra Brands Indonesia</span>
-                <span>📍 Jakarta, Cikarang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memahami konsep dan desain infrastruktur yang ada</li>
-                <li>Menguasai secara teknis dan praktis mengenai keamanan jaringan</li>
-                <li>Memeriksa keadaan data center seperti suhu, penerangan, kelembaban, kebersihan, dan keamanan</li>
-                <li>Memeriksa ketersediaan port yang ada</li>
-                <li>Memeriksa jalur port antar switch</li>
-                <li>Mendokumentasikan access point yang ada</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Preventive Maintenance Server IBM & Lenovo</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
-                <span>📍 Jakarta, Tangerang, Bekasi, Karawang, Cirebon</span>
-                
-              </div>
-              <ul class="list">
-                <li>Memelihara dan memastikan system yang ada berjalan dengan baik</li>
-                <li>Troubleshooting dan perbaikan system</li>
-                <li>Membuat laporan pekerjaan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan 3 Server DellEMC R740 dan R440</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support Hardware</span>
-                <span>🏢 Rumah Sakit Ibu dan Anak Sepatan Tangerang</span>
-                <span>📍 Tangerang</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and Configure Server</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Sistem Integrated</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support</span>
-                <span>🏢 YAMAHA INDONESIA MANUFACTURING</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Instalasi Dell R740 dan EMC 380 Unity</li>
-                <li>Configurasi VMware</li>
-                <li>Men-support / maintain Membuat Materi Pelatihan</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Server Lenovo SR550 dan Windows Server 2016</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Yamaha Indonesia Motor Manufacturing</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and configure server</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2018</span>
-            <span class="year-count">7 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Server Lenovo SR550 dan VMware</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Synthetic Rubber Indonesia</span>
-                <span>📍 Cilegon</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install and configure server</li>
-                <li>Create VM</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Technical Support For The ESP Project.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-de">Desktop Engineer</span>
-                <span>🏢 PT. Ingredion Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Instalasi software</li>
-                <li>Troubleshooting dan perbaikan software</li>
-                <li>Men-support / maintain / memelihara sistem komputer</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Technical Support For The ESP Project.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-de">Desktop Engineer</span>
-                <span>🏢 PT. Abbott Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Instalasi software</li>
-                <li>Troubleshooting dan perbaikan software</li>
-                <li>Men-support / maintain / memelihara sistem komputer</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Technical Support For The SSCS Project.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Shell Indonesia, Tbk</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Import and Export Tape Library</li>
-                <li>Troubleshooting dan perbaikan hardware</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Technical Support For The Dell Project.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. NCR Indonesia</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Troubleshooting dan perbaikan hardware</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Technical Support For The Server Monitoring IBM AS/400.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Bank Syariah Bukopin, Tbk</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Check DASD Used</li>
-                <li>Check CPU Used and Memory Used</li>
-                <li>Health Check Activity</li>
-              </ul>
-            </article>
-            <article class="project">
-              <h3>Pekerjaan Pengadaan Storage DellEMC Unity 300</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Bank Commonwealth</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Install system storage</li>
-                <li>Cabling system storage</li>
-                <li>Configure system storage</li>
-                <li>Configure file resources</li>
-                <li>Configure hosts</li>
-                <li>Configure replications DC & DRC</li>
-                <li>Mapping new volume</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2017</span>
-            <span class="year-count">1 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Technical Support For The Smart Digital Banking (SDB).</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Bank Tabungan Pensiunan Nasional, Tbk</span>
-                <span>📍 Jakarta</span>
-                
-              </div>
-              <ul class="list">
-                <li>Instalasi hardware</li>
-                <li>Troubleshooting dan perbaikan hardware</li>
-                <li>Men-support / maintain / memelihara perangkat IT</li>
-              </ul>
-            </article>
-          </div>
-        </details>
-        <details class="year-group">
-          <summary>
-            <span class="year-label">Tahun 2016</span>
-            <span class="year-count">1 Proyek</span>
-          </summary>
-          <div class="year-projects">
-            <article class="project">
-              <h3>Pengadaan SKCK Online Integrated POLRES dan POLSEK (APBNP) TA 2016.</h3>
-              <div class="project-meta">
-                <span class="role-badge role-ts">Technical Support  Hardware</span>
-                <span>🏢 PT. Astra Graphia, Tbk</span>
-                <span>📍 Jakarta</span>
-                <span>🗓️ 2016 - 2017</span>
-              </div>
-              <ul class="list">
-                <li>Instalasi hardware dan software</li>
-                <li>Troubleshooting dan perbaikan hardware</li>
-                <li>Men-support / maintain / memelihara sistem komputer</li>
-              </ul>
-            </article>
-          </div>
-        </details>
+        <!-- Filter Bar -->
+        <div class="project-filter-bar" id="projectFilterBar">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Master Project Table -->
+        <div class="table-responsive">
+          <table class="project-table" id="masterProjectTable">
+            <thead>
+              <tr>
+                <th class="th-no" id="thNo">No</th>
+                <th class="th-year" id="thYear">Year</th>
+                <th class="th-project" id="thProject">Project & Client</th>
+                <th class="th-role" id="thRole">Role</th>
+                <th class="th-tasks" id="thTasks">Scope & Key Achievements</th>
+              </tr>
+            </thead>
+            <tbody id="masterTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
+    <!-- Contact Closing Card -->
     <div class="card contact-card">
-      <div class="section-title">📌 Hubungi & Terhubung</div>
       <div class="contact-grid">
         <div>
-          <ul class="list" style="margin: 0; padding-left: 0; list-style: none;">
-            <li style="margin-bottom: 12px;">
-              <strong style="color: #4ade80;">📧 Email:</strong> 
-              <a style="color: #93c5fd; text-decoration: none;" href="mailto:ekataris@gmail.com" target="_blank">ekataris@gmail.com</a>
-            </li>
-            <li style="margin-bottom: 12px;">
-              <strong style="color: #4ade80;">💼 LinkedIn:</strong> 
-              <a style="color: #93c5fd; text-decoration: none;" href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/" target="_blank">linkedin.com/in/eka-taris-ariyudi-632847218</a>
-            </li>
-            <li style="margin-bottom: 14px;">
-              <strong style="color: #4ade80;">🌐 Website Portofolio:</strong> 
-              <a style="color: #93c5fd; text-decoration: none;" href="https://etariyudi-create.github.io/my-cv/" target="_blank">etariyudi-create.github.io/my-cv/</a>
-            </li>
+          <div class="section-title" style="border: none; margin-bottom: 8px;" id="uiContactHeader">📫 Direct Contact & Professional Network</div>
+          <p style="color: #cbd5e1; font-size: 14px; margin: 0 0 12px 0;" id="uiContactSub">
+            Available for enterprise consulting, high-impact infrastructure roles, and international remote engagements.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0 0 14px 0; color: #cbd5e1; font-size: 14px; line-height: 1.8;">
+            <li>✉️ <strong>Email:</strong> <a style="color: #38bdf8; text-decoration: none;" href="mailto:ekataris@gmail.com">ekataris@gmail.com</a></li>
+            <li>💼 <strong>LinkedIn:</strong> <a style="color: #38bdf8; text-decoration: none;" href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/" target="_blank">linkedin.com/in/eka-taris-ariyudi</a></li>
+            <li>🌐 <strong>Portfolio:</strong> <a style="color: #38bdf8; text-decoration: none;" href="https://etariyudi-create.github.io/my-cv/" target="_blank">etariyudi-create.github.io/my-cv/</a></li>
           </ul>
-          <button class="download-btn btn-secondary" onclick="requestPhoneNumber()" style="margin-top: 8px;">📞 Request Phone Number</button>
+          <button class="download-btn btn-secondary" onclick="requestPhoneNumber()" id="uiBtnReqPhone">📞 Request Phone Number</button>
         </div>
 
-        <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <div style="display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap;">
           <div style="text-align: center;">
-            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 8px; font-size: 13px;">LinkedIn</div>
+            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 6px; font-size: 12.5px;">LinkedIn QR</div>
             <div class="qr">
               <img
                 src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://www.linkedin.com/in/eka-taris-ariyudi-632847218/"
@@ -1856,7 +1213,7 @@
             </div>
           </div>
           <div style="text-align: center;">
-            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 8px; font-size: 13px;">Website</div>
+            <div style="font-weight: 700; color: #e2e8f0; margin-bottom: 6px; font-size: 12.5px;">Web Portfolio QR</div>
             <div class="qr">
               <img
                 src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=https://etariyudi-create.github.io/my-cv/"
@@ -1869,12 +1226,1663 @@
       </div>
     </div>
 
-    <footer>Generated by Eka • Eka Taris Ariyudi Tech Edition • 2026</footer>
+    <footer id="uiFooter">Eka Taris Ariyudi — Senior System Engineer • International Portfolio Edition • 2026</footer>
 
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('service-worker.js');
+        });
+      }
+
+      // Bilingual Database
+      const PROJECTS_DATA = [
+  {
+    "index": 1,
+    "year": "2026",
+    "title_id": "Pekerjaan Pengadaan Sangfor Hyper Converged Infrastructure (HCI) Beserta Migrasi VMware ke Sangfor",
+    "client": "PT. Equity Life Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Equipment Hardware Start-up",
+      "Reimage Sangfor OS",
+      "Provisioning Cluster Sangfor",
+      "Provisioning Storage and Network",
+      "Configure VLAN and Trunk Switch",
+      "Migrating VMs from VMware to Sangfor HCI using SCMT",
+      "Client Access Testing",
+      "Testing and Comissioning",
+      "Review all installation-implementation and  configuration"
+    ],
+    "title_en": "Procurement & Deployment: Sangfor Hyper Converged Infrastructure (HCI) with Migration of VMware to Sangfor",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Executed hardware installation, racking, and initial startup diagnostics",
+      "Deployed and reimaged Sangfor HCI operating environment",
+      "Architected and provisioned high-availability Sangfor HCI cluster",
+      "Configured enterprise storage volumes, virtual switches, and network bridges",
+      "Configured switch VLANs and 802.1Q trunk interfaces",
+      "Executed live cross-platform VM migration from VMware to Sangfor HCI using SCMT with minimal downtime",
+      "Performed end-to-end client access validation and connectivity testing",
+      "Conducted rigorous functional testing and formal commissioning",
+      "Delivered post-implementation technical documentation and configuration audit"
+    ]
+  },
+  {
+    "index": 2,
+    "year": "2026",
+    "title_id": "Pekerjaan Pengadaan Renewal License & Garansi Nutanix Hyper Converged Infrastructure (HCI) Data Center dan Disaster Recovery Center PT BPD Sultra",
+    "client": "PT. Bank Pembangunan Daerah Sulawesi Tenggara (BPD Sultra)",
+    "location": "Kendari dan Cibitung",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Renewal License & Garansi Nutanix Hyper Converged Infrastructure (HCI) Data Center and Disaster Recovery Center PT BPD Sultra",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 3,
+    "year": "2026",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Peruntukan Mobile Banking Dan Internet Banking Business",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Bitera",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server for Mobile and Internet Banking Business Core",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 4,
+    "year": "2026",
+    "title_id": "Pekerjaan Pengadaan Renewal Maintenance Hardware Aplikasi Sistem Pembayaran Swift",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Bitera",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Renewal Maintenance Hardware SWIFT Payment Application Infrastructure",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 5,
+    "year": "2026",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Hard Token CMS dan Active Directory",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul, Bitera dan OC",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server Hard Token CMS and Active Directory",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 6,
+    "year": "2025",
+    "title_id": "Pekerjaan Pengadaan Server Dell PowerEdge R760xs Beserta Migrasi VMware ke Proxmox VE (Virtual Enterprise)",
+    "client": "PT. Tokai Dharma Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Equipment Hardware Start-up",
+      "Reimage Proxmox OS",
+      "Provisioning Storage and Network",
+      "Configure VLAN Network",
+      "Migrating VMs from VMware to Proxmox",
+      "Client Access Testing",
+      "Testing and Comissioning",
+      "Review all installation-implementation and  configuration"
+    ],
+    "title_en": "Procurement & Deployment: Server Dell PowerEdge R760xs with Migration of VMware to Proxmox VE (Virtual Enterprise)",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Executed hardware installation, racking, and initial startup diagnostics",
+      "Deployed, hardened, and reimaged Proxmox VE operating system",
+      "Configured enterprise storage volumes, virtual switches, and network bridges",
+      "Designed and implemented isolated VLAN network segments",
+      "Orchestrated seamless VM workload migration from VMware ESXi to Proxmox VE",
+      "Performed end-to-end client access validation and connectivity testing",
+      "Conducted rigorous functional testing and formal commissioning",
+      "Delivered post-implementation technical documentation and configuration audit"
+    ]
+  },
+  {
+    "index": 7,
+    "year": "2025",
+    "title_id": "Pengadaan CCTV RCOM Jakarta",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Installation of 44 CCTV Hikvision camera",
+      "CCTV network installation",
+      "Installation of CCTV monitor",
+      "Cabling, HDMI, and switch configure",
+      "NAS, HCP & pStore server configuration",
+      "Configuration, Commisioning & Training"
+    ],
+    "title_en": "Procurement & Implementation: Enterprise CCTV Infrastructure for RCOM Jakarta",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Supervised hardware installation and alignment of 44 enterprise Hikvision CCTV cameras",
+      "Engineered dedicated CCTV IP network infrastructure and PoE connectivity",
+      "Installed and calibrated central CCTV monitoring display matrices",
+      "Terminated structured cabling, HDMI distribution matrices, and managed switch configs",
+      "Configured storage integration across enterprise NAS, HCP, and pStore recording servers",
+      "Conducted system commissioning, user acceptance testing (UAT), and operator training"
+    ]
+  },
+  {
+    "index": 8,
+    "year": "2025",
+    "title_id": "Pekerjaan Pengadaan 3 Server ThinkSystem SR650 V3, Expansion Storage NetApp DS224C, dan VMware ESXi 8",
+    "client": "PT. Yamaha Motor Parts Manufacturing Indonesia",
+    "location": "Karawang",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install and Configure Server (ESXi 8)",
+      "Zoning SAN Switch",
+      "Deploy and Configure vCenter 7",
+      "Create Data Center and Cluster",
+      "Initial Setup System Storage",
+      "Cabling System Storage",
+      "Configure System Storage",
+      "Configure File Resource",
+      "Configure Hosts and Volumes",
+      "Mapping New Volume",
+      "Mapping Datastore Server",
+      "Test vMotion and HA"
+    ],
+    "title_en": "Procurement & Deployment: 3 Servers ThinkSystem SR650 V3, Expansion Storage NetApp DS224C, and VMware ESXi 8",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Installed and hardened VMware ESXi 8.0 hypervisor across host servers",
+      "Engineered SAN zoning and LUN masking on Brocade/HPE Fibre Channel switches",
+      "Deployed and configured high-availability VMware vCenter Server 7",
+      "Established centralized datacenter hierarchy, DRS, and HA clusters",
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Installed redundant multipath storage cabling",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configured CIFS/NFS shares, quotas, and access control policies",
+      "Mapped FC target ports and assigned storage volumes to ESXi cluster hosts",
+      "Expanded and mapped new VMFS datastore volumes",
+      "Configured multipath datastore access for ESXi host clusters",
+      "Validated live vMotion migrations, host failover automation, and HA clustering"
+    ]
+  },
+  {
+    "index": 9,
+    "year": "2025",
+    "title_id": "Pengadaan Migrasi Perangkat DRC Surabaya ke Bitera DC",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Surabaya dan Bitera",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Shutdown machine di DRC Surabaya",
+      "Unplug cable (FO, LAN, Power)",
+      "Dismantle device",
+      "Unmounting machine",
+      "Unloading and Assembling di DRC Bitera",
+      "Mounting to Rack",
+      "Cabling and Labeling",
+      "Power on Test",
+      "Upgrade Firmware (if needed)",
+      "Reconfiguring IP Adress",
+      "Connection test"
+    ],
+    "title_en": "Procurement & Implementation: Physical Infrastructure Migration from Surabaya DRC to Bitera Data Center",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Executed graceful shutdown sequence of enterprise servers and storage at Surabaya DRC",
+      "Decommissioned and labeled high-density optical fiber, copper LAN, and power distribution cabling",
+      "Dismantled enterprise chassis, blade servers, and modular storage enclosures",
+      "Safely unmounted rackmount equipment from server racks following data center standards",
+      "Transported, unloaded, and re-assembled enterprise equipment at Bitera Tier-3 Data Center",
+      "Re-racked all server nodes and storage enclosures according to elevation design",
+      "Completed redundant power, SAN, and network cabling with enterprise labeling standards",
+      "Conducted cold-start power verification, POST checks, and service availability testing",
+      "Upgrade Firmware (if needed)",
+      "Reconfiguring IP Adress",
+      "Connection test"
+    ]
+  },
+  {
+    "index": 10,
+    "year": "2025",
+    "title_id": "Pekerjaan Pengadaan NAS Untuk Backup Data Aplikasi BIFast Peruntukan Divisi ITOD",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Mounting Hardware to Rack",
+      "Cabling:  Power Cable, UTP Cable and FO Cable",
+      "Initial Setup Network",
+      "Configure Array and Volume",
+      "Configure System Storage",
+      "Configure File Resources"
+    ],
+    "title_en": "Procurement & Deployment: Enterprise Backup NAS for BI-FAST Application for IT Operations Division (ITOD)",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Mounting Hardware to Rack",
+      "Cabling:  Power Cable, UTP Cable and FO Cable",
+      "Initial Setup Network",
+      "Configure Array and Volume",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configure File Resources"
+    ]
+  },
+  {
+    "index": 11,
+    "year": "2025",
+    "title_id": "Pekerjaan Pengadaan Server Lenovo SR650 V4 dan Memory Server Lenovo",
+    "client": "PDAM Tirta Kerta Raharja (PDAM Tangerang)",
+    "location": "Tangerang",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: Server Lenovo SR650 V4 and Memory Server Lenovo",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 12,
+    "year": "2025",
+    "title_id": "Pekerjaan Pengadaan 8 Server Aplikasi Irekon HPE DL360 G10",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Bitera",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 8 Servers Irekon Financial Reconciliation Application Servers HPE DL360 G10",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 13,
+    "year": "2024",
+    "title_id": "Pekerjaan Pengadaan 10 Server Lenovo SR630 & SR650, VMware ESXi 8",
+    "client": "PT Chandra Asri Petrochemical Tbk (CAP)",
+    "location": "Cilegon",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install and Configure Server (ESXi 8)",
+      "Deploy and Configure vCenter 8",
+      "Create Data Center and Cluster",
+      "Mapping Datastore Server",
+      "Test vMotion and HA"
+    ],
+    "title_en": "Procurement & Deployment: 10 Servers Lenovo SR630 & SR650, VMware ESXi 8",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Installed and hardened VMware ESXi 8.0 hypervisor across host servers",
+      "Deploy and Configure vCenter 8",
+      "Established centralized datacenter hierarchy, DRS, and HA clusters",
+      "Configured multipath datastore access for ESXi host clusters",
+      "Validated live vMotion migrations, host failover automation, and HA clustering"
+    ]
+  },
+  {
+    "index": 14,
+    "year": "2024",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Blade HPE C7000",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Surabaya",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server Blade HPE C7000",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 15,
+    "year": "2024",
+    "title_id": "Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta, Sentul, Surabaya",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install Support jika ada instalasi dan konfigurasi perangkat lunak",
+      "Support perbaikan terhadap perangkat lunak",
+      "Service on call support (24 jam x 7 hari) dan on site jika diperlukan",
+      "Health check 1 (satu) bulan sekali yang mancakup pemeriksaan software"
+    ],
+    "title_en": "Procurement & Deployment: Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan and Utilisasi Sistem Sistem Operasi",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Install Support jika ada Installation of dan konfigurasi perangkat lunak",
+      "Support perbaikan terhadap perangkat lunak",
+      "Service on call support (24 jam x 7 hari) dan on site jika diperlukan",
+      "Health check 1 (satu) bulan sekali yang mancakup pemeriksaan software"
+    ]
+  },
+  {
+    "index": 16,
+    "year": "2024",
+    "title_id": "Pekerjaan Pengadaan 4 Server Aplikasi Opics HPE DL360 G10 dan Upgrade disk 14 Server BI-RTGS dan SKNBI",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Surabaya",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server",
+      "Upgrade Disk Server"
+    ],
+    "title_en": "Procurement & Deployment: 4 Servers Opics Treasury Application Servers HPE DL360 G10 and Upgrade disk 14 Bank Indonesia RTGS and SKNBI Mission-Critical Servers",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server",
+      "Upgrade Disk Server"
+    ]
+  },
+  {
+    "index": 17,
+    "year": "2023",
+    "title_id": "Pekerjaan Pengadaan 2 Server HPE DL360 G10, HPE SN3600B (SAN Switch), Storage NetApp FAS2750, dan VMware ESXi 7",
+    "client": "PT. Yamaha Motor Parts Manufacturing Indonesia",
+    "location": "Karawang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server (ESXi 7)",
+      "Zoning SAN Switch",
+      "Deploy and Configure vCenter 7",
+      "Create Data Center and Cluster",
+      "Initial Setup System Storage",
+      "Cabling System Storage",
+      "Configure System Storage",
+      "Configure File Resource",
+      "Configure Hosts and Volumes",
+      "Mapping New Volume",
+      "Mapping Datastore Server",
+      "Test vMotion and HA"
+    ],
+    "title_en": "Procurement & Deployment: 2 Servers HPE DL360 G10, HPE SN3600B (SAN Switch), Storage NetApp FAS2750, and VMware ESXi 7",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server (ESXi 7)",
+      "Engineered SAN zoning and LUN masking on Brocade/HPE Fibre Channel switches",
+      "Deployed and configured high-availability VMware vCenter Server 7",
+      "Established centralized datacenter hierarchy, DRS, and HA clusters",
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Installed redundant multipath storage cabling",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configured CIFS/NFS shares, quotas, and access control policies",
+      "Mapped FC target ports and assigned storage volumes to ESXi cluster hosts",
+      "Expanded and mapped new VMFS datastore volumes",
+      "Configured multipath datastore access for ESXi host clusters",
+      "Validated live vMotion migrations, host failover automation, and HA clustering"
+    ]
+  },
+  {
+    "index": 18,
+    "year": "2023",
+    "title_id": "Pekerjaan Pengadaan Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan dan Utilisasi Sistem Sistem Operasi",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta, Sentul, Surabaya",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install RedHat Satellite Server",
+      "Install RedHat Satellite Capsule Jakarta, Sentul, Surabaya",
+      "Add RedHat Satellite Capsule to RedHat Satellite Server",
+      "Configuration ( Subscription,Repository,Activation Key, etc)",
+      "Register RHEL Server to Satellite Server",
+      "Create Host Collection"
+    ],
+    "title_en": "Procurement & Deployment: Service Red Hat Enterprise Linux (RHEL) Peruntukan Kebutuhan and Utilisasi Sistem Sistem Operasi",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Install RedHat Satellite Server",
+      "Install RedHat Satellite Capsule Jakarta, Sentul, Surabaya",
+      "Add RedHat Satellite Capsule to RedHat Satellite Server",
+      "Configuration ( Subscription,Repository,Activation Key, etc)",
+      "Register RHEL Server to Satellite Server",
+      "Create Host Collection"
+    ]
+  },
+  {
+    "index": 19,
+    "year": "2023",
+    "title_id": "Pekerjaan Pengadaan Perangkat Switch Hub",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Configure Hostname",
+      "Configure Date&Time",
+      "Configure IP Management",
+      "Configure Trunk",
+      "Configure Default Route",
+      "Configure Web User",
+      "Configure Local Username",
+      "Configure SSH"
+    ],
+    "title_en": "Procurement & Deployment: Enterprise Switch Infrastructure Deployment",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Configure Hostname",
+      "Configure Date&Time",
+      "Configure IP Management",
+      "Configure Trunk",
+      "Configure Default Route",
+      "Configure Web User",
+      "Configure Local Username",
+      "Configure SSH"
+    ]
+  },
+  {
+    "index": 20,
+    "year": "2023",
+    "title_id": "Pekerjaan Pengadaan 6 Server Lenovo ThinkAgile HX3331",
+    "client": "PT Chandra Asri Petrochemical Tbk (CAP)",
+    "location": "Jakarta dan Cilegon",
+    "period": "",
+    "role_id": "System Engineer",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 6 Servers Lenovo ThinkAgile HX3331",
+    "role_en": "System Engineer",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 21,
+    "year": "2023",
+    "title_id": "Pekerjaan Pengadaan Server DC & DRC Bank Sultra",
+    "client": "PT. Bank Pembangunan Daerah Sulawesi Tenggara (Bank Sultra)",
+    "location": "Kendari",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Equipment Hardware Start-up",
+      "Reimage Nutanix OS with Acropolis/VMWare/Hyper-V",
+      "Provisioning Cluster Nutanix",
+      "Provisioning Storage and Network",
+      "Configure VLAN and Trunk Switch",
+      "Client Access Testing",
+      "Testing and Comissioning",
+      "Review all installation-implementation and  configuration"
+    ],
+    "title_en": "Procurement & Deployment: Primary Data Center & DRC Server Infrastructure for Bank Sultra",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Executed hardware installation, racking, and initial startup diagnostics",
+      "Reimage Nutanix OS with Acropolis/VMWare/Hyper-V",
+      "Provisioning Cluster Nutanix",
+      "Configured enterprise storage volumes, virtual switches, and network bridges",
+      "Configured switch VLANs and 802.1Q trunk interfaces",
+      "Performed end-to-end client access validation and connectivity testing",
+      "Conducted rigorous functional testing and formal commissioning",
+      "Delivered post-implementation technical documentation and configuration audit"
+    ]
+  },
+  {
+    "index": 22,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server BI-RTGS dan SKNBI",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Surabaya",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Bank Indonesia RTGS and SKNBI Mission-Critical Servers",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 23,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan 3 Server BI Fast HPE DL360 G10",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Surabaya",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 3 Dedicated BI-FAST Application Servers HPE DL360 G10",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 24,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan 3 Server HPE DL360 G10",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 3 Servers HPE DL360 G10",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 25,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan 2 Server Lenovo SR650, Storage Lenovo DE2000H, dan VMware ESXi 7",
+    "client": "PT. Yamaha Indonesia Motor Manufacturing",
+    "location": "Cibitung",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server (ESXi 7)",
+      "Deploy and Configure vCenter 7",
+      "Create Data Center and Cluster",
+      "Initial Setup System Storage",
+      "Cabling System Storage",
+      "Configure System Storage",
+      "Configure File Resource",
+      "Configure Hosts and Volumes",
+      "Mapping New Volume",
+      "Mapping Datastore Server",
+      "Test vMotion and HA"
+    ],
+    "title_en": "Procurement & Deployment: 2 Servers Lenovo SR650, Storage Lenovo DE2000H, and VMware ESXi 7",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server (ESXi 7)",
+      "Deployed and configured high-availability VMware vCenter Server 7",
+      "Established centralized datacenter hierarchy, DRS, and HA clusters",
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Installed redundant multipath storage cabling",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configured CIFS/NFS shares, quotas, and access control policies",
+      "Mapped FC target ports and assigned storage volumes to ESXi cluster hosts",
+      "Expanded and mapped new VMFS datastore volumes",
+      "Configured multipath datastore access for ESXi host clusters",
+      "Validated live vMotion migrations, host failover automation, and HA clustering"
+    ]
+  },
+  {
+    "index": 26,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan 3 Server HPE DL360 G10",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta, Sentul, Surabaya",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 3 Servers HPE DL360 G10",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 27,
+    "year": "2022",
+    "title_id": "Pekerjaan Pengadaan 2 Server DellEMC R750, Storage DellEMC PowerStore, dan VMware ESXi 7",
+    "client": "PT. Yamaha Indonesia Motor Manufacturing",
+    "location": "Tangerang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server (ESXi 7)",
+      "Deploy and Configure vCenter 7",
+      "Create Data Center and Cluster",
+      "Initial Setup System Storage",
+      "Cabling System Storage",
+      "Configure System Storage",
+      "Configure File Resource",
+      "Configure Hosts and Volumes",
+      "Mapping New Volume",
+      "Mapping Datastore Server",
+      "Test vMotion and HA"
+    ],
+    "title_en": "Procurement & Deployment: 2 Servers DellEMC R750, Storage DellEMC PowerStore, and VMware ESXi 7",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server (ESXi 7)",
+      "Deployed and configured high-availability VMware vCenter Server 7",
+      "Established centralized datacenter hierarchy, DRS, and HA clusters",
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Installed redundant multipath storage cabling",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configured CIFS/NFS shares, quotas, and access control policies",
+      "Mapped FC target ports and assigned storage volumes to ESXi cluster hosts",
+      "Expanded and mapped new VMFS datastore volumes",
+      "Configured multipath datastore access for ESXi host clusters",
+      "Validated live vMotion migrations, host failover automation, and HA clustering"
+    ]
+  },
+  {
+    "index": 28,
+    "year": "2021",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Storage Lenovo Nutanix HX Series, Storage DellEMC Unity 500 dan DellEMC XtremIO X2-S",
+    "client": "PT. Pelabuhan Indonesia III (Pelindo III)",
+    "location": "Surabaya dan Semarang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server Storage Lenovo Nutanix HX Series, Storage DellEMC Unity 500 and DellEMC XtremIO X2-S",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 29,
+    "year": "2021",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Blade HPE C7000",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Sentul dan Surabaya",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server Blade HPE C7000",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 30,
+    "year": "2021",
+    "title_id": "Pekerjaan Pengadaan Maintenance Server Blade HPE C3000",
+    "client": "PT. Bank Tabungan Negara (BTN)",
+    "location": "Jakarta dan Sentul",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Melakukan corrective maintenance jika terjadi kerusakan/gangguan",
+      "Melakukan upgrade firmware jika diperlukan",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Procurement & Deployment: Maintenance Server Blade HPE C3000",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Executed rapid-response corrective maintenance to restore critical banking services within SLA",
+      "Applied vendor firmware updates, security patches, and microcode upgrades",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 31,
+    "year": "2021",
+    "title_id": "Pekerjaan Pengadaan Cabling New Office dan Switch+WAP Cisco",
+    "client": "PT. Kohler Indonesia",
+    "location": "Indonesia",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Cabling and Labeling",
+      "Switch L2 Configuration",
+      "Switch L3 Configuration",
+      "Configure VLAN",
+      "Configure Routing Table",
+      "Assign VLAN to Each Access Port",
+      "Configure Trunk Port",
+      "Configure Virtual Routing and Forwarding",
+      "Configure to IP Address to Accsess Point",
+      "Provisioning All AP to Controller",
+      "OS Upgrade or Firmware Upgraded if Needed",
+      "Test Network Connectivity from All WAP Configured"
+    ],
+    "title_en": "Procurement & Deployment: New Corporate Office Structured Cabling, Cisco Switching & Wireless APs",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Completed redundant power, SAN, and network cabling with enterprise labeling standards",
+      "Switch L2 Configuration",
+      "Switch L3 Configuration",
+      "Configure VLAN",
+      "Configure Routing Table",
+      "Assign VLAN to Each Access Port",
+      "Configure Trunk Port",
+      "Configure Virtual Routing and Forwarding",
+      "Configure to IP Address to Accsess Point",
+      "Provisioning All AP to Controller",
+      "OS Upgrade or Firmware Upgraded if Needed",
+      "Test Network Connectivity from All WAP Configured"
+    ]
+  },
+  {
+    "index": 32,
+    "year": "2021",
+    "title_id": "Pekerjaan Pengadaan 20 WAP Cisco 2802E",
+    "client": "PT. Kohler Manufacturing Indonesia",
+    "location": "Cikarang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Configure to IP Address to Accsess Point",
+      "Provisioning All AP to Controller",
+      "OS Upgrade or Firmware Upgraded if Needed",
+      "Test Network Connectivity from All WAP Configured"
+    ],
+    "title_en": "Procurement & Deployment: 20 Cisco Aironet 2802E Wireless Access Points",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Configure to IP Address to Accsess Point",
+      "Provisioning All AP to Controller",
+      "OS Upgrade or Firmware Upgraded if Needed",
+      "Test Network Connectivity from All WAP Configured"
+    ]
+  },
+  {
+    "index": 33,
+    "year": "2020",
+    "title_id": "Pekerjaan Pengadaan 3 Server DellEMC R740, 1 Storage DellEMC Unity 380",
+    "client": "PT. Kohler Manufacturing Indonesia",
+    "location": "Cikarang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server (Oracle VM and RHEL)",
+      "Initial Setup System Storage",
+      "Cabling System Storage",
+      "Configure System Storage",
+      "Configure File Resource",
+      "Configure Hosts",
+      "Mapping New Volume"
+    ],
+    "title_en": "Procurement & Deployment: 3 Servers DellEMC R740, 1 Storage DellEMC Unity 380",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server (Oracle VM and RHEL)",
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Installed redundant multipath storage cabling",
+      "Configured storage pools, tiering, snapshots, and replication policies",
+      "Configured CIFS/NFS shares, quotas, and access control policies",
+      "Configure Hosts",
+      "Expanded and mapped new VMFS datastore volumes"
+    ]
+  },
+  {
+    "index": 34,
+    "year": "2020",
+    "title_id": "Pekerjaan Pengadaan Perangkat Cisco, 3 Core Switch 3850, 1 Router ISR 4431, 2 Wireless Controller 5520, 25 Access Point 3802I/3802E",
+    "client": "PT. Kohler Manufacturing Indonesia",
+    "location": "Cikarang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Cisco Device",
+      "Switch L2 Configuration",
+      "Switch L3 Configuration",
+      "Configure VLAN",
+      "Configure Routing Table",
+      "Assign VLAN to Each Access Port",
+      "Configure Trunk Port",
+      "Configure Virtual Routing and Forwarding",
+      "Configure Stacking"
+    ],
+    "title_en": "Procurement & Deployment: Cisco Enterprise Network Core: 3 Catalyst 3850 Switches, 1 ISR 4431 Router, 2 WLC 5520 Controllers, 25 Access Points",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Cisco Device",
+      "Switch L2 Configuration",
+      "Switch L3 Configuration",
+      "Configure VLAN",
+      "Configure Routing Table",
+      "Assign VLAN to Each Access Port",
+      "Configure Trunk Port",
+      "Configure Virtual Routing and Forwarding",
+      "Configure Stacking"
+    ]
+  },
+  {
+    "index": 35,
+    "year": "2020",
+    "title_id": "Pekerjaan Pengadaan 4 Server HPE DL580 Gen10,  HPE MSA 2050 SAN, dan HPE SN3600B Switch",
+    "client": "PT. Pulsa Media Bersama",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Initial Setup System Storage",
+      "Configure Storage",
+      "Zoning SAN Switch"
+    ],
+    "title_en": "Procurement & Deployment: 4 Servers HPE DL580 Gen10,  HPE MSA 2050 SAN, and HPE SN3600B Switch",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Configured storage array controllers, management IPs, and storage pool architecture",
+      "Configure Storage",
+      "Engineered SAN zoning and LUN masking on Brocade/HPE Fibre Channel switches"
+    ]
+  },
+  {
+    "index": 36,
+    "year": "2020",
+    "title_id": "Pekerjaan Pengadaan 2 Server DellEMC R740 dan CentOS",
+    "client": "PT. Kejora Gasbumi Mandiri",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 2 Servers DellEMC R740 and CentOS",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 37,
+    "year": "2019",
+    "title_id": "Pekerjaan Pengadaan IBM Expansion V7000",
+    "client": "PT. Bank Muamalat Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Install the enclosure in the rack",
+      "Attach the power and SAS cables",
+      "Add enclosures",
+      "Create new mdisk",
+      "Extend new mdisk to pool existing",
+      "Extend size volume existing",
+      "Mapping new volume"
+    ],
+    "title_en": "Procurement & Deployment: IBM Storwize V7000 Storage Expansion",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install the enclosure in the rack",
+      "Attach the power and SAS cables",
+      "Add enclosures",
+      "Create new mdisk",
+      "Extend new mdisk to pool existing",
+      "Extend size volume existing",
+      "Mapping new volume"
+    ]
+  },
+  {
+    "index": 38,
+    "year": "2019",
+    "title_id": "Proof of Concept (PoC) Dell Server",
+    "client": "PT. Pefindo Biro Kredit",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Instalasi baik software maupun hardware",
+      "Menguasai secara mendalam salah satu atau berapa platform / network operating system untuk membangun suatu data warehouse yang aman dan terintegrasi"
+    ],
+    "title_en": "Proof of Concept (PoC) Dell Server",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Installation of baik software maupun hardware",
+      "Menguasai secara mendalam salah satu atau berapa platform / network operating system untuk membangun suatu data warehouse yang aman dan terintegrasi"
+    ]
+  },
+  {
+    "index": 39,
+    "year": "2019",
+    "title_id": "Network & Data Center Audit",
+    "client": "PT. Fonterra Brands Indonesia",
+    "location": "Jakarta, Cikarang",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Memahami konsep dan desain infrastruktur yang ada",
+      "Menguasai secara teknis dan praktis mengenai keamanan jaringan",
+      "Memeriksa keadaan data center seperti suhu, penerangan, kelembaban, kebersihan, dan keamanan",
+      "Memeriksa ketersediaan port yang ada",
+      "Memeriksa jalur port antar switch",
+      "Mendokumentasikan access point yang ada"
+    ],
+    "title_en": "Network & Data Center Audit",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Memahami konsep dan desain infrastruktur yang ada",
+      "Menguasai secara teknis dan praktis mengenai keamanan jaringan",
+      "Memeriksa keadaan data center seperti suhu, penerangan, kelembaban, kebersihan, dan keamanan",
+      "Memeriksa ketersediaan port yang ada",
+      "Memeriksa jalur port antar switch",
+      "Mendokumentasikan access point yang ada"
+    ]
+  },
+  {
+    "index": 40,
+    "year": "2019",
+    "title_id": "Preventive Maintenance Server IBM & Lenovo",
+    "client": "PT. Yamaha Indonesia Motor Manufacturing",
+    "location": "Jakarta, Tangerang, Bekasi, Karawang, Cirebon",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Memelihara dan memastikan system yang ada berjalan dengan baik",
+      "Troubleshooting dan perbaikan system",
+      "Membuat laporan pekerjaan"
+    ],
+    "title_en": "Preventive Maintenance for IBM and Lenovo Server Fleet",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Maintained continuous 24/7 system availability, health monitoring, and performance stability",
+      "Conducted advanced hardware diagnostics, root-cause analysis, and fault resolution",
+      "Compiled comprehensive maintenance reports, SLA compliance logs, and executive handover docs"
+    ]
+  },
+  {
+    "index": 41,
+    "year": "2019",
+    "title_id": "Pekerjaan Pengadaan 3 Server DellEMC R740 dan R440",
+    "client": "Rumah Sakit Ibu dan Anak Sepatan Tangerang",
+    "location": "Tangerang",
+    "period": "",
+    "role_id": "Technical Support Hardware",
+    "tasks_id": [
+      "Install and Configure Server"
+    ],
+    "title_en": "Procurement & Deployment: 3 Servers DellEMC R740 and R440",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and Configure Server"
+    ]
+  },
+  {
+    "index": 42,
+    "year": "2019",
+    "title_id": "Sistem Integrated",
+    "client": "YAMAHA INDONESIA MANUFACTURING",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support",
+    "tasks_id": [
+      "Instalasi Dell R740 dan EMC 380 Unity",
+      "Configurasi VMware",
+      "Men-support / maintain Membuat Materi Pelatihan"
+    ],
+    "title_en": "Enterprise System Integration Project",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Installation of Dell R740 dan EMC 380 Unity",
+      "Configurasi VMware",
+      "Men-support / maintain Membuat Materi Pelatihan"
+    ]
+  },
+  {
+    "index": 43,
+    "year": "2019",
+    "title_id": "Pekerjaan Pengadaan Server Lenovo SR550 dan Windows Server 2016",
+    "client": "PT. Yamaha Indonesia Motor Manufacturing",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Install and configure server"
+    ],
+    "title_en": "Procurement & Deployment: Server Lenovo SR550 and Windows Server 2016",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and configure server"
+    ]
+  },
+  {
+    "index": 44,
+    "year": "2018",
+    "title_id": "Pekerjaan Pengadaan Server Lenovo SR550 dan VMware",
+    "client": "PT. Synthetic Rubber Indonesia",
+    "location": "Cilegon",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Install and configure server",
+      "Create VM"
+    ],
+    "title_en": "Procurement & Deployment: Server Lenovo SR550 and VMware",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install and configure server",
+      "Create VM"
+    ]
+  },
+  {
+    "index": 45,
+    "year": "2018",
+    "title_id": "Technical Support For The ESP Project.",
+    "client": "PT. Ingredion Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Desktop Engineer",
+    "tasks_id": [
+      "Instalasi software",
+      "Troubleshooting dan perbaikan software",
+      "Men-support / maintain / memelihara sistem komputer"
+    ],
+    "title_en": "Technical Support For The ESP Project.",
+    "role_en": "Desktop Systems Engineer",
+    "tasks_en": [
+      "Installation of software",
+      "Troubleshooting dan perbaikan software",
+      "Maintained end-to-end computer system reliability, user support, and preventive health checks"
+    ]
+  },
+  {
+    "index": 46,
+    "year": "2018",
+    "title_id": "Technical Support For The ESP Project.",
+    "client": "PT. Abbott Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Desktop Engineer",
+    "tasks_id": [
+      "Instalasi software",
+      "Troubleshooting dan perbaikan software",
+      "Men-support / maintain / memelihara sistem komputer"
+    ],
+    "title_en": "Technical Support For The ESP Project.",
+    "role_en": "Desktop Systems Engineer",
+    "tasks_en": [
+      "Installation of software",
+      "Troubleshooting dan perbaikan software",
+      "Maintained end-to-end computer system reliability, user support, and preventive health checks"
+    ]
+  },
+  {
+    "index": 47,
+    "year": "2018",
+    "title_id": "Technical Support For The SSCS Project.",
+    "client": "PT. Shell Indonesia, Tbk",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Import and Export Tape Library",
+      "Troubleshooting dan perbaikan hardware"
+    ],
+    "title_en": "Technical Support For The SSCS Project.",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Import and Export Tape Library",
+      "Conducted root-cause hardware troubleshooting, board-level diagnosis, and component replacement"
+    ]
+  },
+  {
+    "index": 48,
+    "year": "2018",
+    "title_id": "Technical Support For The Dell Project.",
+    "client": "PT. NCR Indonesia",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Troubleshooting dan perbaikan hardware"
+    ],
+    "title_en": "Technical Support For The Dell Project.",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Conducted root-cause hardware troubleshooting, board-level diagnosis, and component replacement"
+    ]
+  },
+  {
+    "index": 49,
+    "year": "2018",
+    "title_id": "Technical Support For The Server Monitoring IBM AS/400.",
+    "client": "PT. Bank Syariah Bukopin, Tbk",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Check DASD Used",
+      "Check CPU Used and Memory Used",
+      "Health Check Activity"
+    ],
+    "title_en": "Technical Support For The Server Monitoring IBM AS/400.",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Check DASD Used",
+      "Check CPU Used and Memory Used",
+      "Health Check Activity"
+    ]
+  },
+  {
+    "index": 50,
+    "year": "2018",
+    "title_id": "Pekerjaan Pengadaan Storage DellEMC Unity 300",
+    "client": "PT. Bank Commonwealth",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Install system storage",
+      "Cabling system storage",
+      "Configure system storage",
+      "Configure file resources",
+      "Configure hosts",
+      "Configure replications DC & DRC",
+      "Mapping new volume"
+    ],
+    "title_en": "Procurement & Deployment: Storage DellEMC Unity 300",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Install system storage",
+      "Cabling system storage",
+      "Configure system storage",
+      "Configure file resources",
+      "Configure hosts",
+      "Configure replications DC & DRC",
+      "Mapping new volume"
+    ]
+  },
+  {
+    "index": 51,
+    "year": "2017",
+    "title_id": "Technical Support For The Smart Digital Banking (SDB).",
+    "client": "PT. Bank Tabungan Pensiunan Nasional, Tbk",
+    "location": "Jakarta",
+    "period": "",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Instalasi hardware",
+      "Troubleshooting dan perbaikan hardware",
+      "Men-support / maintain / memelihara perangkat IT"
+    ],
+    "title_en": "Technical Support For The Smart Digital Banking (SDB).",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Installation of hardware",
+      "Conducted root-cause hardware troubleshooting, board-level diagnosis, and component replacement",
+      "Men-support / maintain / memelihara perangkat IT"
+    ]
+  },
+  {
+    "index": 52,
+    "year": "2016",
+    "title_id": "Pengadaan SKCK Online Integrated POLRES dan POLSEK (APBNP) TA 2016.",
+    "client": "PT. Astra Graphia, Tbk",
+    "location": "Jakarta",
+    "period": "2016 - 2017",
+    "role_id": "Technical Support  Hardware",
+    "tasks_id": [
+      "Instalasi hardware dan software",
+      "Troubleshooting dan perbaikan hardware",
+      "Men-support / maintain / memelihara sistem komputer"
+    ],
+    "title_en": "Procurement & Implementation: SKCK Online Integrated POLRES and POLSEK (APBNP) TA 2016.",
+    "role_en": "Technical Support Specialist",
+    "tasks_en": [
+      "Deployed enterprise hardware platforms and installed baseline software configurations",
+      "Conducted root-cause hardware troubleshooting, board-level diagnosis, and component replacement",
+      "Maintained end-to-end computer system reliability, user support, and preventive health checks"
+    ]
+  }
+];
+
+      const I18N = {
+        en: {
+          docTitle: "Eka Taris Ariyudi — Senior System Engineer | Enterprise IT Infrastructure",
+          roleTag: "Senior System Engineer",
+          location: "📍 Greater Jakarta, Indonesia (Open to Remote / Relocation)",
+          downloadPdf: "⬇️ Download CV (PDF)",
+          downloadWord: "⬇️ Download CV (Word)",
+          langToggle: "🌐 Bahasa Indonesia",
+          
+          metric1Val: "10+ Years",
+          metric1Label: "Enterprise IT Experience",
+          metric2Val: "52 Projects",
+          metric2Label: "Enterprise Deployments Delivered",
+          metric3Val: "15+ Certs",
+          metric3Label: "Vendor Accreditations (Cisco, Nutanix, HPE)",
+          metric4Val: "Tier-1",
+          metric4Label: "Banking & Enterprise Clients (BTN, Shell)",
+
+          secTitleSummary: "⭐ Professional Summary",
+          summaryText: "Results-driven Senior System Engineer with 10 years of enterprise IT infrastructure experience specializing in mission-critical server environments, enterprise storage architectures (Dell EMC, NetApp, HPE), and hybrid-cloud virtualization (VMware, Nutanix AHV, Proxmox VE, Sangfor HCI). Proven track record delivering 50+ end-to-end infrastructure deployments, data center migrations, and high-availability operations for tier-1 financial institutions (Bank BTN, BPD Sultra) and multinational corporations (Shell Indonesia). Certified professional holding credentials including Cisco CCNP Enterprise, Nutanix NCP-MCI / NCSE-Core, HPE ATP, and Huawei HCIA.",
+          
+          secTitleEducation: "🎓 Education",
+          degreeName: "Bachelor of Science in Informatics Engineering (Computer Science)",
+          degreeInst: "Universitas Mercu Buana, Jakarta (Graduated 2017)",
+          
+          secTitleSkillsDist: "📊 Skills Distribution",
+          secTitleCoreSkills: "🛠️ Core Technical Competencies",
+          skillStorageTitle: "💾 Enterprise Storage & Backup",
+          skillNetworkTitle: "🌐 Networking & Security",
+          skillServerTitle: "🖥️ Server Infrastructure & OS",
+          skillCloudTitle: "☁️ Cloud & Virtualization",
+          
+          secTitleSoftSkills: "🤝 Professional Competencies",
+          soft1Title: "Stakeholder Communication",
+          soft1Desc: "Effective technical and executive coordination with clients and cross-functional teams",
+          soft2Title: "Root-Cause Problem Solving",
+          soft2Desc: "Advanced incident investigation, diagnostics, and high-availability disaster recovery",
+          soft3Title: "Cross-Functional Collaboration",
+          soft3Desc: "Seamless collaboration across multi-vendor teams, tier-1 clients, and engineering leads",
+          soft4Title: "Project & SLA Management",
+          soft4Desc: "Disciplined execution strictly aligned with enterprise SLAs, budgets, and project timelines",
+          soft5Title: "Technology Adaptability",
+          soft5Desc: "Fast-track mastery and vendor certification in emerging cloud and virtualization platforms",
+          soft6Title: "Technical Documentation",
+          soft6Desc: "Rigorous system architecture diagrams, handover manuals, and audit-ready SOPs",
+
+          secTitleTechSummary: "🔍 Technical Profile Summary",
+          tech1Title: "Storage Architecture",
+          tech1Desc: "Enterprise SAN/NAS configuration: Dell EMC, NetApp, HPE, Nutanix",
+          tech2Title: "Server Infrastructure",
+          tech2Desc: "Multi-vendor server deployment: Dell PowerEdge, HPE ProLiant, IBM, Lenovo",
+          tech3Title: "Enterprise Networking",
+          tech3Desc: "Cisco & Huawei enterprise routing, switching, SAN fabric, and security",
+          tech4Title: "Hybrid Cloud Solutions",
+          tech4Desc: "Hybrid cloud design and orchestration with HPE, Nutanix, and Sangfor HCI",
+          tech5Title: "Virtualization Platforms",
+          tech5Desc: "VMware vSphere/vCenter, Proxmox VE, Nutanix AHV cluster administration",
+          tech6Title: "Backup & Disaster Recovery",
+          tech6Desc: "Veritas Backup Exec, Acronis Cloud, DC-DRC synchronous replication",
+          tech7Title: "Hardware Diagnostics",
+          tech7Desc: "Component-level diagnostics, corrective maintenance, and firmware updates",
+          tech8Title: "Enterprise Clients",
+          tech8Desc: "Bank BTN, Bank Syariah Bukopin, Shell Indonesia, BPD Sultra, Tokai, Yamaha",
+
+          secTitleCertifications: "📜 Certifications & Credentials",
+          secTitleEvents: "🎤 Specialized Training & Conferences",
+          secTitleProjects: "🧩 Professional Experience & Enterprise Projects",
+
+          thNo: "No",
+          thYear: "Year",
+          thProject: "Project & Client",
+          thRole: "Role",
+          thTasks: "Scope & Key Achievements",
+          filterAll: "All (52)",
+          
+          clientPrefix: "🏢 Client:",
+          locPrefix: "📍 Location:",
+          contactHeader: "📫 Direct Contact & Professional Network",
+          contactSub: "Available for enterprise consulting, high-impact infrastructure roles, and international remote engagements.",
+          btnReqPhone: "📞 Request Phone Number",
+          footerText: "Eka Taris Ariyudi — Senior System Engineer • International Portfolio Edition • 2026"
+        },
+        id: {
+          docTitle: "Eka Taris Ariyudi — System Engineer CV",
+          roleTag: "System Engineer",
+          location: "📍 Tangerang, Indonesia",
+          downloadPdf: "⬇️ Download CV (PDF)",
+          downloadWord: "⬇️ Download CV (Word)",
+          langToggle: "🌐 English (International)",
+
+          metric1Val: "10+ Tahun",
+          metric1Label: "Pengalaman IT Enterprise",
+          metric2Val: "52 Proyek",
+          metric2Label: "Proyek Enterprise Diselesaikan",
+          metric3Val: "15+ Sertifikasi",
+          metric3Label: "Akreditasi Vendor Ternama (Cisco, Nutanix, HPE)",
+          metric4Val: "Tier-1",
+          metric4Label: "Klien Perbankan & Multinasional (BTN, Shell)",
+
+          secTitleSummary: "⭐ Profil Singkat",
+          summaryText: "System Engineer dengan pengalaman sejak 2016 (10 tahun), termasuk di PT. Mitra Infosarana, berspesialisasi dalam infrastruktur IT, storage, server, dan technical support. Berpengalaman dalam instalasi dan konfigurasi storage (DellEMC, NetApp, HPE), troubleshooting hardware, server monitoring, serta implementasi solusi hybrid cloud dan virtualization. Memiliki berbagai sertifikasi vendor ternama termasuk Cisco (CCNP), Nutanix (NCP-MCI, NCSE-Core), HPE, NetApp, Huawei, dan lainnya. Terbiasa bekerja dengan berbagai klien enterprise seperti Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dan perusahaan besar lainnya.",
+          
+          secTitleEducation: "🎓 Pendidikan",
+          degreeName: "Strata 1 / Teknik Informatika",
+          degreeInst: "Universitas Mercu Buana, Jakarta (2017)",
+          
+          secTitleSkillsDist: "📊 Distribusi Keahlian",
+          secTitleCoreSkills: "🛠️ Keahlian Inti (Tech Stack)",
+          skillStorageTitle: "💾 Storage & Infrastructure",
+          skillNetworkTitle: "🌐 Networking",
+          skillServerTitle: "🖥️ Server & Hardware",
+          skillCloudTitle: "☁️ Cloud & Virtualization",
+          
+          secTitleSoftSkills: "🤝 Soft Skills",
+          soft1Title: "Komunikasi",
+          soft1Desc: "Komunikasi efektif dengan klien dan tim",
+          soft2Title: "Problem Solving",
+          soft2Desc: "Analisis dan troubleshooting infrastruktur",
+          soft3Title: "Kolaborasi",
+          soft3Desc: "Kerja tim lintas departemen",
+          soft4Title: "Manajemen",
+          soft4Desc: "Manajemen proyek dan waktu",
+          soft5Title: "Adaptasi",
+          soft5Desc: "Adaptasi cepat pada teknologi baru",
+          soft6Title: "Dokumentasi",
+          soft6Desc: "Dokumentasi teknis yang rapi",
+
+          secTitleTechSummary: "🔍 Tech Summary",
+          tech1Title: "Storage Management",
+          tech1Desc: "Konfigurasi dan manajemen storage DellEMC, NetApp, HPE, Nutanix",
+          tech2Title: "Server Infrastructure",
+          tech2Desc: "Instalasi dan konfigurasi server DellEMC, HPE, IBM, Lenovo",
+          tech3Title: "Networking",
+          tech3Desc: "Cisco & Huawei networking, routing, switching, dan firewall",
+          tech4Title: "Hybrid Cloud",
+          tech4Desc: "Implementasi solusi hybrid cloud dengan HPE, Nutanix, dan Sangfor",
+          tech5Title: "Virtualization",
+          tech5Desc: "VMware, Proxmox, Nutanix AHV virtualization management",
+          tech6Title: "Backup & Recovery",
+          tech6Desc: "Veritas Backup Exec, Acronis, dan disaster recovery solutions",
+          tech7Title: "Hardware Support",
+          tech7Desc: "Troubleshooting dan maintenance hardware server dan storage",
+          tech8Title: "Enterprise Projects",
+          tech8Desc: "Pengalaman dengan Bank BTN, Bank Syariah Bukopin, Shell Indonesia, dll",
+
+          secTitleCertifications: "📜 Sertifikasi",
+          secTitleEvents: "🎤 Event & Training",
+          secTitleProjects: "🧩 Pengalaman Kerja & Proyek Utama",
+
+          thNo: "No",
+          thYear: "Tahun",
+          thProject: "Nama Pekerjaan & Klien",
+          thRole: "Peran",
+          thTasks: "Lingkup Pekerjaan",
+          filterAll: "Semua (52)",
+
+          clientPrefix: "🏢",
+          locPrefix: "📍",
+          contactHeader: "📫 Kontak Langsung & Jaringan Profesional",
+          contactSub: "Terbuka untuk konsultasi enterprise, peran senior infrastructure engineer, dan remote engagement.",
+          btnReqPhone: "📞 Request Phone Number",
+          footerText: "Generated by Eka • Eka Taris Ariyudi Tech Edition • 2026"
+        }
+      };
+
+      let currentLang = localStorage.getItem('cv_lang') || 'en';
+      let currentFilterYear = 'all';
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('cv_lang', lang);
+        const t = I18N[lang];
+
+        document.title = t.docTitle;
+        document.getElementById('uiRoleTag').textContent = t.roleTag;
+        document.getElementById('uiLocation').textContent = t.location;
+        document.getElementById('btnDownloadPdf').textContent = t.downloadPdf;
+        document.getElementById('btnDownloadWord').textContent = t.downloadWord;
+        document.getElementById('btnLangToggle').textContent = t.langToggle;
+
+        document.getElementById('uiMetric1Val').textContent = t.metric1Val;
+        document.getElementById('uiMetric1Label').textContent = t.metric1Label;
+        document.getElementById('uiMetric2Val').textContent = t.metric2Val;
+        document.getElementById('uiMetric2Label').textContent = t.metric2Label;
+        document.getElementById('uiMetric3Val').textContent = t.metric3Val;
+        document.getElementById('uiMetric3Label').textContent = t.metric3Label;
+        document.getElementById('uiMetric4Val').textContent = t.metric4Val;
+        document.getElementById('uiMetric4Label').textContent = t.metric4Label;
+
+        document.getElementById('secTitleSummary').textContent = t.secTitleSummary;
+        document.getElementById('uiSummaryText').textContent = t.summaryText;
+
+        document.getElementById('secTitleEducation').textContent = t.secTitleEducation;
+        document.getElementById('uiDegreeName').textContent = t.degreeName;
+        document.getElementById('uiDegreeInst').textContent = t.degreeInst;
+
+        document.getElementById('secTitleSkillsDist').textContent = t.secTitleSkillsDist;
+        document.getElementById('secTitleCoreSkills').textContent = t.secTitleCoreSkills;
+        document.getElementById('uiSkillStorageTitle').textContent = t.skillStorageTitle;
+        document.getElementById('uiSkillNetworkTitle').textContent = t.skillNetworkTitle;
+        document.getElementById('uiSkillServerTitle').textContent = t.skillServerTitle;
+        document.getElementById('uiSkillCloudTitle').textContent = t.skillCloudTitle;
+
+        document.getElementById('secTitleSoftSkills').textContent = t.secTitleSoftSkills;
+        document.getElementById('uiSoft1Title').textContent = t.soft1Title;
+        document.getElementById('uiSoft1Desc').textContent = t.soft1Desc;
+        document.getElementById('uiSoft2Title').textContent = t.soft2Title;
+        document.getElementById('uiSoft2Desc').textContent = t.soft2Desc;
+        document.getElementById('uiSoft3Title').textContent = t.soft3Title;
+        document.getElementById('uiSoft3Desc').textContent = t.soft3Desc;
+        document.getElementById('uiSoft4Title').textContent = t.soft4Title;
+        document.getElementById('uiSoft4Desc').textContent = t.soft4Desc;
+        document.getElementById('uiSoft5Title').textContent = t.soft5Title;
+        document.getElementById('uiSoft5Desc').textContent = t.soft5Desc;
+        document.getElementById('uiSoft6Title').textContent = t.soft6Title;
+        document.getElementById('uiSoft6Desc').textContent = t.soft6Desc;
+
+        document.getElementById('secTitleTechSummary').textContent = t.secTitleTechSummary;
+        document.getElementById('uiTech1Title').textContent = t.tech1Title;
+        document.getElementById('uiTech1Desc').textContent = t.tech1Desc;
+        document.getElementById('uiTech2Title').textContent = t.tech2Title;
+        document.getElementById('uiTech2Desc').textContent = t.tech2Desc;
+        document.getElementById('uiTech3Title').textContent = t.tech3Title;
+        document.getElementById('uiTech3Desc').textContent = t.tech3Desc;
+        document.getElementById('uiTech4Title').textContent = t.tech4Title;
+        document.getElementById('uiTech4Desc').textContent = t.tech4Desc;
+        document.getElementById('uiTech5Title').textContent = t.tech5Title;
+        document.getElementById('uiTech5Desc').textContent = t.tech5Desc;
+        document.getElementById('uiTech6Title').textContent = t.tech6Title;
+        document.getElementById('uiTech6Desc').textContent = t.tech6Desc;
+        document.getElementById('uiTech7Title').textContent = t.tech7Title;
+        document.getElementById('uiTech7Desc').textContent = t.tech7Desc;
+        document.getElementById('uiTech8Title').textContent = t.tech8Title;
+        document.getElementById('uiTech8Desc').textContent = t.tech8Desc;
+
+        document.getElementById('secTitleCertifications').textContent = t.secTitleCertifications;
+        document.getElementById('secTitleEvents').textContent = t.secTitleEvents;
+        document.getElementById('secTitleProjects').textContent = t.secTitleProjects;
+
+        document.getElementById('thNo').textContent = t.thNo;
+        document.getElementById('thYear').textContent = t.thYear;
+        document.getElementById('thProject').textContent = t.thProject;
+        document.getElementById('thRole').textContent = t.thRole;
+        document.getElementById('thTasks').textContent = t.thTasks;
+
+        document.getElementById('uiContactHeader').textContent = t.contactHeader;
+        document.getElementById('uiContactSub').textContent = t.contactSub;
+        document.getElementById('uiBtnReqPhone').textContent = t.btnReqPhone;
+        document.getElementById('uiFooter').textContent = t.footerText;
+
+        renderFilterButtons();
+        renderProjectRows();
+      }
+
+      function toggleLanguage() {
+        applyLanguage(currentLang === 'en' ? 'id' : 'en');
+      }
+
+      function renderFilterButtons() {
+        const t = I18N[currentLang];
+        const yearsDesc = ['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016'];
+        
+        // Count per year
+        const counts = {};
+        PROJECTS_DATA.forEach(p => {
+          counts[p.year] = (counts[p.year] || 0) + 1;
+        });
+
+        const filterBar = document.getElementById('projectFilterBar');
+        filterBar.innerHTML = '';
+
+        const allBtn = document.createElement('button');
+        allBtn.className = 'filter-btn' + (currentFilterYear === 'all' ? ' active' : '');
+        allBtn.textContent = t.filterAll;
+        allBtn.onclick = () => filterProjects('all', allBtn);
+        filterBar.appendChild(allBtn);
+
+        yearsDesc.forEach(y => {
+          const btn = document.createElement('button');
+          btn.className = 'filter-btn' + (currentFilterYear === y ? ' active' : '');
+          btn.textContent = y + ' (' + (counts[y] || 0) + ')';
+          btn.onclick = () => filterProjects(y, btn);
+          filterBar.appendChild(btn);
+        });
+      }
+
+      function renderProjectRows() {
+        const tbody = document.getElementById('masterTableBody');
+        tbody.innerHTML = '';
+        const isEn = currentLang === 'en';
+
+        PROJECTS_DATA.forEach(p => {
+          const tr = document.createElement('tr');
+          tr.setAttribute('data-year', p.year);
+          if (currentFilterYear !== 'all' && currentFilterYear !== p.year) {
+            tr.style.display = 'none';
+          }
+
+          const title = isEn ? p.title_en : p.title_id;
+          const role = isEn ? p.role_en : p.role_id;
+          const tasks = isEn ? p.tasks_en : p.tasks_id;
+
+          let roleClass = 'role-se';
+          if (p.role_id.toLowerCase().includes('technical support')) roleClass = 'role-ts';
+          if (p.role_id.toLowerCase().includes('desktop')) roleClass = 'role-de';
+
+          let metaHtml = '';
+          if (p.client) {
+            metaHtml += '<span class="meta-item">🏢 ' + p.client + '</span>';
+          }
+          if (p.location) {
+            if (metaHtml) metaHtml += ' <span class="meta-sep">•</span> ';
+            metaHtml += '<span class="meta-item">📍 ' + p.location + '</span>';
+          }
+          if (p.period) {
+            if (metaHtml) metaHtml += ' <span class="meta-sep">•</span> ';
+            metaHtml += '<span class="meta-item">🗓️ ' + p.period + '</span>';
+          }
+
+          const tasksHtml = tasks.map(t => '<li>' + t + '</li>').join('');
+
+          tr.innerHTML = `
+            <td class="col-no">${p.index}</td>
+            <td class="col-year"><span class="year-pill">${p.year}</span></td>
+            <td class="col-project">
+              <div class="project-title">${title}</div>
+              <div class="project-meta-info">${metaHtml}</div>
+            </td>
+            <td class="col-role"><span class="role-badge ${roleClass}">${role}</span></td>
+            <td class="col-tasks">
+              <ul class="task-list">
+                ${tasksHtml}
+              </ul>
+            </td>
+          `;
+
+          tbody.appendChild(tr);
+        });
+      }
+
+      function filterProjects(year, btn) {
+        currentFilterYear = year;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        const rows = document.querySelectorAll('#masterProjectTable tbody tr');
+        rows.forEach(row => {
+          if (year === 'all' || row.getAttribute('data-year') === year) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
         });
       }
 
@@ -1897,6 +2905,7 @@
         modal.style.zIndex = '1000';
         modal.style.backdropFilter = 'blur(8px)';
 
+        const isEn = currentLang === 'en';
         const modalContent = document.createElement('div');
         modalContent.style.background = '#0e1611';
         modalContent.style.padding = '30px';
@@ -1909,73 +2918,67 @@
         modalContent.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.7)';
 
         modalContent.innerHTML = `
-          <h3 style="color: #4ade80; margin-top: 0; font-size: 20px;">Request Phone Number</h3>
-          <p style="color: #cbd5e1; font-size: 14px; margin: 15px 0;">Silakan hubungi melalui email atau LinkedIn untuk mendapatkan kontak nomor telepon langsung.</p>
+          <h3 style="color: #4ade80; margin-top: 0; font-size: 20px;">${isEn ? 'Direct Phone Number' : 'Request Nomor Telepon'}</h3>
+          <p style="color: #cbd5e1; font-size: 14px; margin: 15px 0;">${isEn ? 'Please reach out via professional Email or LinkedIn to request direct phone & WhatsApp communication.' : 'Silakan hubungi melalui email atau LinkedIn untuk mendapatkan kontak nomor telepon langsung.'}</p>
           <div style="margin: 20px 0;">
-            <a href="mailto:ekataris@gmail.com" style="color: #38bdf8; text-decoration: none; display: block; margin: 8px 0; font-weight: 500;">📧 ekataris@gmail.com</a>
+            <a href="mailto:ekataris@gmail.com" style="color: #38bdf8; text-decoration: none; display: block; margin: 8px 0; font-weight: 500;">✉️ ekataris@gmail.com</a>
             <a href="https://www.linkedin.com/in/eka-taris-ariyudi-632847218/" target="_blank" style="color: #38bdf8; text-decoration: none; display: block; margin: 8px 0; font-weight: 500;">💼 LinkedIn Profile</a>
           </div>
-          <button id="closeModalBtn" class="download-btn btn-primary" style="margin-top: 10px; width: 100%;">Tutup</button>
+          <button id="closeModalBtn" class="download-btn btn-primary" style="margin-top: 10px; width: 100%;">${isEn ? 'Close' : 'Tutup'}</button>
         `;
 
         modal.appendChild(modalContent);
         document.body.appendChild(modal);
 
         document.getElementById('closeModalBtn').addEventListener('click', () => {
-          modal.remove();
+          document.body.removeChild(modal);
         });
 
         modal.addEventListener('click', (e) => {
-          if (e.target === modal) modal.remove();
+          if (e.target === modal) {
+            document.body.removeChild(modal);
+          }
         });
       }
 
-      document.addEventListener('DOMContentLoaded', function () {
-        // Register datalabels
-        Chart.register(ChartDataLabels);
+      // Charts Initialization
+      window.addEventListener('load', () => {
+        applyLanguage(currentLang);
 
-        // Technical Skills Donut Chart
+        // Skill Donut Chart
         const skillCtx = document.getElementById('skillChart').getContext('2d');
         new Chart(skillCtx, {
           type: 'doughnut',
           data: {
             labels: [
-              'Storage & Infrastructure',
-              'Networking',
-              'Server & Hardware',
-              'Cloud & Virtualization'
+              'Storage & Backup (30%)',
+              'Server & Hardware (25%)',
+              'Networking & Security (25%)',
+              'Cloud & Virtualization (20%)'
             ],
             datasets: [{
-              data: [35, 25, 25, 15],
+              data: [30, 25, 25, 20],
               backgroundColor: [
                 'rgba(34, 197, 94, 0.85)',
                 'rgba(56, 189, 248, 0.85)',
                 'rgba(251, 146, 60, 0.85)',
                 'rgba(168, 85, 247, 0.85)'
               ],
-              borderColor: [
-                'rgba(34, 197, 94, 1)',
-                'rgba(56, 189, 248, 1)',
-                'rgba(251, 146, 60, 1)',
-                'rgba(168, 85, 247, 1)'
-              ],
+              borderColor: 'rgba(8, 12, 9, 0.8)',
               borderWidth: 2
             }]
           },
+          plugins: [ChartDataLabels],
           options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
               legend: {
-                display: true,
                 position: 'bottom',
                 labels: {
                   color: '#e2e8f0',
-                  padding: 12,
-                  font: {
-                    size: 11.5,
-                    family: 'Inter'
-                  }
+                  padding: 10,
+                  font: { size: 11, family: 'Inter' }
                 }
               },
               tooltip: {
@@ -1988,11 +2991,7 @@
               },
               datalabels: {
                 color: '#ffffff',
-                font: {
-                  weight: 'bold',
-                  size: 13,
-                  family: 'Inter'
-                },
+                font: { weight: 'bold', size: 12, family: 'Inter' },
                 formatter: function (value, context) {
                   const total = context.dataset.data.reduce((a, b) => a + b, 0);
                   const percentage = ((value / total) * 100).toFixed(0);
@@ -2003,14 +3002,14 @@
           }
         });
 
-        // Work Experience Donut Chart
+        // Experience Chart
         const expCtx = document.getElementById('experienceChart').getContext('2d');
         new Chart(expCtx, {
           type: 'doughnut',
           data: {
             labels: ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
             datasets: [{
-              label: 'Jumlah Proyek',
+              label: 'Projects Delivered',
               data: [1, 1, 7, 7, 4, 5, 6, 5, 4, 7, 5],
               backgroundColor: [
                 'rgba(250, 204, 21, 0.8)',
@@ -2029,9 +3028,10 @@
               borderWidth: 2
             }]
           },
+          plugins: [ChartDataLabels],
           options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
               legend: {
                 display: true,
@@ -2039,10 +3039,7 @@
                 labels: {
                   color: '#e2e8f0',
                   padding: 8,
-                  font: {
-                    size: 11,
-                    family: 'Inter'
-                  }
+                  font: { size: 11, family: 'Inter' }
                 }
               },
               tooltip: {
@@ -2054,17 +3051,13 @@
                 padding: 10,
                 callbacks: {
                   label: function (context) {
-                    return ' ' + context.label + ': ' + context.raw + ' Proyek';
+                    return ' ' + context.label + ': ' + context.raw + ' Enterprise Projects';
                   }
                 }
               },
               datalabels: {
                 color: '#ffffff',
-                font: {
-                  weight: 'bold',
-                  size: 11,
-                  family: 'Inter'
-                },
+                font: { weight: 'bold', size: 11, family: 'Inter' },
                 formatter: function (value) {
                   return value;
                 }
@@ -2074,16 +3067,69 @@
         });
       });
 
+      // Print Preparation (ATS Clean)
+      window.addEventListener('beforeprint', () => {
+        document.querySelectorAll('#masterProjectTable tbody tr').forEach((r) => (r.style.display = ''));
+        document.querySelectorAll('.dropdown').forEach((d) => {
+          const content = d.querySelector('.dropdown-content');
+          if (content) {
+            content.style.maxHeight = 'none';
+            content.style.display = 'block';
+          }
+        });
+      });
+
+      // Professional Word Export (ATS Clean & Native Tables)
       async function downloadWordDoc() {
         const clone = document.body.cloneNode(true);
-        clone.querySelectorAll('.download-btn').forEach((button) => button.remove());
+        clone.querySelectorAll('.download-btn, .btn-lang, .project-filter-bar').forEach((button) => button.remove());
+        clone.querySelectorAll('#masterProjectTable tbody tr').forEach((r) => (r.style.display = ''));
         clone.querySelectorAll('script').forEach((script) => script.remove());
         clone.querySelectorAll('.qr').forEach((qr) => qr.remove());
 
+        // Convert Chart Canvas to high-res PNG image in Word
+        const chartCanvas = document.getElementById('experienceChart');
+        if (chartCanvas) {
+          try {
+            const chartDataUrl = chartCanvas.toDataURL('image/png');
+            const cloneChart = clone.querySelector('#experienceChart');
+            if (cloneChart && cloneChart.parentNode) {
+              const img = document.createElement('img');
+              img.src = chartDataUrl;
+              img.style.width = '100%';
+              img.style.maxWidth = '520px';
+              img.style.height = 'auto';
+              cloneChart.parentNode.replaceChild(img, cloneChart);
+            }
+          } catch (e) {
+            console.error('Failed to export chart to Word:', e);
+          }
+        }
+
+        // Expand dropdowns in Word export
+        clone.querySelectorAll('.dropdown').forEach((dropdown) => {
+          const content = dropdown.querySelector('.dropdown-content');
+          if (content) {
+            content.style.maxHeight = 'none';
+            content.style.display = 'block';
+          }
+          const icon = dropdown.querySelector('.dropdown-icon');
+          if (icon) icon.remove();
+        });
+
+        // Add explicit table attributes for Word compatibility
+        clone.querySelectorAll('table').forEach((table) => {
+          table.setAttribute('border', '1');
+          table.setAttribute('cellpadding', '5');
+          table.setAttribute('cellspacing', '0');
+          table.setAttribute('width', '100%');
+        });
+
+        // Embed external images as base64 data URLs
         const images = Array.from(clone.querySelectorAll('img'));
         await Promise.all(
           images.map(async (img) => {
-            if (!img.src) return;
+            if (!img.src || img.src.startsWith('data:')) return;
             try {
               const response = await fetch(img.src);
               if (response.ok) {
@@ -2102,31 +3148,116 @@
           })
         );
 
-        const styleTags = Array.from(document.querySelectorAll('style'))
-          .map((style) => style.outerHTML)
-          .join('');
-
         const wordStyle = `<style>
-          body { background: #fff !important; color: #000 !important; font-family: Arial, sans-serif !important; }
-          p, span, div, li, h1, h2, h3, h4, h5, h6, a { color: #000 !important; background: transparent !important; }
-          a, a:link, a:visited { color: #000 !important; text-decoration: none !important; }
-          .card, .project { background: none !important; box-shadow: none !important; border: 1px solid #ddd !important; margin-bottom: 12px !important; }
-          .download-btn, .qr { display: none !important; }
-          .profile-photo { max-width: 100px !important; height: auto !important; }
-          .logo-chip img { height: 18px !important; width: auto !important; }
-          .dropdown-header strong { color: #000 !important; }
-          .year-group { border: 1px solid #ccc !important; }
-          .year-group summary { background: #eee !important; color: #000 !important; }
-          .year-label { color: #000 !important; }
-          .year-count { background: #ddd !important; color: #000 !important; }
+          @page Section1 {
+            size: 21.0cm 29.7cm;
+            margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+            mso-header-margin: 35.4pt;
+            mso-footer-margin: 35.4pt;
+            mso-paper-source: 0;
+          }
+          div.Section1 { page: Section1; }
+          body {
+            background: #ffffff !important;
+            color: #000000 !important;
+            font-family: Calibri, Arial, sans-serif !important;
+            font-size: 10pt !important;
+            line-height: 1.35 !important;
+          }
+          p, span, div, li, td, th {
+            color: #000000 !important;
+            font-family: Calibri, Arial, sans-serif !important;
+          }
+          h1 { font-size: 18pt !important; color: #166534 !important; margin: 0 0 4px 0 !important; }
+          h2, h3, .section-title { font-size: 12pt !important; color: #15803d !important; font-weight: bold !important; margin: 14px 0 6px 0 !important; border-bottom: 1px solid #16a34a !important; padding-bottom: 3px !important; }
+          .download-btn, .btn-lang, .project-filter-bar { display: none !important; }
+          .card { background: none !important; box-shadow: none !important; border: none !important; padding: 0 !important; margin-bottom: 12px !important; }
+          .container { display: block !important; width: 100% !important; }
+          .left-col, .right-col { width: 100% !important; }
+          .profile-photo { max-width: 85px !important; height: auto !important; }
+          .logo-row { margin-top: 6px !important; margin-bottom: 10px !important; }
+          .logo-chip { display: inline-block !important; padding: 2px 7px !important; border: 1px solid #cbd5e1 !important; border-radius: 4px !important; font-size: 9pt !important; margin: 2px !important; }
+          .logo-chip img { height: 13px !important; vertical-align: middle !important; margin-right: 4px !important; }
+          
+          /* Metrics Grid in Word */
+          .metrics-grid { display: table !important; width: 100% !important; margin-bottom: 12px !important; }
+          .metric-card { display: table-cell !important; width: 25% !important; background: #f8fafc !important; border: 1px solid #cbd5e1 !important; padding: 6px 8px !important; text-align: center !important; }
+          .metric-val { font-size: 12pt !important; font-weight: bold !important; color: #166534 !important; }
+          .metric-label { font-size: 8.5pt !important; color: #334155 !important; }
+
+          /* Word Tables */
+          table {
+            border-collapse: collapse !important;
+            width: 100% !important;
+            margin-bottom: 12px !important;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+          }
+          th {
+            background-color: #f1f5f9 !important;
+            color: #0f172a !important;
+            font-size: 9.5pt !important;
+            font-weight: bold !important;
+            border: 1px solid #94a3b8 !important;
+            padding: 5px 6px !important;
+            text-align: left !important;
+          }
+          td {
+            border: 1px solid #cbd5e1 !important;
+            padding: 4px 6px !important;
+            font-size: 9pt !important;
+            vertical-align: top !important;
+          }
+          .col-no { text-align: center !important; font-weight: bold !important; width: 4% !important; }
+          .col-year { text-align: center !important; font-weight: bold !important; width: 8% !important; }
+          .col-project { width: 36% !important; }
+          .col-role { width: 14% !important; }
+          .col-tasks { width: 38% !important; }
+          .year-pill { font-weight: bold !important; color: #000000 !important; }
+          .project-title { font-weight: bold !important; font-size: 9.5pt !important; color: #000000 !important; margin-bottom: 2px !important; }
+          .project-meta-info { font-size: 8.5pt !important; color: #475569 !important; }
+          .role-badge { display: inline-block !important; font-size: 8pt !important; font-weight: bold !important; padding: 1px 4px !important; border: 1px solid #94a3b8 !important; background: #f8fafc !important; }
+          .task-list { margin: 0 !important; padding-left: 16px !important; }
+          .task-list li { font-size: 8.5pt !important; line-height: 1.25 !important; margin-bottom: 2px !important; }
+          
+          .dropdown-header {
+            background-color: #f8fafc !important;
+            padding: 4px 6px !important;
+            font-size: 9.5pt !important;
+            font-weight: bold !important;
+            border: 1px solid #e2e8f0 !important;
+            margin-top: 6px !important;
+          }
         </style>`;
 
-        const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${document.title}</title>${styleTags}${wordStyle}</head><body>${clone.innerHTML}</body></html>`;
-        const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+        const wordDocHtml = `<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset='utf-8'>
+  <title>${document.title}</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  ${wordStyle}
+</head>
+<body>
+  <div class="Section1">
+    ${clone.innerHTML}
+  </div>
+</body>
+</html>`;
+
+        const blob = new Blob(['\ufeff', wordDocHtml], { type: 'application/msword' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'CV-Eka-Taris-Ariyudi.doc';
+        link.download = currentLang === 'en' ? 'CV-Eka-Taris-Ariyudi-Senior-System-Engineer.doc' : 'CV-Eka-Taris-Ariyudi.doc';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

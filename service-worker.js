@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cv-eka-v8';
+const CACHE_NAME = 'cv-eka-v12';
 const OFFLINE_URL = 'offline.html';
 const ASSETS = [
   './',
@@ -9,7 +9,7 @@ const ASSETS = [
   './icons/icon-512.png',
   './assets/profile.png',
   './assets/logos/cisco.svg',
-  './assets/logos/dell.svg',
+  './assets/logos/redhat.svg',
   './assets/logos/dellemc.svg',
   './assets/logos/hpe.svg',
   './assets/logos/netapp.svg',
